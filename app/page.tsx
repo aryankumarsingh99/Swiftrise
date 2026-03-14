@@ -175,15 +175,15 @@ export default function Home() {
  
         <div className="relative mx-auto flex min-h-[92vh] w-[94vw] max-w-330 flex-col px-2 pb-10 pt-6 sm:px-4 md:pb-14 md:pt-8">
           <div className="mt-auto">
-            <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">ABOUT ECI</p>
+            <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">ABOUT SWIFTWRISE</p>
             <h1 className="max-w-[18ch] text-4xl font-medium leading-[1.06] sm:text-5xl md:text-6xl lg:text-7xl">
-              A Global Partner in Risk, Insurance &amp; Financial Security
+              Building the Future with Code, AI, &amp; and Innovation
             </h1>
 
             <div className="mt-8 border-t border-white/35 pt-5 md:mt-12 md:pt-7">
               <div className="grid gap-5 text-[1.08rem] leading-relaxed text-white/90 md:grid-cols-[1fr_1fr_auto] md:items-start md:gap-10">
                 <p className="max-w-[34ch]">
-                  ECI corporate helps businesses and families protect what matters most through disciplined risk management,
+                  SwiftWrise helps businesses and families protect what matters most through disciplined risk management,
                   insurance, and investment solutions.
                 </p>
                 <p className="max-w-[36ch]">

@@ -14,7 +14,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hamburger to X animation
+  // Hamburger to X animation classe
   const hamburgerClass = menuOpen
     ? "rotate-45"
     : "";

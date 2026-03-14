@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`flex items-center fixed top-0 left-0 w-full z-50 justify-between pt-6 gap-4 text-[0.98rem] text-white/90 px-6 md:px-35 transition-colors duration-300 ${
+      className={`flex items-center fixed top-0 left-0 w-full z-50 justify-between pt-6 gap-4 text-[0.98rem] text-white/90 px-6 md:px-30 transition-colors duration-300 ${
         scrolled ? "bg-[#0d1b36]" : "bg-transparent"
       }`}
     >

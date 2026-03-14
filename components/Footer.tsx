@@ -11,9 +11,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4 inline-flex items-center gap-3">
-              <span className="grid size-8 place-items-center rounded-full bg-white text-sm font-bold text-[#0d1b36]">A</span>
-              <span className="font-semibold tracking-wide text-white">Aurevia Group</span>
-            </div>
+              <img
+                src="/logo.png"
+                alt="ECI Logo"
+                className="h-15 w-auto object-contain"
+              />
+             </div>
             <p className="text-sm leading-relaxed text-white/60">
               Built on trust, designed for tomorrow. Planning, building, and modernising the environments where growth happens.
             </p>
@@ -84,7 +87,7 @@ export default function Footer() {
             <address className="grid gap-3 text-sm not-italic text-white/60">
               <p>45 Innovation Avenue<br />New York, NY 10018</p>
               <p>
-                <a href="tel:+12125550188" className="transition hover:text-white">+1 212 555 0188</a>
+                <a href="tel:+12125550188" className="transition hover:text-white">  +1 212 555 0188</a>
               </p>
               <p>
                 <a href="mailto:hello@aurevia.com" className="transition hover:text-white">hello@aurevia.com</a>

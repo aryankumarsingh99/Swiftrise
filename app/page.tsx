@@ -633,50 +633,6 @@ export default function Home() {
         </div>
       </section>
 
- <section className="animate-rise px-0 py-16 [animation-delay:320ms] md:py-20">
-        <div className="mx-auto w-[92vw] max-w-7xl">
-          <p className="mb-4 text-[0.72rem] uppercase tracking-[0.14em] text-[--ink-soft]">Meet us here</p>
-          <h2 className="max-w-[18ch] font-(--font-playfair-display) text-3xl leading-tight md:text-5xl">
-            Visit our office and innovation hub.
-          </h2>
-          <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_1.2fr]">
-            <aside className="rounded-[0.9rem] border border-[--line] bg-[--surface] p-5">
-              <h3 className="font-(--font-playfair-display) text-2xl">Aurevia Group HQ</h3>
-              <p className="mt-2 text-[--ink-soft]">
-                45 Innovation Avenue, Central Business District, New York, NY 10018
-              </p>
-              <div className="mt-4 grid gap-2 text-sm text-[--ink-soft]">
-                <p>
-                  <span className="font-semibold text-[--ink]">Phone:</span> +1 212 555 0188
-                </p>
-                <p>
-                  <span className="font-semibold text-[--ink]">Email:</span> hello@aurevia.com
-                </p>
-                <p>
-                  <span className="font-semibold text-[--ink]">Hours:</span> Mon - Fri, 9:00 AM - 6:00 PM
-                </p>
-              </div>
-              <Link
-                className="mt-5 inline-flex items-center justify-center rounded-full bg-[--accent] px-5 py-3 text-[0.95rem] font-semibold text-white transition hover:-translate-y-px hover:bg-[--accent-strong]"
-                href="/contact"
-              >
-                Book a Meeting
-              </Link>
-            </aside>
-
-            <div className="overflow-hidden rounded-[0.9rem] border border-[--line] bg-[--surface]">
-              <iframe
-                title="Aurevia Group location map"
-                src="https://maps.google.com/maps?q=Times%20Square%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                className="h-90 w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       {/* ── Newsletter CTA ───────────────────────────────────── */}
       <section className="animate-rise px-0 py-16 [animation-delay:335ms] md:py-20">

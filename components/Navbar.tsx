@@ -25,8 +25,12 @@ export default function Navbar() {
         scrolled ? "bg-[#0d1b36]" : "bg-transparent"
       }`}
     >
-      <Link className="text-5xl font-semibold tracking-tight text-white" href="/" aria-label="ECI home">
-        ECI.
+      <Link href="/" aria-label="ECI home">
+        <img
+          src="/logo.png"
+          alt="ECI Logo"
+          className="h-12 w-auto object-contain"
+        />
       </Link>
       {/* Desktop Nav */}
       <nav className="hidden items-center gap-8 text-[1.05rem] md:flex" aria-label="Hero navigation">

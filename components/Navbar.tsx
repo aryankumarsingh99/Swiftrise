@@ -1,10 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +16,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Hamburger to X animation classe
-  const hamburgerClass = menuOpen
-    ? "rotate-45"
-    : "";
 
   return (
     <header
@@ -26,32 +24,39 @@ export default function Navbar() {
       }`}
     >
       <Link href="/" aria-label="ECI home">
-        <img
+        <Image
           src="/logo.png"
           alt="ECI Logo"
+          width={48}
+          height={48}
           className="h-12 w-auto object-contain"
         />
       </Link>
       {/* Desktop Nav */}
       <nav className="hidden items-center gap-8 text-[1.05rem] md:flex" aria-label="Hero navigation">
-        <Link className="transition hover:text-white" href="/about">
-          About Us
-        </Link>
-        <Link className="transition hover:text-white" href="/services">
-          Service
-        </Link>
-        <Link className="transition hover:text-white" href="/projects">
-          Projects
-        </Link>
-        <Link className="transition hover:text-white" href="/team">
-          Team
-        </Link>
-        <Link className="transition hover:text-white" href="/news">
-          News
-        </Link>
-        <Link className="transition hover:text-white" href="/contact">
-          Contact
-        </Link>
+        {[
+          { href: "/", label: "Home" },
+          { href: "/about", label: "About Us" },
+          { href: "/services", label: "Service" },
+          { href: "/projects", label: "Projects" },
+          { href: "/team", label: "Team" },
+          { href: "/news", label: "News" },
+          { href: "/contact", label: "Contact" },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={
+              `group relative transition pb-1 ${pathname === item.href ? "text-white font-semibold" : ""}`
+            }
+          >
+            {item.label}
+            <span
+              className={`absolute left-0 bottom-0 h-0.5 w-full bg-white transition-all duration-300 origin-left
+                ${pathname === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+            />
+          </Link>
+        ))}
       </nav>
       {/* Mobile Hamburger */}
       <button

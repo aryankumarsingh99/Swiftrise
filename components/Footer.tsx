@@ -85,12 +85,12 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Contact</h3>
             <address className="grid gap-3 text-sm not-italic text-white/60">
-              <p>45 Innovation Avenue<br />New York, NY 10018</p>
+              <p>33/11, Star House, Lane-4, Bhagabat Sandhan Colony, Rasulgarh, Bhubaneswar, Odisha – 751010</p>
               <p>
-                <a href="tel:+12125550188" className="transition hover:text-white">  +1 212 555 0188</a>
+                <a href="tel:+12125550188" className="transition hover:text-white"> +91 70087 96745</a>
               </p>
               <p>
-                <a href="mailto:hello@aurevia.com" className="transition hover:text-white">hello@aurevia.com</a>
+                <a href="mailto:hello@aurevia.com" className="transition hover:text-white">contactswiftrise@gmail.com</a>
               </p>
               <p>Mon – Fri, 9:00 AM – 6:00 PM</p>
             </address>
@@ -99,7 +99,7 @@ export default function Footer() {
 
         {/* ── Bottom bar ── */}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} Aurevia Group. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SwiftRise Solution PVT. Ltd. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="/contact" className="transition hover:text-white/70">Privacy Policy</Link>
             <Link href="/contact" className="transition hover:text-white/70">Terms of Service</Link>

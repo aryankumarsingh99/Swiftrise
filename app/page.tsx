@@ -175,7 +175,7 @@ export default function Home() {
  
         <div className="relative mx-auto flex min-h-[92vh] w-[94vw] max-w-330 flex-col px-2 pb-10 pt-6 sm:px-4 md:pb-14 md:pt-8">
           <div className="mt-auto">
-            <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">ABOUT SWIFTWRISE</p>
+            <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">ABOUT SWIFTRISE</p>
             <h1 className="max-w-[18ch] text-4xl font-medium leading-[1.06] sm:text-5xl md:text-6xl lg:text-7xl">
               Building the Future with Code, AI, &amp; and Innovation
             </h1>
@@ -202,12 +202,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="animate-rise border-y border-[--line] bg-[--surface] px-0 py-8 [animation-delay:80ms]">
+      <section className="animate-rise  border-[--line]  px-0 py-8 [animation-delay:80ms]">
         <div className="mx-auto w-[92vw] max-w-7xl">
           <p className="mb-5 text-center text-[0.68rem] uppercase tracking-[0.18em] text-[--ink-soft]">
             Trusted by leading organisations
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+          <div className="flex flex-wrap font-bold text-3xl items-center justify-center gap-x-10 gap-y-4">
             {[
               "Halden Properties",
               "NorthRiver Industries",
@@ -218,10 +218,27 @@ export default function Home() {
             ].map((name) => (
               <span
                 key={name}
-                className="font-(--font-playfair-display) text-base text-[--ink-soft] opacity-60 transition hover:opacity-100"
+                className=" text-base text-[#0d1b36]  transition "
               >
                 {name}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="animate-rise border-y border-[--line]   px-0 py-16 [animation-delay:300ms] md:py-20">
+        <div className="mx-auto w-[92vw] max-w-7xl">
+          <p className="mb-4 text-[0.72rem] uppercase tracking-[0.14em] text-[--ink-soft]">Statistics</p>
+          <h2 className="max-w-[18ch] font-(--font-playfair-display) text-3xl leading-tight md:text-5xl">
+            Measurable outcomes, year after year.
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((item) => (
+              <article key={item.label} className="rounded-[0.8rem] border border-[--line] bg-[--surface] px-3 py-4 text-center">
+                <p className="font-(--font-playfair-display) text-3xl">{item.value}</p>
+                <p className="mt-1 text-sm text-[--ink-soft]">{item.label}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -239,18 +256,21 @@ export default function Home() {
               governance, and responsibilities.
             </p>
           </div>
+          
 
           <div className="relative mt-8 overflow-hidden border border-[#d1d5de] bg-[#d9dee9] md:mt-10">
             <Image
-              src={imageSet.partner}
+              src={"https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
               alt="Partners celebrating a successful strategic decision"
               width={1800}
               height={980}
-              className="h-[52vw] max-h-155 min-h-75 w-full object-cover"
+              className="h-[52vw] max-h-155  min-h-75 w-full object-cover"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,43,95,0.22)_0%,rgba(20,34,83,0.44)_100%)] mix-blend-multiply" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.35)_1px,transparent_1px)] bg-size-[34px_34px] opacity-20" />
-          </div>
+             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,32,84,0.38)_0%,rgba(4,27,82,0.72)_58%,rgba(2,21,70,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.14)_0%,transparent_35%),radial-gradient(circle_at_88%_68%,rgba(88,131,255,0.15)_0%,transparent_33%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.22)_0.65px,transparent_0.65px)] bg-size-[18px_18px] opacity-30" />
+ 
+            </div>
         </div>
       </section>
 
@@ -398,6 +418,10 @@ export default function Home() {
                 height={1100}
                 className="h-72 w-full object-cover sm:h-80 md:h-96"
               />
+               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,32,84,0.38)_0%,rgba(4,27,82,0.72)_58%,rgba(2,21,70,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.14)_0%,transparent_35%),radial-gradient(circle_at_88%_68%,rgba(88,131,255,0.15)_0%,transparent_33%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.22)_0.65px,transparent_0.65px)] bg-size-[18px_18px] opacity-30" />
+ 
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(26,43,95,0.22)_0%,rgba(20,34,83,0.44)_100%)] mix-blend-multiply" />
             </div>
           </div>

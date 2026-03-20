@@ -6,26 +6,38 @@ export default function ServicesPage() {
     };
   const services = [
     {
-      title: "Architecture & Planning",
+      title: "Mobile Engineering",
       description:
         "Master planning, heritage-sensitive architecture, and future-ready spaces that balance character with performance.",
     },
     {
-      title: "Engineering & Execution",
+      title: "AI / ML Integration",
       description:
         "Civil, mechanical, and electrical execution managed through disciplined timelines, clear documentation, and quality controls.",
     },
     {
-      title: "Industrial Modernization",
+      title: "IOT & Digital Innovation",
       description:
         "Production process improvements, automation readiness, and retrofits that increase output without disrupting continuity.",
     },
     {
-      title: "Digital Transformation",
+      title: "Cyber Security",
       description:
         "Data-enabled operations, management dashboards, and practical AI integrations built around measurable business outcomes.",
     },
+    {
+      title: "Data Analytics & Big Data",
+      description:
+        "Comprehensive maintenance, safety protocols, and operational support for seamless facility performance.",
+    },
+     {
+      title: "Blockchain & Web3 Solutions",
+      description:
+        "Comprehensive maintenance, safety protocols, and operational support for seamless facility performance.",
+    },
+    
   ];
+  
 
   const testimonials = [
     {
@@ -46,7 +58,7 @@ export default function ServicesPage() {
     <>
       <section className="animate-rise relative isolate min-h-[92vh] overflow-hidden text-white">
         <Image
-          src={imageSet.hero}
+          src={"https://images.unsplash.com/flagged/photo-1553267252-d100936057c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
           alt="Leadership team in strategic meeting"
           fill
           priority
@@ -92,13 +104,48 @@ export default function ServicesPage() {
             <h1 className="max-w-[20ch] font-(--font-playfair-display) text-3xl leading-tight md:text-5xl">
               Capabilities for every phase of growth.
             </h1>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {services.map((service) => (
-                <article key={service.title} className="rounded-[0.8rem] border border-[--line] bg-[--surface] p-5">
-                  <h2 className="font-(--font-playfair-display) text-xl">{service.title}</h2>
-                  <p className="mt-2 text-[--ink-soft]">{service.description}</p>
-                </article>
-              ))}
+            <div className="flex flex-row gap-8 py-2 relative justify-start">
+              {/* Cards with vertical title overlays */}
+              <div className="flex gap-4">
+                {services.map((service, idx) => {
+                  const unsplashImages = [
+                    "https://images.unsplash.com/photo-1647964185852-cdc3069aa0ab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    "https://plus.unsplash.com/premium_photo-1683120963435-6f9355d4a776?q=80&w=663&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    "https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    "https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    "https://images.unsplash.com/photo-1584291527908-033f4d6542c8?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+                  ];
+                  return (
+                    <div
+                      key={service.title}
+                      className={
+                        `relative rounded-xl shadow-md border border-[#e2e3e8] mx-2 h-85 overflow-hidden flex items-end group transition-all duration-500 min-w-45 max-w-45 hover:min-w-85 hover:max-w-85` +
+                        (idx === services.length - 1 ? ' bg-linear-to-t from-[#e2e3e8] to-transparent' : '')
+                      }
+                      style={{
+                        backgroundImage: `url(${unsplashImages[idx % unsplashImages.length]})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                      {/* Vertical text overlay for all cards, hidden on hover */}
+                      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-lg font-bold tracking-wide -rotate-90 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-0">
+                        {service.title}
+                      </span>
+                      {/* Sliding content from bottom on hover */}
+                      <div className={
+                        `absolute left-0 bottom-0 w-full bg-linear-to-t from-[#232d4b]/80 to-transparent p-6 transition-transform duration-500 translate-y-full group-hover:translate-y-0` +
+                        (idx === services.length - 1 ? ' group-hover:bg-linear-to-t group-hover:from-[#232d4b]/80 group-hover:to-transparent' : '')
+                      }>
+                        <p className="text-white text-lg font-bold mb-1">{service.title}</p>
+                        <p className="text-white text-sm">{service.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
       </section>

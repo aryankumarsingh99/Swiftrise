@@ -376,61 +376,78 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[{
-              img: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Claude Bébéar",
-              role: "Founder & Strategic Visionary",
-              socials: [
-                { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
-                { icon: "fa fa-twitter", url: "https://twitter.com/" }
-              ]
-            }, {
-              img: "https://images.unsplash.com/photo-1713947507130-227586ab3024?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Bertrand Poupart-Lafarge",
-              role: "Chief Financial Officer",
-              socials: [
-                { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
-              ]
-            }, {
-              img: "https://images.unsplash.com/photo-1508214757746-8b2b0a6a3c4a?auto=format&fit=crop&w=800&q=80",
-              name: "Henri De Castries",
-              role: "CEO & Architect Of Globalization",
-              socials: [
-                { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
-                { icon: "fa fa-twitter", url: "https://twitter.com/" }
-              ]
-            }, {
-              img: imageSet.team4,
-              name: "Thomas Buberl",
-              role: "CEO & Architect Of Globalization",
-              socials: [
-                { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
-              ]
-            }, {
-              img: imageSet.team5,
-              name: "Eugéne Dé Clarie",
-              role: "Chief Operating Officer",
-              socials: [
-                { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
-              ]
-            }].map((member) => (
-              <div key={member.name} className="group flex flex-col items-center border border-[#e2e3e8] bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300">
+            {[
+              {
+                img: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                name: "Claude Bébéar",
+                role: "Founder & Strategic Visionary",
+                socials: [
+                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
+                  { icon: "fa fa-twitter", url: "https://twitter.com/" }
+                ]
+              },
+              {
+                img: "https://images.unsplash.com/photo-1713947507130-227586ab3024?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                name: "Bertrand Poupart-Lafarge",
+                role: "Chief Financial Officer",
+                socials: [
+                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
+                ]
+              },
+              {
+                img: "https://images.unsplash.com/photo-1508214757746-8b2b0a6a3c4a?auto=format&fit=crop&w=800&q=80",
+                name: "Henri De Castries",
+                role: "CEO & Architect Of Globalization",
+                socials: [
+                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
+                  { icon: "fa fa-twitter", url: "https://twitter.com/" }
+                ]
+              },
+              {
+                img: imageSet.team4,
+                name: "Thomas Buberl",
+                role: "CEO & Architect Of Globalization",
+                socials: [
+                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
+                ]
+              },
+              {
+                img: imageSet.team5,
+                name: "Eugéne Dé Clarie",
+                role: "Chief Operating Officer",
+                socials: [
+                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
+                ]
+              }
+            ].map((member) => (
+              <div
+                key={member.name}
+                className="group relative flex flex-col items-center bg-gradient-to-br from-[#f7f7fa] via-[#e2e3e8] to-[#dbe4f6] p-7 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-[#e2e3e8] overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#232d4b] via-[#6a6f7b] to-[#1a223b] opacity-20" />
                 <Image
                   src={member.img}
                   alt={member.name}
                   width={340}
                   height={340}
-                  className="mb-4 h-65 w-65 object-cover rounded-full border-4 border-[#f7f7fa] group-hover:border-[#232d4b] transition-all duration-300"
+                  className="mb-4 h-56 w-56 object-cover rounded-2xl border-4 border-[#f7f7fa] group-hover:border-[#232d4b] transition-all duration-300 shadow-md"
                 />
-                <p className="text-xl font-bold text-[#1a223b] mt-2">{member.name}</p>
-                <p className="mt-1 text-[1.05rem] text-[#6a6f7b]">{member.role}</p>
-                <div className="mt-3 flex gap-3">
+                <p className="text-2xl font-extrabold text-[#232d4b] mt-2 tracking-tight group-hover:text-[#1a215b] transition-colors duration-200">{member.name}</p>
+                <p className="mt-1 text-[1.1rem] text-[#6a6f7b] font-medium group-hover:text-[#232d4b] transition-colors duration-200">{member.role}</p>
+                <div className="mt-4 flex gap-4">
                   {member.socials && member.socials.map((s, idx) => (
-                    <a key={idx} href={s.url} target="_blank" rel="noopener noreferrer" className="text-[#232d4b] hover:text-[#6a6f7b] text-xl">
+                    <a
+                      key={idx}
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#232d4b] hover:text-[#6a6f7b] text-2xl transition-colors duration-200"
+                    >
                       <i className={s.icon}></i>
                     </a>
                   ))}
                 </div>
+                <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#232d4b] via-[#6a6f7b] to-[#1a223b] opacity-10" />
               </div>
             ))}
             <div className="flex flex-col items-center justify-center border border-[#e2e3e8] bg-[#1a215b] p-6 text-white rounded-2xl shadow-md">

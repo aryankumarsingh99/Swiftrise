@@ -16,7 +16,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Aurevia Group | Built on Trust, Designed for Tomorrow",
+  title: "SwiftRice  | Built on Trust, Designed for Tomorrow",
   description:
     "Aurevia Group is a strategic partner for architecture, engineering, operations, and digital transformation projects.",
 };

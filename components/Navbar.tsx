@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <header
       className={`flex items-center fixed top-0 left-0 w-full z-50 justify-between pt-6 gap-4 text-[0.98rem] text-white/90 px-6 md:px-29 transition-colors duration-300 ${
-        scrolled ? "bg-[#0d1b36]" : "bg-transparent"
+        scrolled ? "bg-[#113f67]" : "bg-transparent"
       }`}
     >
       <Link href="/" aria-label="ECI home">

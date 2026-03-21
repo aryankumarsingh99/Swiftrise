@@ -1,16 +1,41 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default function HeroSection({ imageSet }: { imageSet: any }) {
+const heroImages = [
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1170&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1170&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1170&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1170&auto=format&fit=crop",
+];
+
+export default function HeroSection() {
+  const [imgIdx, setImgIdx] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setImgIdx((prev) => (prev + 1) % heroImages.length);
+        setFade(true);
+      }, 400); // fade out duration
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="animate-rise relative isolate min-h-[92vh] overflow-hidden text-white">
-      <Image
-        src={imageSet.hero}
-        alt="Leadership team in strategic meeting"
-        fill
-        priority
-        className="object-cover"
-      />
+    <section className="relative isolate min-h-[92vh] flex items-center justify-center overflow-hidden text-white pt-20 md:pt-0">
+      <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: fade ? 1 : 0 }}>
+        <Image
+          src={heroImages[imgIdx]}
+          alt="Leadership team in strategic meeting"
+          fill
+          priority
+          className="object-cover transition-all duration-700"
+        />
+      </div>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,32,84,0.38)_0%,rgba(4,27,82,0.72)_58%,rgba(2,21,70,0.88)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.14)_0%,transparent_35%),radial-gradient(circle_at_88%_68%,rgba(88,131,255,0.15)_0%,transparent_33%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.22)_0.65px,transparent_0.65px)] bg-size-[18px_18px] opacity-30" />

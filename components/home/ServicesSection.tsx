@@ -1,4 +1,4 @@
-import { services } from "./data";
+// import { services } from "./data";
 
 export default function ServicesSection() {
   return (

@@ -104,9 +104,9 @@ export default function ServicesPage() {
             <h1 className="max-w-[20ch] font-(--font-playfair-display) text-3xl leading-tight md:text-5xl">
               Capabilities for every phase of growth.
             </h1>
-            <div className="flex flex-row gap-8 py-2 relative justify-start">
+            <div className="overflow-x-auto md:overflow-x-visible py-2">
               {/* Cards with vertical title overlays */}
-              <div className="flex gap-4">
+              <div className="flex flex-row gap-4 w-max md:w-full md:flex-row md:gap-8">
                 {services.map((service, idx) => {
                   const unsplashImages = [
                     "https://images.unsplash.com/photo-1647964185852-cdc3069aa0ab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -121,7 +121,7 @@ export default function ServicesPage() {
                     <div
                       key={service.title}
                       className={
-                        `relative rounded-xl shadow-md border border-[#e2e3e8] mx-2 h-85 overflow-hidden flex items-end group transition-all duration-500 min-w-45 max-w-45 hover:min-w-85 hover:max-w-85` +
+                        `relative rounded-xl shadow-md border border-[#e2e3e8] h-60 md:h-85 overflow-hidden flex items-end group transition-all duration-500 min-w-[260px] max-w-[260px] md:w-full md:min-w-45 md:max-w-45 hover:md:min-w-85 hover:md:max-w-85 mx-0 md:mx-2` +
                         (idx === services.length - 1 ? ' bg-linear-to-t from-[#e2e3e8] to-transparent' : '')
                       }
                       style={{
@@ -130,18 +130,15 @@ export default function ServicesPage() {
                         backgroundPosition: 'center',
                       }}
                     >
-                      {/* Vertical text overlay for all cards, hidden on hover */}
-                      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-lg font-bold tracking-wide -rotate-90 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-0">
-                        {service.title}
-                      </span>
-                      {/* Sliding content from bottom on hover */}
-                      <div className={
-                        `absolute left-0 bottom-0 w-full bg-linear-to-t from-[#232d4b]/80 to-transparent p-6 transition-transform duration-500 translate-y-full group-hover:translate-y-0` +
-                        (idx === services.length - 1 ? ' group-hover:bg-linear-to-t group-hover:from-[#232d4b]/80 group-hover:to-transparent' : '')
-                      }>
+                      {/* Always show title/description on mobile, hover effect on md+ */}
+                      <div className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-[#232d4b]/90 to-transparent p-4 md:p-6 transition-transform duration-500 md:translate-y-full md:group-hover:translate-y-0">
                         <p className="text-white text-lg font-bold mb-1">{service.title}</p>
                         <p className="text-white text-sm">{service.description}</p>
                       </div>
+                      {/* Vertical text overlay for md+ only, hidden on hover */}
+                      <span className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-lg font-bold tracking-wide -rotate-90 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-0">
+                        {service.title}
+                      </span>
                     </div>
                   );
                 })}
@@ -150,28 +147,53 @@ export default function ServicesPage() {
           </div>
       </section>
 
-      <section className="animate-rise px-0 py-16 [animation-delay:280ms] md:py-20">
-          <div className="mx-auto w-[92vw] max-w-7xl">
-            <p className="mb-4 text-[0.72rem] uppercase tracking-[0.14em] text-[--ink-soft]">Client voices</p>
-            <h2 className="max-w-[20ch] font-(--font-playfair-display) text-3xl leading-tight md:text-5xl">
-              Partnerships built on performance and trust.
-            </h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {testimonials.map((item) => (
-                <blockquote
-                  key={item.author}
-                  className="m-0 rounded-[0.8rem] border border-[--line] bg-[--surface] p-5"
-                >
-                  <p className="text-[--ink-soft]">{item.quote}</p>
-                  <footer className="mt-4 grid gap-0.5">
-                    <strong>{item.author}</strong>
-                    <span className="text-sm text-[--ink-soft]">{item.role}</span>
+      <section className="relative animate-rise px-0 py-20 md:py-28 overflow-hidden">
+        {/* Decorative background gradient */}
+        <div className="pointer-events-none absolute inset-0 -z-10   opacity-10" />
+          {/* SVG pattern overlays inside content for visibility */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <svg className="absolute left-0 top-0 w-64 h-64 text-indigo-200 opacity-60 z-0" fill="none" viewBox="0 0 320 320">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="320" height="320" fill="url(#dots)" />
+          </svg>
+          <svg className="absolute right-0 bottom-0 w-64 h-64 text-indigo-200 opacity-60 z-0" fill="none" viewBox="0 0 320 320">
+            <defs>
+              <pattern id="dots2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="320" height="320" fill="url(#dots2)" />
+          </svg>
+        </div>
+        <div className="mx-auto w-[92vw] max-w-7xl relative">
+          <p className="mb-4 text-[0.8rem] uppercase tracking-[0.14em] text-indigo-700 font-semibold letter-spacing-wide">Client voices</p>
+          <h2 className="max-w-[32ch] font-playfair-display text-3xl md:text-5xl font-extrabold text-slate-900 mb-12 drop-shadow-sm">
+            Partnerships built on <span className="text-indigo-700">performance</span> and <span className="text-cyan-600">trust</span>.
+          </h2>
+          <div className="grid gap-10 md:grid-cols-2">
+            {testimonials.map((item, idx) => (
+              <div
+                key={item.author}
+                className="relative flex flex-col bg-white/90 border border-indigo-100 shadow-xl rounded-2xl p-8 md:p-12 overflow-hidden animate-rise"
+                style={{ animationDelay: `${120 + idx * 80}ms` }}
+              >
+                <div className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-indigo-400 via-blue-400 to-cyan-300 rounded-l-2xl" />
+                <blockquote className="relative z-10">
+                  <p className="text-xl font-medium text-slate-800 italic mb-8 leading-relaxed">“{item.quote}”</p>
+                  <footer className="flex flex-col gap-0.5">
+                    <span className="font-semibold text-indigo-700 text-lg">{item.author}</span>
+                    <span className="text-sm text-slate-500">{item.role}</span>
                   </footer>
                 </blockquote>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+        </div>
       </section>
-    </>
+          </>
   );
 }

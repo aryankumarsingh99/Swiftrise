@@ -24,12 +24,10 @@ export default function Navbar() {
       }`}
     >
       <Link href="/" aria-label="ECI home">
-        <Image     
+        <img
           src="/logo.png"
           alt="ECI Logo"
-          width={48}
-          height={48}
-          className="h-12 w-auto object-contain"
+          className="h-10 w-auto object-contain sm:h-15"
         />
       </Link>
       {/* Desktop Nav */}

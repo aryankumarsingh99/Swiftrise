@@ -1,27 +1,77 @@
 export default function ChooseUsSection({ choosePoints, IconBadge }: { choosePoints: any[]; IconBadge: any }) {
   return (
-    <section className="animate-rise border-y border-[--line] bg-[--surface] px-0 py-16 [animation-delay:180ms] md:py-20">
-      <div className="mx-auto w-[92vw] max-w-7xl">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
+    <section className="relative bg-[#113f67] px-0 py-0 min-h-[80vh] flex flex-col items-center justify-center overflow-hidden w-full text-white">
+      {/* Top badge */}
+      <div className="w-full flex justify-center pt-12">
+        <span className="bg-white text-[#232d4b] px-5 py-1.5 rounded-full text-xs font-bold tracking-widest shadow-md border border-[#eee]">WHY CHOOSE US</span>
+      </div>
+      {/* Headline */}
+      <h2 className="mt-6 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-white w-full">
+        Your <span className="text-[#5a83ff] font-semibold italic">Trusted</span> Homecare Partner
+      </h2>
+      {/* Centered image and features - now full width */}
+      <div className="relative flex flex-col md:flex-row items-center justify-center gap-10 mt-10 w-full px-0">
+        {/* Left features */}
+        <div className="flex-1 flex flex-col gap-8 text-right pr-0 md:pr-8 w-full max-w-none">
           <div>
-            <p className="mb-2 text-[0.85rem] uppercase tracking-[0.14em] text-[--accent] font-bold">Why Choose Us</p>
-            <h2 className="max-w-[20ch] font-(--font-playfair-display) text-4xl md:text-5xl font-extrabold text-[#232d4b] drop-shadow-sm">Certainty in Complex Environments</h2>
-            <p className="mt-4 text-lg text-[--ink-soft] max-w-[38ch]">We combine classic accountability with modern delivery tools, ensuring your protection and growth are always in focus.</p>
+            <h3 className="text-lg font-bold text-white flex items-center justify-end gap-2">
+              <span className="w-1.5 h-8 bg-[#5a83ff] rounded-full inline-block mr-2" />Medical &amp; Non-Medical Services
+            </h3>
+            <p className="text-sm text-[#d9dee9] mt-1">From nursing and therapy to companionship and daily assistance</p>
           </div>
-          <div className="hidden md:block md:w-1/3">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80" alt="Why Choose Us" className="rounded-2xl shadow-lg w-full h-auto" />
+          <div>
+            <h3 className="text-lg font-bold text-white flex items-center justify-end gap-2">
+              <span className="w-1.5 h-8 bg-[#5a83ff] rounded-full inline-block mr-2" />Modern Monitoring &amp; Health Tracking
+            </h3>
+            <p className="text-sm text-[#d9dee9] mt-1">Technology-enabled tracking, digital reports, medication reminders</p>
           </div>
         </div>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {choosePoints.map((point: any) => (
-            <article key={point.title} className="rounded-2xl border border-[--line] bg-white px-6 py-6 text-[--ink-soft] shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-              <div className="mb-3 inline-flex size-12 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--accent)_12%,white_88%)] text-[--accent] text-2xl shadow">
-                <IconBadge kind={point.icon} />
-              </div>
-              <h3 className="font-(--font-playfair-display) text-lg text-[--ink] font-bold mb-1">{point.title}</h3>
-              <p className="mt-1 text-sm text-center">{point.text}</p>
-            </article>
-          ))}
+        {/* Center image */}
+        <div className="flex-shrink-0 border-2 border-[#5a83ff] rounded-xl overflow-hidden shadow-xl bg-[#d9dee9] w-[340px] h-[240px] flex items-center justify-center">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+            alt="Homecare Service"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        {/* Right features */}
+        <div className="flex-1 flex flex-col gap-8 text-left pl-0 md:pl-8 w-full max-w-none">
+          <div>
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              Family-Centered Care Approach<span className="w-1.5 h-8 bg-[#5a83ff] rounded-full inline-block ml-2" />
+            </h3>
+            <p className="text-sm text-[#d9dee9] mt-1">We focus on comfort, dignity, independence, and building trust</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              24/7 Support &amp; Emergency Assistance<span className="w-1.5 h-8 bg-[#5a83ff] rounded-full inline-block ml-2" />
+            </h3>
+            <p className="text-sm text-[#d9dee9] mt-1">Round-the-clock care, monitoring, and helpline to ensure safety at all times.</p>
+          </div>
+        </div>
+      </div>
+      {/* Steps section - full width */}
+      <div className="w-full flex flex-col md:flex-row mt-16 pb-16 px-0">
+        {/* Step 1 */}
+        <div className="flex-1 bg-[#d9dee9] rounded-2xl shadow-lg p-4 max-w-sm mx-auto flex flex-col items-center border border-[#113f67]/30 min-w-0">
+          <span className="bg-[#5a83ff] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 1</span>
+          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[0]?.icon} /> : '🛎️'}</div>
+          <h4 className="text-lg font-bold text-[#113f67] mb-1">Select Your Service</h4>
+          <p className="text-sm text-[#232d4b] text-center">Choose from nursing care, elder care, therapy, or medical assistance based on your specific needs.</p>
+        </div>
+        {/* Step 2 */}
+        <div className="flex-1 bg-[#d9dee9] rounded-2xl shadow-lg p-4 max-w-sm mx-auto flex flex-col items-center border border-[#113f67]/30 min-w-0">
+          <span className="bg-[#5a83ff] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 1</span>
+          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[1]?.icon} /> : '📅'}</div>
+          <h4 className="text-lg font-bold text-[#113f67] mb-1">Choose Date &amp; Time</h4>
+          <p className="text-sm text-[#232d4b] text-center">Pick your preferred date and time, and we'll assign a certified caregiver and share booking details.</p>
+        </div>
+        {/* Step 3 */}
+        <div className="flex-1 bg-[#d9dee9] rounded-2xl shadow-lg p-4 max-w-sm mx-auto flex flex-col items-center border border-[#113f67]/30 min-w-0">
+          <span className="bg-[#5a83ff] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 1</span>
+          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[2]?.icon} /> : '🏠'}</div>
+          <h4 className="text-lg font-bold text-[#113f67] mb-1">Care Begins at Home</h4>
+          <p className="text-sm text-[#232d4b] text-center">Our professional caregiver arrives at your location and starts personalized care with full support.</p>
         </div>
       </div>
     </section>

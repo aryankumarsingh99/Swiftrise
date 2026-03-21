@@ -24,7 +24,7 @@ export default function Navbar() {
       }`}
     >
       <Link href="/" aria-label="ECI home">
-        <Image
+        <Image     
           src="/logo.png"
           alt="ECI Logo"
           width={48}

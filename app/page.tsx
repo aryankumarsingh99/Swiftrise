@@ -309,9 +309,9 @@ export default function Home() {
 
 
       <section className="animate-rise relative overflow-hidden bg-[#ffffff] px-0 py-18 text-[#111523] [animation-delay:70ms] md:py-24">
-        <div className="pointer-events-none absolute left-0 top-0 h-52 w-52 bg-[radial-gradient(rgba(23,34,56,0.10)_0.8px,transparent_0.8px)] bg-size-[18px_18px] opacity-35" />
-        <div className="pointer-events-none absolute bottom-0 right-0 h-62 w-62 bg-[radial-gradient(rgba(23,34,56,0.10)_0.8px,transparent_0.8px)] bg-size-[18px_18px] opacity-35" />
-
+          {/* Modern dots pattern background */}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,#b6c2e2_1.2px,transparent_1.2px)] bg-size-[22px_22px] opacity-1\50" />
+         
         <div className="relative mx-auto w-[92vw] max-w-7xl">
           <p className="text-center text-[1.7rem] tracking-tight text-[#1c2438]/95">WHAT WE GOT</p>
           <h2 className="mx-auto mt-4 max-w-[31ch] text-center text-4xl font-medium leading-[1.15] sm:text-5xl md:text-[4.05rem]">
@@ -371,85 +371,81 @@ export default function Home() {
               <p className="mt-4 text-[1.08rem] leading-relaxed text-[#22293c]/95 max-w-[38ch]">Our leadership blends decades of expertise in risk management, innovation, and value creation for clients across industries. Together, we drive transformation and inspire excellence.</p>
             </div>
             <div className="hidden md:block md:w-1/3">
-              <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=800&q=80" alt="Team" className="rounded-2xl shadow-lg w-full h-auto" />
+              <img src="https://images.unsplash.com/photo-1680208730509-2eee550a8b09?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team" className="rounded-2xl shadow-lg w-full h-auto" />
             </div>
           </div>
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {[
-              {
-                img: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                name: "Claude Bébéar",
-                role: "Founder & Strategic Visionary",
-                socials: [
-                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
-                  { icon: "fa fa-twitter", url: "https://twitter.com/" }
-                ]
-              },
-              {
-                img: "https://images.unsplash.com/photo-1713947507130-227586ab3024?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                name: "Bertrand Poupart-Lafarge",
-                role: "Chief Financial Officer",
-                socials: [
-                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
-                ]
-              },
-              {
-                img: "https://images.unsplash.com/photo-1508214757746-8b2b0a6a3c4a?auto=format&fit=crop&w=800&q=80",
-                name: "Henri De Castries",
-                role: "CEO & Architect Of Globalization",
-                socials: [
-                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
-                  { icon: "fa fa-twitter", url: "https://twitter.com/" }
-                ]
-              },
-              {
-                img: imageSet.team4,
-                name: "Thomas Buberl",
-                role: "CEO & Architect Of Globalization",
-                socials: [
-                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
-                ]
-              },
-              {
-                img: imageSet.team5,
-                name: "Eugéne Dé Clarie",
-                role: "Chief Operating Officer",
-                socials: [
-                  { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
-                ]
-              }
-            ].map((member) => (
-              <div
-                key={member.name}
-                className="group relative flex flex-col items-center bg-gradient-to-br from-[#f7f7fa] via-[#e2e3e8] to-[#dbe4f6] p-7 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-[#e2e3e8] overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#232d4b] via-[#6a6f7b] to-[#1a223b] opacity-20" />
-                <Image
-                  src={member.img}
-                  alt={member.name}
-                  width={340}
-                  height={340}
-                  className="mb-4 h-56 w-56 object-cover rounded-2xl border-4 border-[#f7f7fa] group-hover:border-[#232d4b] transition-all duration-300 shadow-md"
-                />
-                <p className="text-2xl font-extrabold text-[#232d4b] mt-2 tracking-tight group-hover:text-[#1a215b] transition-colors duration-200">{member.name}</p>
-                <p className="mt-1 text-[1.1rem] text-[#6a6f7b] font-medium group-hover:text-[#232d4b] transition-colors duration-200">{member.role}</p>
-                <div className="mt-4 flex gap-4">
-                  {member.socials && member.socials.map((s, idx) => (
-                    <a
-                      key={idx}
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#232d4b] hover:text-[#6a6f7b] text-2xl transition-colors duration-200"
-                    >
-                      <i className={s.icon}></i>
-                    </a>
-                  ))}
-                </div>
-                <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#232d4b] via-[#6a6f7b] to-[#1a223b] opacity-10" />
-              </div>
-            ))}
+              {[
+                {
+                  img: "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  name: "Claude Bébéar",
+                  role: "Founder & Strategic Visionary",
+                  socials: [
+                    { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
+                    { icon: "fa fa-twitter", url: "https://twitter.com/" }
+                  ]
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1713947507130-227586ab3024?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  name: "Bertrand Poupart-Lafarge",
+                  role: "Chief Financial Officer",
+                  socials: [
+                    { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
+                  ]
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  name: "Henri De Castries",
+                  role: "CEO & Architect Of Globalization",
+                  socials: [
+                    { icon: "fa fa-linkedin", url: "https://linkedin.com/" },
+                    { icon: "fa fa-twitter", url: "https://twitter.com/" }
+                  ]
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1630939687530-241d630735df?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  name: "Thomas Buberl",
+                  role: "CEO & Architect Of Globalization",
+                  socials: [
+                    { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
+                  ]
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1713947503297-ca19bc5b6e38?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  name: "Eugéne Dé Clarie",
+                  role: "Chief Operating Officer",
+                  socials: [
+                    { icon: "fa fa-linkedin", url: "https://linkedin.com/" }
+                  ]
+                }
+              ].map((member, idx) => (
+                  <div key={member.name} className="relative flex flex-col items-center justify-center rounded-2xl shadow-lg overflow-hidden h-[340px] w-full group">
+                    <img src={member.img} alt={member.name} className="absolute inset-0 w-full h-full object-cover rounded-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/40" />
+                    <span className="absolute left-1/2 bottom-4 -translate-x-1/2 text-white text-[1.25rem] font-bold tracking-tight whitespace-nowrap bg-black/40 px-4 py-2 rounded-xl drop-shadow-lg">{member.name}</span>
+                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3">
+                      {member.socials.map((social, i) => (
+                        <a key={i} href={social.url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#1976d2] text-xl">
+                          <i className={social.icon}></i>
+                        </a>
+                      ))}
+                    </div>
+                    {/* Hidden content slides in from right on hover */}
+                    <div className="absolute top-0 right-0 h-full w-full bg-[#1a215b] flex flex-col items-center justify-center px-6 transition-transform duration-500 translate-x-full group-hover:translate-x-0 z-20 shadow-lg">
+                      <h4 className="text-2xl font-bold text-[#ffffff] mb-2 text-center"></h4>
+                      <p className="text-lg text-[#ffffff] font-bold mb-2 text-center">{member.role}</p>
+                      <p className="text-sm text-[#f0e7e7] text-center mb-4">{idx === 0 ? "Visionary leader with decades of experience in strategic risk management and innovation." : idx === 1 ? "Financial expert driving operational excellence and growth." : idx === 2 ? "Global architect with a passion for transformation." : idx === 3 ? "Governance specialist and industry influencer." : "Operations leader focused on value creation and client success."}</p>
+                      <div className="flex gap-3 mt-2">
+                        {member.socials.map((social, i) => (
+                          <a key={i} href={social.url} target="_blank" rel="noopener noreferrer" className="text-[#232d4b] hover:text-[#1976d2] text-xl">
+                            <i className={social.icon}></i>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+              ))}
             <div className="flex flex-col items-center justify-center border border-[#e2e3e8] bg-[#1a215b] p-6 text-white rounded-2xl shadow-md">
               <div className="mb-4 h-65 w-65 bg-[radial-gradient(rgba(255,255,255,0.11)_0.6px,transparent_0.6px)] bg-size-[11px_11px] flex items-center justify-center rounded-full">
                 <span className="text-2xl font-semibold">Join Us!</span>

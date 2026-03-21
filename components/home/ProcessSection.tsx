@@ -1,5 +1,14 @@
 // import { processSteps } from "./data";
 
+const processSteps = [
+  "Initial Consultation & Briefing",
+  "Strategy & Planning",
+  "Design & Prototyping",
+  "Implementation & Delivery",
+  "Review & Optimization",
+  "Ongoing Support & Impact"
+];
+
 export default function ProcessSection() {
   return (
     <section className="animate-rise px-0 py-16 [animation-delay:200ms] md:py-20">

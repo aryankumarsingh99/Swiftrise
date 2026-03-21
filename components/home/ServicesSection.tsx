@@ -1,4 +1,22 @@
-// import { services } from "./data";
+
+const services = [
+  {
+    title: "Custom Software Development",
+    description: "End-to-end solutions tailored to your business needs, from web to mobile and beyond."
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Cloud migration, CI/CD pipelines, and scalable infrastructure for modern businesses."
+  },
+  {
+    title: "AI & Data Science",
+    description: "Unlock insights and automation with machine learning, analytics, and data engineering."
+  },
+  {
+    title: "UI/UX Design",
+    description: "User-centered design for delightful, accessible, and effective digital experiences."
+  }
+];
 
 export default function ServicesSection() {
   return (

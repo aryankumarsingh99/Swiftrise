@@ -111,7 +111,7 @@ export default function Home() {
 
   return (
     <>
-      <HeroSection imageSet={imageSet} />
+      <HeroSection />
       <StatsSection />
       <AboutSection />
       <TeamSection />

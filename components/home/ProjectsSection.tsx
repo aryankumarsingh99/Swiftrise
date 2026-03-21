@@ -1,4 +1,21 @@
 // import { projects } from "./data";
+const projects = [
+  {
+    name: "AI-Powered Analytics Dashboard",
+    type: "Web Application",
+    result: "Delivered a scalable analytics platform for real-time business insights."
+  },
+  {
+    name: "Smart Home IoT Integration",
+    type: "Embedded System",
+    result: "Unified multiple device protocols for seamless smart home control."
+  },
+  {
+    name: "E-Commerce Revamp",
+    type: "Full Stack Development",
+    result: "Increased conversion rates by 30% with a new user experience."
+  }
+];
 
 export default function ProjectsSection() {
   return (

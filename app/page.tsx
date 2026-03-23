@@ -3,13 +3,15 @@ import Link from "next/link";
 import NewsletterForm from "@/components/NewsletterForm";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/home/HeroSection";
-import StatsSection from "@/components/home/StatsSection";
+// import StatsSection from "@/components/home/StatsSection";
 import AboutSection from "@/components/home/AboutSection";
 import TeamSection from "@/components/home/TeamSection";
 import ChooseUsSection from "@/components/home/ChooseUsSection";
 import CareersSection from "@/components/home/CareersSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
-
+import SolutionsSection from "@/components/home/SolutionsSection";
+import FoundationSection from "@/components/home/FoundationSection";
+ 
 function IconBadge({ kind }: { kind: "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time" }) {
   const base = "size-5";
 
@@ -111,8 +113,11 @@ export default function Home() {
 
   return (
     <>
+      <Navbar />
       <HeroSection />
-      <StatsSection />
+       <FoundationSection />
+       <SolutionsSection />
+      {/* <StatsSection /> */}
       <AboutSection />
       <TeamSection />
       <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />

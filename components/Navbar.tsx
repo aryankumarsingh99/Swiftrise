@@ -30,8 +30,10 @@ export default function Navbar() {
           className="h-10 w-auto object-contain sm:h-15"
         />
       </Link>
+
+
       {/* Desktop Nav */}
-      <nav className="hidden items-center gap-8 text-[1.05rem] md:flex" aria-label="Hero navigation">
+      <nav className="hidden items-center pr-60 gap-8 text-[1.25rem] md:flex" aria-label="Hero navigation">
         {[
           { href: "/", label: "Home" },
           { href: "/about", label: "About Us" },
@@ -45,7 +47,7 @@ export default function Navbar() {
             key={item.href}
             href={item.href}
             className={
-              `group relative transition pb-1 ${pathname === item.href ? "text-white font-semibold" : ""}`
+              `group relative transition pb-1 ${pathname === item.href ? "text-white font-bold " : ""}`
             }
           >
             {item.label}
@@ -56,6 +58,9 @@ export default function Navbar() {
           </Link>
         ))}
       </nav>
+
+
+
       {/* Mobile Hamburger */}
       <button
         className="md:hidden flex flex-col justify-center items-center gap-1 w-10 h-10 focus:outline-none"

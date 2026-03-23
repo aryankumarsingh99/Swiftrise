@@ -3,7 +3,7 @@ import NewsletterForm from "../NewsletterForm";
 export default function NewsletterSection() {
   return (
     <section className="animate-rise relative overflow-hidden px-0 py-20 md:py-28">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_14%,rgba(29,78,216,0.16),transparent_38%),radial-gradient(circle_at_86%_82%,rgba(13,27,54,0.14),transparent_42%)]" />
+      <div className="pointer-events-none absolute inset-0 " />
       <div className="pointer-events-none absolute -left-32 top-14 h-80 w-80 rounded-full bg-[#e4e9f8]/60 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#dce8ff]/70 blur-3xl" />
       <div className="relative z-10 mx-auto w-[92vw] max-w-7xl">

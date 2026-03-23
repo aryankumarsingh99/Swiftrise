@@ -7,9 +7,8 @@ import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import TeamSection from "@/components/home/TeamSection";
 import ChooseUsSection from "@/components/home/ChooseUsSection";
-import CareersSection from "@/components/home/CareersSection";
-import NewsletterSection from "@/components/home/NewsletterSection";
-import SolutionsSection from "@/components/home/SolutionsSection";
+ import NewsletterSection from "@/components/home/NewsletterSection";
+ import SolutionsSection from "@/components/home/SolutionsSection";
 import FoundationSection from "@/components/home/FoundationSection";
  
 function IconBadge({ kind }: { kind: "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time" }) {
@@ -115,14 +114,14 @@ export default function Home() {
     <>
       <Navbar />
       <HeroSection />
-       <FoundationSection />
+       <FoundationSection  />
        <SolutionsSection />
       {/* <StatsSection /> */}
       <AboutSection />
       <TeamSection />
       <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
-      <CareersSection />
-      <NewsletterSection />
+       
+       <NewsletterSection />
     </>
   );
 }

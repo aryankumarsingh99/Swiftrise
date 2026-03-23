@@ -4,11 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1170&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1727434032765-9c4df88b6e02?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-];
+  "https://images.unsplash.com/photo-1645824687625-aaf58242f58f?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1638787377553-0547687f3a87?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1556665490-57c34faa34c4?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+ ];
 
 export default function HeroSection() {
   const [imgIdx, setImgIdx] = useState(0);
@@ -26,7 +25,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative isolate min-h-[92vh] flex items-center justify-center overflow-hidden text-white pt-20 md:pt-0">
+    <section className="relative isolate min-h-[100vh] flex items-center justify-center overflow-hidden text-white pt-20 md:pt-0">
       <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: fade ? 1 : 0 }}>
         <Image
           src={heroImages[imgIdx]}
@@ -41,8 +40,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.22)_0.65px,transparent_0.65px)] bg-size-[18px_18px] opacity-30" />
       <div className="relative mx-auto flex min-h-[92vh] w-[94vw] max-w-330 flex-col px-2 pb-10 pt-6 sm:px-4 md:pb-14 md:pt-8">
         <div className="mt-auto">
-          <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">ABOUT SWIFTRISE</p>
-          <h1 className="max-w-[18ch] text-4xl font-medium leading-[1.06] sm:text-5xl md:text-6xl lg:text-7xl">
+           <h1 className="max-w-[18ch] text-4xl font-medium leading-[1.06] sm:text-5xl md:text-6xl lg:text-7xl">
             Building the Future with Code, AI, &amp; and Innovation
           </h1>
           <div className="mt-8 border-t border-white/35 pt-5 md:mt-12 md:pt-7">

@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/home/HeroSection";
 // import StatsSection from "@/components/home/StatsSection";
 import AboutSection from "@/components/home/AboutSection";
-import TeamSection from "@/components/home/TeamSection";
+// import TeamSection from "@/components/home/TeamSection";
 import ChooseUsSection from "@/components/home/ChooseUsSection";
  import NewsletterSection from "@/components/home/NewsletterSection";
  import SolutionsSection from "@/components/home/SolutionsSection";
@@ -118,7 +118,7 @@ export default function Home() {
        <SolutionsSection />
       {/* <StatsSection /> */}
       <AboutSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
        
        <NewsletterSection />

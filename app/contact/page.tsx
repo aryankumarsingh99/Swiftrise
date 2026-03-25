@@ -6,7 +6,7 @@ export default function ContactPage() {
     };
   return (
     <>
-      <section className="animate-rise relative isolate min-h-[92vh] overflow-hidden text-white">
+      <section className="animate-rise relative isolate min-h-[100vh] overflow-hidden text-white">
         <Image
           src={imageSet.hero}
           alt="Leadership team in strategic meeting"

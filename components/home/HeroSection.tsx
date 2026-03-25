@@ -7,7 +7,9 @@ const heroImages = [
   "https://images.unsplash.com/photo-1645824687625-aaf58242f58f?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1638787377553-0547687f3a87?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1556665490-57c34faa34c4?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
- ];
+];
+// Change this to switch animation style: 'fade', 'blur', 'parallax', 'kenburns', 'flip'
+const animationType = 'flip';
 
 export default function HeroSection() {
   const [imgIdx, setImgIdx] = useState(0);
@@ -26,14 +28,32 @@ export default function HeroSection() {
 
   return (
     <section className="relative isolate min-h-[100vh] flex items-center justify-center overflow-hidden text-white pt-20 md:pt-0">
-      <div className="absolute inset-0 transition-opacity duration-500" style={{ opacity: fade ? 1 : 0 }}>
-        <Image
-          src={heroImages[imgIdx]}
-          alt="Leadership team in strategic meeting"
-          fill
-          priority
-          className="object-cover transition-all duration-700"
-        />
+      <div className="absolute inset-0 w-full h-full perspective-[1200px]">
+        {heroImages.map((img, idx) => {
+          // Improved 3D rotation (flip) effect
+          let isActive = idx === imgIdx;
+          let isPrev = idx === (imgIdx === 0 ? heroImages.length - 1 : imgIdx - 1);
+          return (
+            <Image
+              key={img}
+              src={img}
+              alt="Hero background"
+              fill
+              priority={isActive}
+              className={`object-cover absolute inset-0 transition-all duration-[5000ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform ${
+                isActive
+                  ? 'opacity-100 rotate-y-0 z-10'
+                  : isPrev
+                    ? 'opacity-0 -rotate-y-90 z-0'
+                    : 'opacity-0 rotate-y-90 z-0'
+              }`}
+              style={{
+                transitionProperty: 'opacity, transform',
+                backfaceVisibility: 'hidden',
+              }}
+            />
+          );
+        })}
       </div>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,32,84,0.38)_0%,rgba(4,27,82,0.72)_58%,rgba(2,21,70,0.88)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.14)_0%,transparent_35%),radial-gradient(circle_at_88%_68%,rgba(88,131,255,0.15)_0%,transparent_33%)]" />

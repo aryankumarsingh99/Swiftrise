@@ -1,3 +1,5 @@
+
+'use client';
 import Image from "next/image";
 
 export default function FoundationSection() {
@@ -12,11 +14,38 @@ export default function FoundationSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 mb-14">
-          <div className="border-4 border-[#ffffff] rounded-2xl p-8 flex flex-col gap-3 bg-[#113f67] shadow-md">
+          <div className="relative rounded-2xl p-8 flex flex-col gap-3 bg-[#113f67] shadow-md animated-border">
             <span className="text-3xl mb-2">✔️</span>
             <h3 className="font-semibold text-white text-lg sm:text-2xl mb-2">VISION</h3>
             <p className="text-white text-base">We aim to build a future where individuals and businesses operate with complete assurance, supported by dependable, adaptable protection systems designed to strengthen stability, reduce vulnerabilities, and deliver long-term security in every condition.</p>
           </div>
+
+          {/* Animated border styles */}
+          <style jsx>{`
+            .animated-border {
+              border: 4px solid transparent;
+            }
+            .animated-border::before {
+              content: '';
+              position: absolute;
+              inset: 0;
+              border-radius: 1rem;
+              padding: 0.25rem;
+              background: linear-gradient(270deg, #ffffff, #113f67, #ffffff, #113f67);
+              background-size: 400% 400%;
+              z-index: 1;
+              animation: borderMove 2s linear infinite;
+              -webkit-mask:
+                linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+              pointer-events: none;
+            }
+            @keyframes borderMove {
+              0% { background-position: 0% 50%; }
+              100% { background-position: 100% 50%; }
+            }
+          `}</style>
 
           <div className="border-4 border-[#113f67] rounded-2xl p-8 flex flex-col gap-3 bg-white shadow-md">
             <span className="text-3xl mb-2">⚙️</span>

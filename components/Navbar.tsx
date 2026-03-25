@@ -33,13 +33,11 @@ export default function Navbar() {
 
 
       {/* Desktop Nav */}
-      <nav className="hidden items-center pr-60 gap-8 text-[1.25rem] md:flex" aria-label="Hero navigation">
+      <nav className="hidden items-center  pr-90 gap-16 text-[1.25rem] md:flex" aria-label="Hero navigation">
         {[
           { href: "/", label: "Home" },
           { href: "/about", label: "About Us" },
           { href: "/services", label: "Service" },
-          { href: "/projects", label: "Projects" },
-          { href: "/team", label: "Team" },
           { href: "/news", label: "News" },
           { href: "/contact", label: "Contact" },
         ].map((item) => (

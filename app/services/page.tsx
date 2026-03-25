@@ -56,7 +56,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <section className="animate-rise relative isolate min-h-[92vh] overflow-hidden text-white">
+      <section className="animate-rise relative isolate min-h-[100vh] overflow-hidden text-white">
         <Image
           src={"https://images.unsplash.com/flagged/photo-1553267252-d100936057c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
           alt="Leadership team in strategic meeting"

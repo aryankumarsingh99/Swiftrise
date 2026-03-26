@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
  
+
 import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -21,11 +22,7 @@ export const metadata: Metadata = {
     "Aurevia Group is a strategic partner for architecture, engineering, operations, and digital transformation projects.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${playfairDisplay.variable} antialiased`}>

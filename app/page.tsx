@@ -10,6 +10,7 @@ import ChooseUsSection from "@/components/home/ChooseUsSection";
  import NewsletterSection from "@/components/home/NewsletterSection";
  import SolutionsSection from "@/components/home/SolutionsSection";
 import FoundationSection from "@/components/home/FoundationSection";
+import PageLoader from "@/components/PageLoader";
  
 function IconBadge({ kind }: { kind: "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time" }) {
   const base = "size-5";
@@ -111,17 +112,16 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <PageLoader>
       <Navbar />
       <HeroSection />
-       <FoundationSection  />
-       <SolutionsSection />
+      <FoundationSection />
+      <SolutionsSection />
       {/* <StatsSection /> */}
       <AboutSection />
       {/* <TeamSection /> */}
       <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
-       
-       <NewsletterSection />
-    </>
+      <NewsletterSection />
+    </PageLoader>
   );
 }

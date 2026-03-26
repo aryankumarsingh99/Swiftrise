@@ -5,85 +5,82 @@ import Image from "next/image";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
 
+// Animation variants for more complex, layered effects
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const headingVariants = {
+  hidden: { opacity: 0, y: 60, scale: 0.92, rotate: -6 },
+  show: { opacity: 1, y: 0, scale: 1.04, rotate: 0, transition: { type: "spring", duration: 1.1, bounce: 0.5 } },
+};
+
+const paraVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", duration: 1, bounce: 0.35 } },
+};
+
+const cardLeftVariants = {
+  hidden: { opacity: 0, x: -80, scale: 0.92, rotate: -8 },
+  show: { opacity: 1, x: 0, scale: 1, rotate: 0, transition: { type: "spring", duration: 1.1, bounce: 0.45 } },
+  hover: { scale: 1.07, rotate: -3, boxShadow: "0 8px 32px 0 rgba(17,63,103,0.18)" },
+};
+
+const cardRightVariants = {
+  hidden: { opacity: 0, x: 80, scale: 0.92, rotate: 8 },
+  show: { opacity: 1, x: 0, scale: 1, rotate: 0, transition: { type: "spring", duration: 1.1, bounce: 0.45 } },
+  hover: { scale: 1.07, rotate: 3, boxShadow: "0 8px 32px 0 rgba(17,63,103,0.18)" },
+};
+
+const impactVariants = {
+  hidden: { opacity: 0, y: 80, scale: 0.92, filter: "blur(8px)" },
+  show: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { type: "spring", duration: 1.2, bounce: 0.38 } },
+};
+
 export default function FoundationSection() {
   const sectionRef = useRef(null);
-  const headingControls = useAnimation();
-  const paraControls = useAnimation();
-  const card1Controls = useAnimation();
-  const card2Controls = useAnimation();
-  const impactControls = useAnimation();
   const inView = useInView(sectionRef, { amount: 0.2, once: false });
-
-  useEffect(() => {
-    if (inView) {
-      headingControls.start({
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: { type: "spring", duration: 1, bounce: 0.4 }
-      });
-      paraControls.start({
-        opacity: 1,
-        y: 0,
-        transition: { type: "spring", duration: 1, bounce: 0.3, delay: 0.1 }
-      });
-      card1Controls.start({
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        transition: { type: "spring", duration: 1, bounce: 0.35, delay: 0.18 }
-      });
-      card2Controls.start({
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        transition: { type: "spring", duration: 1, bounce: 0.35, delay: 0.32 }
-      });
-      impactControls.start({
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: { type: "spring", duration: 1.1, bounce: 0.32, delay: 0.45 }
-      });
-    } else {
-      headingControls.start({ opacity: 0, y: 40, scale: 0.96, transition: { duration: 0.5 } });
-      paraControls.start({ opacity: 0, y: 40, transition: { duration: 0.5 } });
-      card1Controls.start({ opacity: 0, x: -60, scale: 0.96, transition: { duration: 0.5 } });
-      card2Controls.start({ opacity: 0, x: 60, scale: 0.96, transition: { duration: 0.5 } });
-      impactControls.start({ opacity: 0, y: 60, scale: 0.96, transition: { duration: 0.5 } });
-    }
-  }, [inView, headingControls, paraControls, card1Controls, card2Controls, impactControls]);
-
   return (
     <section ref={sectionRef} className="w-full min-h-[90vh]  bg-white py-20 md:py-32 relative overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "show" : "hidden"}
+      >
         <motion.p
           className="text-sm sm:text-base tracking-widest text-white mb-3"
-          initial={{ opacity: 0, y: 40 }}
-          animate={headingControls}
+          variants={headingVariants}
         >OUR FOUNDATION</motion.p>
         <motion.h2
           className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-10 leading-tight"
-          initial={{ opacity: 0, y: 40, scale: 0.96 }}
-          animate={headingControls}
+          variants={headingVariants}
         >
           Precision-Driven Solutions<br />For A Secure Tomorrow
         </motion.h2>
         <motion.div
           className="grid gap-10 md:grid-cols-3 mb-12"
-          initial={{ opacity: 0, y: 40 }}
-          animate={paraControls}
+          variants={paraVariants}
         >
-          <p className="text-white text-base md:col-span-1">We create integrated protection solutions that enhance stability, reduce uncertainty, and support long-term confidence for individuals, families, and modern businesses.</p>
-          <p className="text-white text-base md:col-span-1">Our approach delivers clarity and measurable value by simplifying complexity, strengthening resilience, and providing future-ready strategies that empower clients’ progress.</p>
+          <motion.p className="text-white text-base md:col-span-1" variants={paraVariants}>
+            We create integrated protection solutions that enhance stability, reduce uncertainty, and support long-term confidence for individuals, families, and modern businesses.
+          </motion.p>
+          <motion.p className="text-white text-base md:col-span-1" variants={paraVariants}>
+            Our approach delivers clarity and measurable value by simplifying complexity, strengthening resilience, and providing future-ready strategies that empower clients’ progress.
+          </motion.p>
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2 mb-14">
           <motion.div
             className="relative rounded-2xl p-8 flex flex-col gap-3 bg-[#113f67] shadow-md animated-border"
-            initial={{ opacity: 0, x: -60, scale: 0.96 }}
-            animate={card1Controls}
-            whileHover={{ scale: 1.04, rotate: -1 }}
+            variants={cardLeftVariants}
+            whileHover="hover"
           >
             <span className="text-3xl mb-2">✔️</span>
             <h3 className="font-semibold text-white text-lg sm:text-2xl mb-2">VISION</h3>
@@ -119,9 +116,8 @@ export default function FoundationSection() {
 
           <motion.div
             className="border-4 border-[#113f67] rounded-2xl p-8 flex flex-col gap-3 bg-white shadow-md"
-            initial={{ opacity: 0, x: 60, scale: 0.96 }}
-            animate={card2Controls}
-            whileHover={{ scale: 1.04, rotate: 1 }}
+            variants={cardRightVariants}
+            whileHover="hover"
           >
             <span className="text-3xl mb-2">⚙️</span>
             <h3 className="font-semibold text-[#113f67] text-lg sm:text-2xl mb-2">MISSION</h3>
@@ -130,13 +126,11 @@ export default function FoundationSection() {
         </div>
         <motion.div
           className="mb-3 text-sm sm:text-base tracking-widest text-white"
-          initial={{ opacity: 0, y: 40 }}
-          animate={impactControls}
+          variants={headingVariants}
         >OUR IMPACT</motion.div>
         <motion.div
           className="rounded-2xl overflow-hidden bg-gray-100"
-          initial={{ opacity: 0, y: 60, scale: 0.96 }}
-          animate={impactControls}
+          variants={impactVariants}
         >
           <div className="relative w-full border-6 border-r-4 border-[#ffffff] h-80 xs:h-96 sm:h-[32rem] md:h-[38rem]">
             <Image
@@ -156,7 +150,7 @@ export default function FoundationSection() {
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
       {/* Modern decorated background: bold diagonal split, blurred accent, and dot grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Bold diagonal split */}

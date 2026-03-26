@@ -1,24 +1,94 @@
 
+
 'use client';
 import Image from "next/image";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 export default function FoundationSection() {
+  const sectionRef = useRef(null);
+  const headingControls = useAnimation();
+  const paraControls = useAnimation();
+  const card1Controls = useAnimation();
+  const card2Controls = useAnimation();
+  const impactControls = useAnimation();
+  const inView = useInView(sectionRef, { amount: 0.2, once: false });
+
+  useEffect(() => {
+    if (inView) {
+      headingControls.start({
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { type: "spring", duration: 1, bounce: 0.4 }
+      });
+      paraControls.start({
+        opacity: 1,
+        y: 0,
+        transition: { type: "spring", duration: 1, bounce: 0.3, delay: 0.1 }
+      });
+      card1Controls.start({
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        transition: { type: "spring", duration: 1, bounce: 0.35, delay: 0.18 }
+      });
+      card2Controls.start({
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        transition: { type: "spring", duration: 1, bounce: 0.35, delay: 0.32 }
+      });
+      impactControls.start({
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { type: "spring", duration: 1.1, bounce: 0.32, delay: 0.45 }
+      });
+    } else {
+      headingControls.start({ opacity: 0, y: 40, scale: 0.96, transition: { duration: 0.5 } });
+      paraControls.start({ opacity: 0, y: 40, transition: { duration: 0.5 } });
+      card1Controls.start({ opacity: 0, x: -60, scale: 0.96, transition: { duration: 0.5 } });
+      card2Controls.start({ opacity: 0, x: 60, scale: 0.96, transition: { duration: 0.5 } });
+      impactControls.start({ opacity: 0, y: 60, scale: 0.96, transition: { duration: 0.5 } });
+    }
+  }, [inView, headingControls, paraControls, card1Controls, card2Controls, impactControls]);
+
   return (
-    <section className="w-full min-h-[90vh]  bg-white py-20 md:py-32 relative overflow-hidden">
+    <section ref={sectionRef} className="w-full min-h-[90vh]  bg-white py-20 md:py-32 relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-sm sm:text-base tracking-widest text-white mb-3">OUR FOUNDATION</p>
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-10 leading-tight">Precision-Driven Solutions<br />For A Secure Tomorrow</h2>
-        <div className="grid gap-10 md:grid-cols-3 mb-12">
+        <motion.p
+          className="text-sm sm:text-base tracking-widest text-white mb-3"
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingControls}
+        >OUR FOUNDATION</motion.p>
+        <motion.h2
+          className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-10 leading-tight"
+          initial={{ opacity: 0, y: 40, scale: 0.96 }}
+          animate={headingControls}
+        >
+          Precision-Driven Solutions<br />For A Secure Tomorrow
+        </motion.h2>
+        <motion.div
+          className="grid gap-10 md:grid-cols-3 mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          animate={paraControls}
+        >
           <p className="text-white text-base md:col-span-1">We create integrated protection solutions that enhance stability, reduce uncertainty, and support long-term confidence for individuals, families, and modern businesses.</p>
           <p className="text-white text-base md:col-span-1">Our approach delivers clarity and measurable value by simplifying complexity, strengthening resilience, and providing future-ready strategies that empower clients’ progress.</p>
-        </div>
+        </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2 mb-14">
-          <div className="relative rounded-2xl p-8 flex flex-col gap-3 bg-[#113f67] shadow-md animated-border">
+          <motion.div
+            className="relative rounded-2xl p-8 flex flex-col gap-3 bg-[#113f67] shadow-md animated-border"
+            initial={{ opacity: 0, x: -60, scale: 0.96 }}
+            animate={card1Controls}
+            whileHover={{ scale: 1.04, rotate: -1 }}
+          >
             <span className="text-3xl mb-2">✔️</span>
             <h3 className="font-semibold text-white text-lg sm:text-2xl mb-2">VISION</h3>
             <p className="text-white text-base">We aim to build a future where individuals and businesses operate with complete assurance, supported by dependable, adaptable protection systems designed to strengthen stability, reduce vulnerabilities, and deliver long-term security in every condition.</p>
-          </div>
+          </motion.div>
 
           {/* Animated border styles */}
           <style jsx>{`
@@ -47,14 +117,27 @@ export default function FoundationSection() {
             }
           `}</style>
 
-          <div className="border-4 border-[#113f67] rounded-2xl p-8 flex flex-col gap-3 bg-white shadow-md">
+          <motion.div
+            className="border-4 border-[#113f67] rounded-2xl p-8 flex flex-col gap-3 bg-white shadow-md"
+            initial={{ opacity: 0, x: 60, scale: 0.96 }}
+            animate={card2Controls}
+            whileHover={{ scale: 1.04, rotate: 1 }}
+          >
             <span className="text-3xl mb-2">⚙️</span>
             <h3 className="font-semibold text-[#113f67] text-lg sm:text-2xl mb-2">MISSION</h3>
             <p className="text-black text-base">Our mission is to deliver integrated insurance and financial solutions that simplify complexity, minimize risk, and empower clients with clarity, transparency, and measurable value through consistently reliable service and forward-focused strategic guidance.</p>
-          </div>
+          </motion.div>
         </div>
-        <div className="mb-3 text-sm sm:text-base tracking-widest text-white">OUR IMPACT</div>
-        <div className="rounded-2xl overflow-hidden bg-gray-100">
+        <motion.div
+          className="mb-3 text-sm sm:text-base tracking-widest text-white"
+          initial={{ opacity: 0, y: 40 }}
+          animate={impactControls}
+        >OUR IMPACT</motion.div>
+        <motion.div
+          className="rounded-2xl overflow-hidden bg-gray-100"
+          initial={{ opacity: 0, y: 60, scale: 0.96 }}
+          animate={impactControls}
+        >
           <div className="relative w-full border-6 border-r-4 border-[#ffffff] h-80 xs:h-96 sm:h-[32rem] md:h-[38rem]">
             <Image
               src="https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -72,7 +155,7 @@ export default function FoundationSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       {/* Modern decorated background: bold diagonal split, blurred accent, and dot grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">

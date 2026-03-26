@@ -1,19 +1,45 @@
+"use client";
 import Image from "next/image";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 export default function AboutSection() {
+  const sectionRef = useRef(null);
+  const textControls = useAnimation();
+  const imageControls = useAnimation();
+  const inView = useInView(sectionRef, { amount: 0.2, once: false });
+
+  useEffect(() => {
+    if (inView) {
+      textControls.start({ opacity: 1, x: 0, transition: { duration: 0.8, type: "spring", bounce: 0.2 } });
+      imageControls.start({ opacity: 1, y: 0, transition: { duration: 0.9, type: "spring", bounce: 0.18 } });
+    } else {
+      textControls.start({ opacity: 0, x: -60, transition: { duration: 0.5 } });
+      imageControls.start({ opacity: 0, y: 60, transition: { duration: 0.5 } });
+    }
+  }, [inView, textControls, imageControls]);
+
   return (
-    <section className="animate-rise relative bg-[#113f67] overflow-hidden px-0 pb-12 pt-8 text-[#ffffff] [animation-delay:76ms] md:pb-14 md:pt-10">
+    <section ref={sectionRef} className="animate-rise relative bg-[#113f67] overflow-hidden px-0 pb-12 pt-8 text-[#ffffff] [animation-delay:76ms] md:pb-14 md:pt-10">
       <div className="pointer-events-none absolute left-0 top-0 h-52 w-52 bg-[radial-gradient(rgba(23,34,56,0.10)_0.8px,transparent_0.8px)] bg-size-[18px_18px] opacity-35" />
       <div className="pointer-events-none absolute right-0 top-0 h-42 w-58 bg-[radial-gradient(rgba(23,34,56,0.10)_0.8px,transparent_0.8px)] bg-size-[18px_18px] opacity-35" />
       <div className="mx-auto w-[95vw] max-w-330">
         <div className="grid gap-8 md:grid-cols-[1fr_1.25fr] md:gap-14">
-          <div className="order-2 md:order-1">
+          <motion.div
+            className="order-2 md:order-1"
+            initial={{ opacity: 0, x: -60 }}
+            animate={textControls}
+          >
             <h2 className="max-w-[13ch] text-4xl font-medium leading-[1.08] sm:text-5xl md:text-[4.25rem]">
               Who We Are As Your Risk &amp; Finance Partner
             </h2>
-          </div>
+          </motion.div>
         </div>
-        <div className="relative mt-8 overflow-hidden border-6 border-[#d1d5de] bg-[#d9dee9] md:mt-10">
+        <motion.div
+          className="relative mt-8 overflow-hidden border-6 border-[#d1d5de] bg-[#d9dee9] md:mt-10"
+          initial={{ opacity: 0, y: 60 }}
+          animate={imageControls}
+        >
           <Image
             src={"https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
             alt="Partners celebrating a successful strategic decision"
@@ -33,8 +59,10 @@ export default function AboutSection() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
+

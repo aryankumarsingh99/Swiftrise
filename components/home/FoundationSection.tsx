@@ -2,11 +2,11 @@
 
 'use client';
 import Image from "next/image";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 import { useRef, useEffect } from "react";
 
 // Animation variants for more complex, layered effects
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -16,29 +16,29 @@ const containerVariants = {
   },
 };
 
-const headingVariants = {
+const headingVariants: Variants = {
   hidden: { opacity: 0, y: 60, scale: 0.92, rotate: -6 },
   show: { opacity: 1, y: 0, scale: 1.04, rotate: 0, transition: { type: "spring", duration: 1.1, bounce: 0.5 } },
 };
 
-const paraVariants = {
+const paraVariants: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.96 },
   show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", duration: 1, bounce: 0.35 } },
 };
 
-const cardLeftVariants = {
+const cardLeftVariants: Variants = {
   hidden: { opacity: 0, x: -80, scale: 0.92, rotate: -8 },
   show: { opacity: 1, x: 0, scale: 1, rotate: 0, transition: { type: "spring", duration: 1.1, bounce: 0.45 } },
   hover: { scale: 1.07, rotate: -3, boxShadow: "0 8px 32px 0 rgba(17,63,103,0.18)" },
 };
 
-const cardRightVariants = {
+const cardRightVariants: Variants = {
   hidden: { opacity: 0, x: 80, scale: 0.92, rotate: 8 },
   show: { opacity: 1, x: 0, scale: 1, rotate: 0, transition: { type: "spring", duration: 1.1, bounce: 0.45 } },
   hover: { scale: 1.07, rotate: 3, boxShadow: "0 8px 32px 0 rgba(17,63,103,0.18)" },
 };
 
-const impactVariants = {
+const impactVariants: Variants = {
   hidden: { opacity: 0, y: 80, scale: 0.92, filter: "blur(8px)" },
   show: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { type: "spring", duration: 1.2, bounce: 0.38 } },
 };
@@ -76,7 +76,7 @@ export default function FoundationSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2 mb-14">
+        <div className="grid gap-8  md:grid-cols-2 mb-14">
           <motion.div
             className="relative rounded-2xl p-8 flex flex-col gap-3 bg-[#113f67] shadow-md animated-border"
             variants={cardLeftVariants}

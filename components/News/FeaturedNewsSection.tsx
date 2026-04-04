@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type Transition } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -34,11 +34,13 @@ export default function FeaturedNewsSection() {
   const ribbonY = useTransform(scrollYProgress, [0, 1], [34, -30]);
   const ribbonOpacity = useTransform(scrollYProgress, [0, 0.35, 0.75, 1], [0.2, 0.5, 0.35, 0.15]);
 
+  const headerTransition: Transition = { duration: 0.65, ease: "easeOut" };
+
   const headerMotion = {
     initial: { opacity: 0, y: 36, scale: 0.98 },
     whileInView: { opacity: 1, y: 0, scale: 1 },
     viewport: { once: false, amount: 0.35 },
-    transition: { duration: 0.65, ease: "easeOut" },
+    transition: headerTransition,
   };
 
   const cardMotion = (index: number) => ({
@@ -47,9 +49,9 @@ export default function FeaturedNewsSection() {
     viewport: { once: false, amount: 0.32 },
     transition: {
       duration: 0.7,
-      ease: "easeOut",
+      ease: "easeOut" as const,
       delay: index * 0.08,
-    },
+    } satisfies Transition,
   });
 
   return (

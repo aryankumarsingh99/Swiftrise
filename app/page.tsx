@@ -117,10 +117,8 @@ export default function Home() {
       <HeroSection />
       <FoundationSection />
       <SolutionsSection />
-      {/* <StatsSection /> */}
-      <AboutSection />
-      {/* <TeamSection /> */}
-      <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
+       <AboutSection />
+       <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
       <NewsletterSection />
     </PageLoader>
   );

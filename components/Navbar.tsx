@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`flex items-center fixed top-0 left-0 w-full z-50 justify-between pt-6 gap-4 text-[0.98rem] text-white/90 px-6 md:px-29 transition-colors duration-300 ${
+      className={`flex items-center fixed top-0 left-0 w-full z-50 justify-between pt-6 gap-4 text-[0.98rem] text-white px-6 md:px-29 transition-colors duration-300 ${
         scrolled ? "bg-[#113f67]" : "bg-transparent"
       }`}
     >
@@ -33,13 +33,13 @@ export default function Navbar() {
 
 
       {/* Desktop Nav */}
-      <nav className="hidden items-center  pr-90 gap-16 text-[1.25rem] md:flex" aria-label="Hero navigation">
+      <nav className="hidden items-center font-bold  pr-90 gap-16 text-[1.55rem] md:flex" aria-label="Hero navigation">
         {[
-          { href: "/", label: "Home" },
-          { href: "/about", label: "About Us" },
-          { href: "/services", label: "Service" },
-          { href: "/news", label: "News" },
-          { href: "/contact", label: "Contact" },
+          { href: "/", label: "HOME" },
+          { href: "/about", label: "ABOUT US" },
+          { href: "/services", label: "SERVICES" },
+          { href: "/news", label: "NEWS" },
+          { href: "/contact", label: "CONTACT" },
         ].map((item) => (
           <Link
             key={item.href}
@@ -92,19 +92,19 @@ export default function Navbar() {
             About Us
           </Link>
           <Link className="transition hover:text-white" href="/services" onClick={() => setMenuOpen(false)}>
-            Service
+            SERVICES
           </Link>
           <Link className="transition hover:text-white" href="/projects" onClick={() => setMenuOpen(false)}>
-            Projects
+            PROJECTS
           </Link>
           <Link className="transition hover:text-white" href="/team" onClick={() => setMenuOpen(false)}>
-            Team
+            TEAM
           </Link>
           <Link className="transition hover:text-white" href="/news" onClick={() => setMenuOpen(false)}>
-            News
+            NEWS
           </Link>
           <Link className="transition hover:text-white" href="/contact" onClick={() => setMenuOpen(false)}>
-            Contact
+            CONTACT
           </Link>
         </nav>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ScrollToHomeButton from "@/components/ScrollToHomeButton";
  
 
 import { Manrope, Playfair_Display } from "next/font/google";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <main>{children}</main>
           <Footer />
+          <ScrollToHomeButton />
         </div>
       </body>
     </html>

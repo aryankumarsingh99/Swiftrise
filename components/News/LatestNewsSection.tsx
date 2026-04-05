@@ -72,9 +72,7 @@ export default function LatestNewsSection() {
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#9fc2ff]">Newsroom</p>
             <h2 className="text-3xl font-semibold sm:text-4xl">Latest Updates</h2>
           </div>
-          <a href="/contact" className="text-sm font-semibold text-[#b7d3ff] transition hover:text-white hover:underline">
-            Media inquiries
-          </a>
+          
         </motion.div>
 
         <div className="mb-8">

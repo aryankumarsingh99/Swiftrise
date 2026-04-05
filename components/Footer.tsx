@@ -46,11 +46,12 @@ export default function Footer() {
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Company</h3>
             <ul className="grid gap-2.5 text-sm">
               {[
+                  { href: "/", label: "Home" },
                 { href: "/about", label: "About Us" },
                 { href: "/services", label: "Services" },
-                { href: "/projects", label: "Projects" },
-                { href: "/contact", label: "Careers" },
-                { href: "/contact", label: "Press & Media" },
+                { href: "/news", label: "News" },
+                { href: "/contact", label: "Contact" }
+                
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="text-white/60 transition hover:text-white">

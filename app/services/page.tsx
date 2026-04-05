@@ -10,9 +10,10 @@ export default function ServicesPage() {
     <>
       <HeroSection />
       <ServicesGridSection />
-      <TestimonialsSection />
+     
       <TermsOfServiceSection />
       <PrivacyPolicySection />
+       <TestimonialsSection />
     </>
   );
 }

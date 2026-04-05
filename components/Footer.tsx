@@ -85,12 +85,25 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Contact</h3>
             <address className="grid gap-3 text-sm not-italic text-white/60">
-              <p>33/11, Star House, Lane-4, Bhagabat Sandhan Colony, Rasulgarh, Bhubaneswar, Odisha – 751010</p>
-              <p>
-                <a href="tel:+12125550188" className="transition hover:text-white"> +91 70087 96745</a>
+              <p className="flex items-start gap-2.5">
+                <svg viewBox="0 0 24 24" fill="none" className="mt-0.5 size-4 shrink-0 text-white/70" aria-hidden="true">
+                  <path d="M12 21s7-4.35 7-10a7 7 0 10-14 0c0 5.65 7 10 7 10z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="12" cy="11" r="2.5" stroke="currentColor" strokeWidth="1.8" />
+                </svg>
+                <span>33/11, Star House, Lane-4, Bhagabat Sandhan Colony, Rasulgarh, Bhubaneswar, Odisha - 751010</span>
               </p>
-              <p>
-                <a href="mailto:hello@aurevia.com" className="transition hover:text-white">contactswiftrise@gmail.com</a>
+              <p className="flex items-center gap-2.5">
+                <svg viewBox="0 0 24 24" fill="none" className="size-4 shrink-0 text-white/70" aria-hidden="true">
+                  <path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1.3 1.3 0 011.3-.3c1 .34 2.07.52 3.2.52a1.3 1.3 0 011.3 1.3V20a1.3 1.3 0 01-1.3 1.3C10.8 21.3 2.7 13.2 2.7 3.3A1.3 1.3 0 014 2h3.3A1.3 1.3 0 018.6 3.3c0 1.13.18 2.2.52 3.2.13.45.01.94-.3 1.3l-2.22 2.2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <a href="tel:+917008796745" className="transition hover:text-white">+91 70087 96745</a>
+              </p>
+              <p className="flex items-center gap-2.5">
+                <svg viewBox="0 0 24 24" fill="none" className="size-4 shrink-0 text-white/70" aria-hidden="true">
+                  <path d="M4 6h16v12H4z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                  <path d="M4 8l8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <a href="mailto:contactswiftrise@gmail.com" className="transition hover:text-white">contactswiftrise@gmail.com</a>
               </p>
               <p>Mon – Fri, 9:00 AM – 6:00 PM</p>
             </address>

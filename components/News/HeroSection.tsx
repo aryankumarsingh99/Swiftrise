@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   const heroImage =
-    "https://images.unsplash.com/photo-1465101046530-73398c7fda0c?auto=format&fit=crop&w=1600&q=80";
+    "https://images.unsplash.com/photo-1612461313144-fc1676a1bf17?q=80&w=1102&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D0";
 
   return (
     <section className="animate-rise relative isolate min-h-[100vh] overflow-hidden text-white">

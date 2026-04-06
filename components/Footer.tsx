@@ -113,7 +113,7 @@ export default function Footer() {
 
         {/* ── Bottom bar ── */}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-base text-white/40">
-          <p>&copy; {new Date().getFullYear()} SwiftRise Solution PVT. Ltd. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Swiftrise Solution Pvt.Ltd. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="/services#privacy-policy" className="transition hover:text-white/70">Privacy Policy</Link>
             <Link href="/services#terms-of-service" className="transition hover:text-white/70">Terms of Service</Link>

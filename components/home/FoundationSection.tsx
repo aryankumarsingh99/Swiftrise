@@ -123,6 +123,14 @@ export default function FoundationSection() {
 	const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
 	useEffect(() => {
+		const isSmallDevice = window.matchMedia("(max-width: 767px)").matches;
+
+		// On small screens, keep content visible to avoid observer timing issues.
+		if (isSmallDevice) {
+			setShowContent(true);
+			return;
+		}
+
 		const element = sectionRef.current;
 		if (!element) return;
 

@@ -72,7 +72,7 @@ const privacySections = [
 export default function PrivacyPolicySection() {
   return (
     <>
-      <section className="relative bg-[#113f67] py-12 md:py-20">
+      <section id="privacy-policy" className="relative bg-[#113f67] scroll-mt-28 py-12 md:py-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute inset-x-0 top-0 h-80 bg-[linear-gradient(180deg,rgba(255,255,255,0.16)_0%,transparent_70%)]" />
           <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-cyan-300/10 blur-3xl" />

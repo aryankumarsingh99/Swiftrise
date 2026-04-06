@@ -115,10 +115,9 @@ export default function Footer() {
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-base text-white/40">
           <p>&copy; {new Date().getFullYear()} SwiftRise Solution PVT. Ltd. All rights reserved.</p>
           <div className="flex gap-5">
-            <Link href="/contact" className="transition hover:text-white/70">Privacy Policy</Link>
-            <Link href="/contact" className="transition hover:text-white/70">Terms of Service</Link>
-            <Link href="/contact" className="transition hover:text-white/70">Cookie Settings</Link>
-          </div>
+            <Link href="/services#privacy-policy" className="transition hover:text-white/70">Privacy Policy</Link>
+            <Link href="/services#terms-of-service" className="transition hover:text-white/70">Terms of Service</Link>
+           </div>
         </div>
 
       </div>

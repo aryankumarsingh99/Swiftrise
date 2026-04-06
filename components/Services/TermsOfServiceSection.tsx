@@ -93,7 +93,7 @@ export default function TermsOfServiceSection() {
   return (
     <>
 
-      <section className="relative isolate overflow-hidden  pb-16 pt-12 md:pb-24 md:pt-16">
+      <section id="terms-of-service" className="relative isolate overflow-hidden scroll-mt-28 pb-16 pt-12 md:pb-24 md:pt-16">
       <div className="pointer-events-none absolute inset-0">
         {/* Gradient overlays */}
         <div className="absolute inset-x-0 top-0 h-96 bg-[linear-gradient(180deg,rgba(29,78,216,0.08)_0%,transparent_60%)]" />

@@ -17,7 +17,7 @@ export default function Footer() {
                 className="h-15 w-auto object-contain"
               />
              </div>
-            <p className="text-sm leading-relaxed text-white/60">
+            <p className="text-lg leading-relaxed text-white/60 sm:text-xl">
               Built on trust, designed for tomorrow. Planning, building, and modernising the environments where growth happens.
             </p>
             {/* Social icons */}
@@ -43,8 +43,8 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Company</h3>
-            <ul className="grid gap-2.5 text-sm">
+            <h3 className="mb-4 text-base font-semibold uppercase tracking-[0.14em] text-white/40">Company</h3>
+            <ul className="grid gap-2.5 text-lg">
               {[
                   { href: "/", label: "Home" },
                 { href: "/about", label: "About Us" },
@@ -64,8 +64,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Services</h3>
-            <ul className="grid gap-2.5 text-sm">
+            <h3 className="mb-4 text-base font-semibold uppercase tracking-[0.14em] text-white/40">Services</h3>
+            <ul className="grid gap-2.5 text-lg">
               {[
                 "Architecture & Design",
                 "Engineering & Build",
@@ -84,8 +84,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Contact</h3>
-            <address className="grid gap-3 text-sm not-italic text-white/60">
+            <h3 className="mb-4 text-base font-semibold uppercase tracking-[0.14em] text-white/40">Contact</h3>
+            <address className="grid gap-3 text-lg not-italic text-white/60">
               <p className="flex items-start gap-2.5">
                 <svg viewBox="0 0 24 24" fill="none" className="mt-0.5 size-4 shrink-0 text-white/70" aria-hidden="true">
                   <path d="M12 21s7-4.35 7-10a7 7 0 10-14 0c0 5.65 7 10 7 10z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -112,7 +112,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-xs text-white/40">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-base text-white/40">
           <p>&copy; {new Date().getFullYear()} SwiftRise Solution PVT. Ltd. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="/contact" className="transition hover:text-white/70">Privacy Policy</Link>

@@ -1,16 +1,20 @@
 import React from "react";
 import Image from "next/image";
 
+type IconKind = "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time";
+
 type ChoosePoint = {
-  icon?: string;
+  icon: IconKind;
 };
 
 type ChooseUsSectionProps = {
   choosePoints: ChoosePoint[];
-  IconBadge?: React.ComponentType<{ kind?: string }>;
+  IconBadge?: React.ComponentType<{ kind: IconKind }>;
 };
 
 export default function ChooseUsSection({ choosePoints, IconBadge }: ChooseUsSectionProps) {
+  const defaultStepIcons: IconKind[] = ["team", "time", "target"];
+
   return (
     <section className="relative bg-[#113f67] px-2 sm:px-4 py-0 min-h-[80vh] flex flex-col items-center justify-center overflow-hidden w-full">
       {/* Floating SVG accents */}
@@ -72,21 +76,21 @@ export default function ChooseUsSection({ choosePoints, IconBadge }: ChooseUsSec
         {/* Step 1 */}
         <div className="flex-1 bg-white backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-xs sm:max-w-sm mx-auto flex flex-col items-center border-2 border-[#113f67]/30 min-w-0 mb-4 md:mb-0 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
           <span className="bg-[#113f67] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 1</span>
-          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[0]?.icon} /> : '🛎️'}</div>
+          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[0]?.icon ?? defaultStepIcons[0]} /> : '🛎️'}</div>
           <h4 className="text-lg font-bold text-[#113f67] mb-1">Select Your Tech Service</h4>
           <p className="text-sm text-[#232d4b] text-center">Choose software development, cloud setup, automation, or data engineering based on your goals.</p>
         </div>
         {/* Step 2 */}
         <div className="flex-1 bg-white backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-xs sm:max-w-sm mx-auto flex flex-col items-center border-2 border-[#113f67]/30 min-w-0 mb-4 md:mb-0 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
           <span className="bg-[#113f67] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 2</span>
-          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[1]?.icon} /> : '📅'}</div>
+          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[1]?.icon ?? defaultStepIcons[1]} /> : '📅'}</div>
           <h4 className="text-lg font-bold text-[#113f67] mb-1">Plan Sprint &amp; Timeline</h4>
           <p className="text-sm text-[#232d4b] text-center">Pick your timeline and we&apos;ll align the technical roadmap, milestones, and delivery plan.</p>
         </div>
         {/* Step 3 */}
         <div className="flex-1 bg-white backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-xs sm:max-w-sm mx-auto flex flex-col items-center border-2 border-[#113f67]/30 min-w-0 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
           <span className="bg-[#113f67] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 3</span>
-          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[2]?.icon} /> : '🏠'}</div>
+          <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[2]?.icon ?? defaultStepIcons[2]} /> : '🏠'}</div>
           <h4 className="text-lg font-bold text-[#113f67] mb-1">Build Goes Live</h4>
           <p className="text-sm text-[#232d4b] text-center">Our engineering team ships your solution, monitors performance, and supports scale with confidence.</p>
         </div>

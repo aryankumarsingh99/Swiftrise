@@ -8,8 +8,10 @@ import NewsletterSection from "@/components/home/NewsletterSection";
 import SolutionsSection from "@/components/home/SolutionsSection";
 import FoundationSection from "@/components/home/FoundationSection";
 import PageLoader from "@/components/PageLoader";
+
+type IconKind = "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time";
  
-function IconBadge({ kind }: { kind: "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time" }) {
+function IconBadge({ kind }: { kind: IconKind }) {
   const base = "size-5";
 
   if (kind === "draft") {
@@ -83,7 +85,7 @@ function IconBadge({ kind }: { kind: "draft" | "gear" | "factory" | "chart" | "s
 }
 
 export default function Home() {
-  const choosePoints = [
+  const choosePoints: { icon: IconKind; title: string; text: string }[] = [
     { icon: "team", title: "Integrated Teams", text: "Cross-functional specialists from concept to commissioning." },
     { icon: "shield", title: "Trusted Governance", text: "Classic accountability standards with modern delivery tools." },
     { icon: "target", title: "Outcome Focus", text: "Planning frameworks tied to measurable business value." },

@@ -1,6 +1,6 @@
 export default function ContactFormSection() {
   return (
-    <section className="animate-rise relative overflow-hidden bg-white px-0 py-16 md:py-24">
+    <section id="contact-form" className="animate-rise relative overflow-hidden bg-white px-0 py-16 md:py-24">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-24 h-80 w-80 rounded-full bg-[#163b60]/9 blur-[105px]" />
         <div className="absolute -right-24 bottom-4 h-80 w-80 rounded-full bg-[#e2c99d]/24 blur-[115px]" />

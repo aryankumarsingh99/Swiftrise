@@ -18,7 +18,7 @@ const featuredItems = [
     summary:
       "A cross-functional initiative has helped reduce waste and improve resource efficiency across our core facilities.",
     image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1762330464006-46181dfe3381?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tag: "Impact",
   },
 ];

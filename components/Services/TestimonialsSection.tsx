@@ -38,9 +38,7 @@ export default function TestimonialsSection() {
       </div>
 
       <div className="relative mx-auto w-[92vw] max-w-7xl">
-        <p className="letter-spacing-wide mb-4 text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-indigo-700">
-          Client voices
-        </p>
+        
         <h2 className="font-playfair-display mb-12 max-w-[32ch] text-3xl font-extrabold text-slate-900 drop-shadow-sm md:text-5xl">
           Partnerships built on <span className="text-indigo-700">performance</span> and <span className="text-cyan-600">trust</span>.
         </h2>

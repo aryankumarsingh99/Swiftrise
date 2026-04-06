@@ -97,12 +97,8 @@ export default function Navbar() {
           <Link className="transition hover:text-white" href="/services" onClick={() => setMenuOpen(false)}>
             SERVICES
           </Link>
-          <Link className="transition hover:text-white" href="/projects" onClick={() => setMenuOpen(false)}>
-            PROJECTS
-          </Link>
-          <Link className="transition hover:text-white" href="/team" onClick={() => setMenuOpen(false)}>
-            TEAM
-          </Link>
+          
+          
           <Link className="transition hover:text-white" href="/news" onClick={() => setMenuOpen(false)}>
             NEWS
           </Link>

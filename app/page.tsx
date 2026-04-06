@@ -7,6 +7,7 @@ import ChooseUsSection from "@/components/home/ChooseUsSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import SolutionsSection from "@/components/home/SolutionsSection";
 import FoundationSection from "@/components/home/FoundationSection";
+import MarqueeSection from "@/components/home/MarqueeSection";
 import PageLoader from "@/components/PageLoader";
 import type { Metadata } from "next";
 
@@ -140,10 +141,12 @@ export default function Home() {
       <PageLoader>
         <Navbar />
         <HeroSection />
+         <MarqueeSection />
         <FoundationSection />
         <SolutionsSection />
          <AboutSection />
          <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
+       
         <NewsletterSection />
       </PageLoader>
     </>

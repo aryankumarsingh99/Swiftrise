@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="mt-5 flex gap-3">
               {[
                 { label: "LinkedIn", path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z" },
-                { label: "Twitter / X", path: "M4 4l16 16M4 20L20 4" },
+               
                 { label: "Instagram", path: "M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a4 4 0 100 8 4 4 0 000-8zm4.5-1a.7.7 0 100 1.4.7.7 0 000-1.4z" },
               ].map((s) => (
                 <a

@@ -29,6 +29,14 @@ const updates = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
   },
+  {
+    date: "Mar 05, 2026",
+    category: "Technology",
+    title: "AI-Powered Analytics Platform Launched",
+    excerpt: "Revolutionary analytics engine delivers real-time insights with advanced machine learning capabilities.",
+    image:
+      "https://images.unsplash.com/photo-1555949519-2d0b1a30c49d?auto=format&fit=crop&w=1200&q=80",
+  }  
 ];
 
 export default function LatestNewsSection() {

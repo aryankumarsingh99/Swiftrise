@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { FaArrowUp, FaPaperPlane, FaRobot, FaTimes } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { FaArrowUp, FaPaperPlane, FaRobot, FaTimes, FaEnvelope } from "react-icons/fa";
 
 type ChatMessage = {
   id: number;
@@ -16,6 +17,7 @@ const initialBotMessage: ChatMessage = {
 };
 
 export default function ScrollToHomeButton() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatInput, setChatInput] = useState("");
@@ -88,6 +90,17 @@ export default function ScrollToHomeButton() {
     setChatInput("");
   };
 
+  const handleEmailClick = () => {
+    // First try to scroll on current page
+    const contactFormSection = document.getElementById("contact-form");
+    if (contactFormSection) {
+      contactFormSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // If not found, navigate to contact page
+      router.push("/contact#contact-form");
+    }
+  };
+
   return (
     <div
       className={`fixed bottom-12 right-8 z-70 flex flex-col gap-3 transition-all duration-300 sm:bottom-16 sm:right-10 ${
@@ -143,6 +156,15 @@ export default function ScrollToHomeButton() {
           </form>
         </div>
       )}
+
+      <button
+        type="button"
+        aria-label="Scroll to contact section"
+        onClick={handleEmailClick}
+        className="flex h-14 w-14 items-center justify-center rounded-full border border-[#12395c]/35 bg-white text-[#12395c] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/60 hover:bg-[#e9f1fb]"
+      >
+        <FaEnvelope className="text-xl" />
+      </button>
 
       <button
         type="button"

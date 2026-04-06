@@ -12,12 +12,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+type ContactPageProps = {
+  searchParams?: Promise<{ status?: string }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const params = (await searchParams) || {};
+
   return (
     <>
       <HeroSection />
-      
-      <ContactFormSection />
+
+      <ContactFormSection status={params.status} />
       <MapSection />
     </>
   );

@@ -1,4 +1,68 @@
-export default function ContactFormSection() {
+"use client";
+
+import { FormEvent, useState } from "react";
+
+type ContactFormSectionProps = {
+  status?: string;
+};
+
+const formEndpoint = "https://formsubmit.co/contactswiftrise@gmail.com";
+
+export default function ContactFormSection({ status }: ContactFormSectionProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{ type: "success" | "error"; text: string } | null>(
+    status === "sent"
+      ? {
+          type: "success",
+          text: "Message sent successfully. We will contact you soon. Your request has been forwarded to contactswiftrise@gmail.com.",
+        }
+      : status === "error"
+        ? {
+            type: "error",
+            text: "We could not send your message right now. Please try again in a moment or email contactswiftrise@gmail.com directly.",
+          }
+        : null,
+  );
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    formData.append("_subject", "SwiftRise Website Contact Request");
+    formData.append("_captcha", "false");
+    formData.append("_template", "table");
+
+    try {
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      form.reset();
+      setSubmitMessage({
+        type: "success",
+        text: "Message sent successfully. We will contact you soon. Your request has been forwarded to contactswiftrise@gmail.com, and you can expect an initial response within 24 hours.",
+      });
+    } catch {
+      setSubmitMessage({
+        type: "error",
+        text: "We could not send your message right now. Please try again in a moment. If the issue continues, email us directly at contactswiftrise@gmail.com with your project brief.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <section id="contact-form" className="animate-rise relative overflow-hidden bg-white px-0 py-16 md:py-24">
       <div className="pointer-events-none absolute inset-0">
@@ -46,7 +110,10 @@ export default function ContactFormSection() {
             </div>
           </aside>
 
-          <form className="grid gap-4 rounded-[1.35rem] border-4 border-[#163b60] p-6 shadow-[0_20px_42px_rgba(22,43,62,0.12)] md:p-7">
+          <form
+            onSubmit={handleSubmit}
+            className="grid gap-4 rounded-[1.35rem] border-4 border-[#163b60] p-6 shadow-[0_20px_42px_rgba(22,43,62,0.12)] md:p-7"
+          >
             <div className="mb-2 flex flex-wrap items-center justify-between gap-3 border-b border-[#163b60]/10 pb-4">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4b657d]">Project Inquiry</p>
               <span className="rounded-full border border-[#163b60]/18 bg-[#113f67] px-3 py-1 text-[11px] font-medium text-[#ffffff]">
@@ -61,6 +128,7 @@ export default function ContactFormSection() {
                   className="rounded-xl border border-[#163b60]/15 bg-white px-3 py-3 text-[#183652] outline-2 outline-transparent transition placeholder:text-[#8ca0b3] focus:border-[#163b60]/34 focus:outline-[#163b60]/20"
                   type="text"
                   name="name"
+                  required
                   placeholder="Your full name"
                 />
               </label>
@@ -71,6 +139,7 @@ export default function ContactFormSection() {
                   className="rounded-xl border border-[#163b60]/15 bg-white px-3 py-3 text-[#183652] outline-2 outline-transparent transition placeholder:text-[#8ca0b3] focus:border-[#163b60]/34 focus:outline-[#163b60]/20"
                   type="email"
                   name="email"
+                  required
                   placeholder="you@company.com"
                 />
               </label>
@@ -92,17 +161,33 @@ export default function ContactFormSection() {
                 className="rounded-xl border border-[#163b60]/15 bg-white px-3 py-3 text-[#183652] outline-2 outline-transparent transition placeholder:text-[#8ca0b3] focus:border-[#163b60]/34 focus:outline-[#163b60]/20"
                 name="message"
                 rows={6}
+                required
                 placeholder="Share your goals, expected timeline, available resources, and the challenges you want to solve."
               />
             </label>
+
+            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+
+            {submitMessage ? (
+              <p
+                className={`rounded-xl border px-4 py-3 text-sm font-medium ${
+                  submitMessage.type === "success"
+                    ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                    : "border-rose-200 bg-rose-50 text-rose-700"
+                }`}
+              >
+                {submitMessage.text}
+              </p>
+            ) : null}
 
             <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
               <p className="text-xs tracking-[0.12em] text-[#5e778e]">By submitting this form, you agree to be contacted by our advisory team.</p>
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#163b60] to-[#12395c] px-6 py-3 text-[0.95rem] font-semibold tracking-[0.12em] text-[#f8ecd6] transition hover:-translate-y-px hover:from-[#1b4f7a] hover:to-[#15466f]"
               >
-                Send Request
+                {isSubmitting ? "Sending..." : "Send Request"}
               </button>
             </div>
           </form>

@@ -8,6 +8,16 @@ import NewsletterSection from "@/components/home/NewsletterSection";
 import SolutionsSection from "@/components/home/SolutionsSection";
 import FoundationSection from "@/components/home/FoundationSection";
 import PageLoader from "@/components/PageLoader";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "SwiftRise helps organizations build reliable digital products with software engineering, cloud architecture, and data-driven platform solutions.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 type IconKind = "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time";
  

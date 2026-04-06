@@ -84,34 +84,34 @@ const FOUNDATION_TONE_CLASSES: Record<
 
 const impactHighlights = [
 	{
-		label: "Clarity",
-		title: "Simple guidance",
-		desc: "Straightforward advice for complex decisions.",
+		label: "Architecture",
+		title: "Scalable platforms",
+		desc: "Cloud-native foundations built for growing digital products.",
 	},
 	{
-		label: "Resilience",
-		title: "Built to last",
-		desc: "Structures and safeguards that hold under pressure.",
+		label: "Reliability",
+		title: "Always-on systems",
+		desc: "Resilient infrastructure with observability and automated failover.",
 	},
 	{
-		label: "Confidence",
-		title: "Measured outcomes",
-		desc: "Execution that translates plans into real progress.",
+		label: "Intelligence",
+		title: "Data-led outcomes",
+		desc: "Automation and analytics that convert signals into action.",
 	},
 ];
 
 const foundationCards = [
 	{
 		kicker: "Vision",
-		title: "Secure futures through dependable systems",
-		desc: "We aim to build a future where people and businesses operate with assurance, backed by adaptable protection frameworks that strengthen stability and reduce long-term vulnerability.",
+		title: "Build trusted digital ecosystems",
+		desc: "We envision a future where organizations scale with confidence through secure, intelligent, and adaptable technology platforms designed for constant change.",
 		stamp: "V",
 		tone: "dark",
 	},
 	{
 		kicker: "Mission",
-		title: "Simplify complexity with measurable value",
-		desc: "Our mission is to deliver integrated insurance and financial solutions that improve clarity, reduce risk, and create sustained value through transparent and reliable service.",
+		title: "Deliver engineering that performs",
+		desc: "Our mission is to ship modern software, cloud architecture, and intelligent automation that reduce complexity and deliver measurable business outcomes.",
 		stamp: "M",
 		tone: "light",
 	},
@@ -182,14 +182,14 @@ export default function FoundationSection() {
 			<motion.div
 				className={`pointer-events-none absolute right-8 top-20 z-20 hidden rounded-2xl border border-white/45 bg-white/35 px-5 py-4 text-[#12395c] shadow-[0_18px_38px_rgba(8,18,32,0.2)] backdrop-blur-md md:block slide-down${showContent ? ' slide-active' : ''}`}
 			>
-				<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#5e7490]">Stability</p>
-				<p className="mt-2 font-serif text-xl">Measured growth</p>
+				<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#5e7490]">Innovation</p>
+				<p className="mt-2 font-serif text-xl">Rapid delivery</p>
 			</motion.div>
 			<motion.div
 				className={`pointer-events-none absolute bottom-24 left-8 z-20 hidden rounded-2xl border border-white/28 bg-[#0f2d4a]/72 px-5 py-4 text-[#edf2f7] shadow-[0_18px_38px_rgba(2,8,17,0.34)] backdrop-blur-md md:block slide-up${showContent ? ' slide-active' : ''}`}
 			>
-				<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d8c39c]">Confidence</p>
-				<p className="mt-2 font-serif text-xl text-[#fff8ea]">Future-ready</p>
+				<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d8c39c]">Security</p>
+				<p className="mt-2 font-serif text-xl text-[#fff8ea]">Always protected</p>
 			</motion.div>
 
 			<motion.div
@@ -207,18 +207,18 @@ export default function FoundationSection() {
 						<div className="absolute -bottom-12 -right-10 h-56 w-56 rounded-full bg-[#c9a66b]/12 blur-3xl" />
 
 						<p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#576d85] sm:text-sm">
-							Our Foundation
+							Technology Foundation
 						</p>
 						<h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-[#0f243d] sm:text-5xl md:text-6xl">
-							Precision-driven solutions for a secure tomorrow.
+							Precision-driven technology for a digital tomorrow.
 						</h2>
 						<p className="mt-6 max-w-2xl text-[15px] leading-8 text-[#31445b] md:text-base">
-							We design integrated protection and financial pathways that reduce uncertainty, improve resilience, and create dependable progress for individuals, families, and modern businesses.
+							We architect software, cloud, and data systems that reduce operational friction, improve performance, and create dependable digital growth for modern businesses.
 						</p>
 
 						<div className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#1d3a57]/15 bg-white/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#445d78] backdrop-blur-sm sm:text-xs">
 							<span className="h-2 w-2 rounded-full bg-[#c9a66b]" />
-							Engineered for Stability
+							Engineered for Technology
 						</div>
 
 						<div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -280,30 +280,30 @@ export default function FoundationSection() {
 				<div className="mt-12 grid gap-8 md:grid-cols-2">
 					<motion.div className="space-y-5" variants={revealVariants}>
 						<p className="text-[15px] leading-8 text-[#e8edf4] md:text-base">
-							We create integrated protection solutions that enhance stability, reduce uncertainty, and support long-term confidence for individuals, families, and modern businesses.
+							We build integrated technology solutions that enhance reliability, reduce operational risk, and support long-term growth for digital-first organizations.
 						</p>
 						<p className="text-[15px] leading-8 text-[#e8edf4] md:text-base">
-							Our approach delivers clarity and measurable value by simplifying complexity, strengthening resilience, and providing future-ready strategies that empower clients’ progress.
+							Our approach delivers measurable value by simplifying architecture, accelerating delivery pipelines, and applying automation that improves performance over time.
 						</p>
 					</motion.div>
 					<motion.div className="grid gap-3 sm:grid-cols-3" variants={revealVariants}>
 						<div className="rounded-2xl border border-white/14 bg-white/10 p-4 backdrop-blur-sm">
-							<p className="text-[11px] uppercase tracking-[0.2em] text-[#c7d4e2]">Focus</p>
-							<p className="mt-2 font-serif text-lg text-white">Clear direction</p>
+							<p className="text-[11px] uppercase tracking-[0.2em] text-[#c7d4e2]">Roadmap</p>
+							<p className="mt-2 font-serif text-lg text-white">Clear priorities</p>
 						</div>
 						<div className="rounded-2xl border border-white/14 bg-white/10 p-4 backdrop-blur-sm">
-							<p className="text-[11px] uppercase tracking-[0.2em] text-[#c7d4e2]">Balance</p>
-							<p className="mt-2 font-serif text-lg text-white">Calm delivery</p>
+							<p className="text-[11px] uppercase tracking-[0.2em] text-[#c7d4e2]">Execution</p>
+							<p className="mt-2 font-serif text-lg text-white">Agile delivery</p>
 						</div>
 						<div className="rounded-2xl border border-[#d8c39c]/35 bg-[#102a45] p-4">
-							<p className="text-[11px] uppercase tracking-[0.2em] text-[#d8c39c]">Trust</p>
-							<p className="mt-2 font-serif text-lg text-[#fff7ea]">Reliable outcomes</p>
+							<p className="text-[11px] uppercase tracking-[0.2em] text-[#d8c39c]">Security</p>
+							<p className="mt-2 font-serif text-lg text-[#fff7ea]">Reliable systems</p>
 						</div>
 					</motion.div>
 				</div>
 
 				<motion.div className="mb-4 mt-14 text-xs font-semibold uppercase tracking-[0.34em] text-[#d8c39c] sm:text-sm" variants={revealVariants}>
-					Our Impact
+					Tech Impact
 				</motion.div>
 
 				<motion.div
@@ -314,7 +314,7 @@ export default function FoundationSection() {
 						<div className="relative min-h-96 lg:min-h-136">
 							<Image
 								src="https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-								alt="Team impact"
+								alt="Technology team collaboration"
 								fill
 								className="object-cover"
 								priority
@@ -328,10 +328,10 @@ export default function FoundationSection() {
 							<div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
 								<div className="max-w-xl rounded-3xl border border-white/12 bg-[#081624]/70 p-5 text-white backdrop-blur-md sm:p-6">
 									<p className="mb-4 text-[13px] uppercase tracking-[0.26em] text-[#d8c39c] sm:text-sm">
-										Consistent delivery, measurable value
+										Reliable releases, measurable impact
 									</p>
 									<p className="max-w-lg text-sm leading-7 text-[#edf2f7] sm:text-base">
-										We combine disciplined oversight with calm execution, giving every project a dependable path from planning to completion.
+										We combine disciplined engineering with continuous delivery, giving every product a dependable path from architecture to production.
 									</p>
 								</div>
 							</div>
@@ -341,35 +341,35 @@ export default function FoundationSection() {
 							<div>
 								<div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#12395c]/12 bg-white/80 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4a627d] sm:text-xs">
 									<span className="h-1.5 w-1.5 rounded-full bg-[#12395c]" />
-									Project Delivery That Holds
+									Technology Delivery That Scales
 								</div>
 
 								<h3 className="max-w-lg font-serif text-3xl font-semibold tracking-wide text-[#0f243d] sm:text-4xl">
-									Results shaped by precision, oversight, and trust.
+									Results shaped by engineering, automation, and trust.
 								</h3>
 
 								<div className="mt-6 grid gap-5 text-sm leading-7 text-[#2e4158] sm:text-base">
 									<p>
-										We deliver consistent project outcomes through structured processes and attentive oversight, ensuring developments progress smoothly and meet every expectation with reliable, measurable results.
+										We deliver consistent digital outcomes through strong architecture, clean code standards, and automated pipelines that keep releases fast and dependable.
 									</p>
 									<p>
-										Our approach reduces risk, improves efficiency, and strengthens client confidence, creating long-term value across every stage of the built environment lifecycle.
+										Our approach reduces technical debt, improves velocity, and strengthens platform resilience, creating long-term value across the full product lifecycle.
 									</p>
 								</div>
 							</div>
 
 							<div className="grid gap-3 border-t border-[#173a5a]/10 pt-5 sm:grid-cols-3">
 								<div className="rounded-2xl border border-[#173a5a]/10 bg-white/80 px-4 py-4 shadow-[0_10px_24px_rgba(13,35,59,0.06)]">
-									<div className="text-[11px] uppercase tracking-[0.2em] text-[#68809a]">Oversight</div>
-									<div className="mt-2 text-base font-semibold text-[#12395c]">Hands-on coordination</div>
+									<div className="text-[11px] uppercase tracking-[0.2em] text-[#68809a]">Architecture</div>
+									<div className="mt-2 text-base font-semibold text-[#12395c]">System design</div>
 								</div>
 								<div className="rounded-2xl border border-[#173a5a]/10 bg-white/80 px-4 py-4 shadow-[0_10px_24px_rgba(13,35,59,0.06)]">
-									<div className="text-[11px] uppercase tracking-[0.2em] text-[#68809a]">Delivery</div>
-									<div className="mt-2 text-base font-semibold text-[#12395c]">Smooth execution</div>
+									<div className="text-[11px] uppercase tracking-[0.2em] text-[#68809a]">Implementation</div>
+									<div className="mt-2 text-base font-semibold text-[#12395c]">Agile rollout</div>
 								</div>
 								<div className="rounded-2xl border border-[#12395c]/10 bg-[#12395c] px-4 py-4 text-[#f5efe4] shadow-[0_10px_24px_rgba(13,35,59,0.1)]">
-									<div className="text-[11px] uppercase tracking-[0.2em] text-[#d8c39c]">Outcome</div>
-									<div className="mt-2 text-base font-semibold text-[#fff7ea]">Long-term value</div>
+									<div className="text-[11px] uppercase tracking-[0.2em] text-[#d8c39c]">Performance</div>
+									<div className="mt-2 text-base font-semibold text-[#fff7ea]">Scalable impact</div>
 								</div>
 							</div>
 						</div>

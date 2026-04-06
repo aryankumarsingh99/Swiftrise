@@ -1,6 +1,16 @@
 import React from "react";
+import Image from "next/image";
 
-export default function ChooseUsSection({ choosePoints, IconBadge }: { choosePoints: any[]; IconBadge: any }) {
+type ChoosePoint = {
+  icon?: string;
+};
+
+type ChooseUsSectionProps = {
+  choosePoints: ChoosePoint[];
+  IconBadge?: React.ComponentType<{ kind?: string }>;
+};
+
+export default function ChooseUsSection({ choosePoints, IconBadge }: ChooseUsSectionProps) {
   return (
     <section className="relative bg-[#113f67] px-2 sm:px-4 py-0 min-h-[80vh] flex flex-col items-center justify-center overflow-hidden w-full">
       {/* Floating SVG accents */}
@@ -12,7 +22,7 @@ export default function ChooseUsSection({ choosePoints, IconBadge }: { choosePoi
       </div>
       {/* Headline */}
       <h2 className="mt-6 text-center text-4xl md:text-5xl font-extrabold text-[#ffffff] w-full px-2 animate-slide-in-down">
-        Your <span className="text-[#5a83ff] font-semibold italic">Trusted</span> Homecare Partner
+        Your <span className="text-[#5a83ff] font-semibold italic">Trusted</span> Technology Partner
         <span className="block h-1 w-16 bg-[#ffffff] mx-auto mt-3 rounded-full animate-grow-x"></span>
       </h2>
       {/* Features and image */}
@@ -21,63 +31,64 @@ export default function ChooseUsSection({ choosePoints, IconBadge }: { choosePoi
         <div className="flex-1 flex flex-col gap-8 text-right pr-0 md:pr-8 w-full max-w-none">
           <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
             <h3 className="text-lg font-bold text-[#113f67] flex items-center justify-end gap-2 group-hover:underline">
-              <span className="w-1 h-8 bg-[#113f67] rounded-full inline-block mr-2" />Medical &amp; Non-Medical Services
+              <span className="w-1 h-8 bg-[#113f67] rounded-full inline-block mr-2" />Full-Stack Product Engineering
             </h3>
-            <p className="text-sm text-[#232d4b] mt-1">From nursing and therapy to companionship and daily assistance</p>
+            <p className="text-sm text-[#232d4b] mt-1">From frontend experiences and backend APIs to scalable cloud services.</p>
           </div>
           <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
             <h3 className="text-lg font-bold text-[#113f67] flex items-center justify-end gap-2 group-hover:underline">
-              <span className="w-1 h-8 bg-[#113f67] rounded-full inline-block mr-2" />Modern Monitoring &amp; Health Tracking
+              <span className="w-1 h-8 bg-[#113f67] rounded-full inline-block mr-2" />Modern Monitoring &amp; Platform Analytics
             </h3>
-            <p className="text-sm text-[#232d4b] mt-1">Technology-enabled tracking, digital reports, medication reminders</p>
+            <p className="text-sm text-[#232d4b] mt-1">Real-time observability, alerting dashboards, and performance insights.</p>
           </div>
         </div>
         {/* Center image */}
-        <div className="flex-shrink-0 border-4 border-[#5a83ff] rounded-2xl overflow-hidden shadow-2xl bg-[#d9dee9] w-[260px] xs:w-[320px] sm:w-[380px] h-[180px] xs:h-[220px] sm:h-[280px] flex items-center justify-center animate-float">
-          <img
+        <div className="relative shrink-0 border-4 border-[#5a83ff] rounded-2xl overflow-hidden shadow-2xl bg-[#d9dee9] w-65 xs:w-80 sm:w-95 h-45 xs:h-55 sm:h-70 flex items-center justify-center animate-float">
+          <Image
             src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
-            alt="Homecare Service"
-            className="w-full h-full object-cover"
+            alt="Technology collaboration"
+            fill
+            className="object-cover"
           />
         </div>
         {/* Right features */}
         <div className="flex-1 flex flex-col gap-8 text-left pl-0 md:pl-8 w-full max-w-none">
           <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
             <h3 className="text-lg font-bold text-[#113f67] flex items-center gap-2 group-hover:underline">
-              Family-Centered Care Approach<span className="w-1 h-8 bg-[#113f67] rounded-full inline-block ml-2" />
+              Security-First Delivery Approach<span className="w-1 h-8 bg-[#113f67] rounded-full inline-block ml-2" />
             </h3>
-            <p className="text-sm text-[#232d4b] mt-1">We focus on comfort, dignity, independence, and building trust</p>
+            <p className="text-sm text-[#232d4b] mt-1">We prioritize secure architecture, compliance, and resilient deployment pipelines.</p>
           </div>
           <div className="bg-white backdrop-blur-md rounded-2xl shadow-lg p-6 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
             <h3 className="text-lg font-bold text-[#113f67] flex items-center gap-2 group-hover:underline">
-              24/7 Support &amp; Emergency Assistance<span className="w-1 h-8 bg-[#113f67] rounded-full inline-block ml-2" />
+              24/7 Support &amp; Incident Response<span className="w-1 h-8 bg-[#113f67] rounded-full inline-block ml-2" />
             </h3>
-            <p className="text-sm text-[#232d4b] mt-1">Round-the-clock care, monitoring, and helpline to ensure safety at all times.</p>
+            <p className="text-sm text-[#232d4b] mt-1">Round-the-clock monitoring, rapid fixes, and on-call engineering assistance.</p>
           </div>
         </div>
       </div>
       {/* Steps section - full width */}
       <div className="w-full flex flex-col md:flex-row mt-16 pb-16 px-0 gap-8">
         {/* Step 1 */}
-        <div className="flex-1 bg-white backdrop-blur-md backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-xs sm:max-w-sm mx-auto flex flex-col items-center border-2 border-[#113f67]/30 min-w-0 mb-4 md:mb-0 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+        <div className="flex-1 bg-white backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-xs sm:max-w-sm mx-auto flex flex-col items-center border-2 border-[#113f67]/30 min-w-0 mb-4 md:mb-0 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
           <span className="bg-[#113f67] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 1</span>
           <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[0]?.icon} /> : '🛎️'}</div>
-          <h4 className="text-lg font-bold text-[#113f67] mb-1">Select Your Service</h4>
-          <p className="text-sm text-[#232d4b] text-center">Choose from nursing care, elder care, therapy, or medical assistance based on your specific needs.</p>
+          <h4 className="text-lg font-bold text-[#113f67] mb-1">Select Your Tech Service</h4>
+          <p className="text-sm text-[#232d4b] text-center">Choose software development, cloud setup, automation, or data engineering based on your goals.</p>
         </div>
         {/* Step 2 */}
         <div className="flex-1 bg-white backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-xs sm:max-w-sm mx-auto flex flex-col items-center border-2 border-[#113f67]/30 min-w-0 mb-4 md:mb-0 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
           <span className="bg-[#113f67] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 2</span>
           <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[1]?.icon} /> : '📅'}</div>
-          <h4 className="text-lg font-bold text-[#113f67] mb-1">Choose Date &amp; Time</h4>
-          <p className="text-sm text-[#232d4b] text-center">Pick your preferred date and time, and we'll assign a certified caregiver and share booking details.</p>
+          <h4 className="text-lg font-bold text-[#113f67] mb-1">Plan Sprint &amp; Timeline</h4>
+          <p className="text-sm text-[#232d4b] text-center">Pick your timeline and we&apos;ll align the technical roadmap, milestones, and delivery plan.</p>
         </div>
         {/* Step 3 */}
         <div className="flex-1 bg-white backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-xs sm:max-w-sm mx-auto flex flex-col items-center border-2 border-[#113f67]/30 min-w-0 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
           <span className="bg-[#113f67] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">Step 3</span>
           <div className="mb-3 text-4xl text-[#113f67]">{IconBadge ? <IconBadge kind={choosePoints[2]?.icon} /> : '🏠'}</div>
-          <h4 className="text-lg font-bold text-[#113f67] mb-1">Care Begins at Home</h4>
-          <p className="text-sm text-[#232d4b] text-center">Our professional caregiver arrives at your location and starts personalized care with full support.</p>
+          <h4 className="text-lg font-bold text-[#113f67] mb-1">Build Goes Live</h4>
+          <p className="text-sm text-[#232d4b] text-center">Our engineering team ships your solution, monitors performance, and supports scale with confidence.</p>
         </div>
       </div>
     </section>

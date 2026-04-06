@@ -1,14 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import NewsletterForm from "@/components/NewsletterForm";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/home/HeroSection";
 // import StatsSection from "@/components/home/StatsSection";
 import AboutSection from "@/components/home/AboutSection";
 // import TeamSection from "@/components/home/TeamSection";
 import ChooseUsSection from "@/components/home/ChooseUsSection";
- import NewsletterSection from "@/components/home/NewsletterSection";
- import SolutionsSection from "@/components/home/SolutionsSection";
+import NewsletterSection from "@/components/home/NewsletterSection";
+import SolutionsSection from "@/components/home/SolutionsSection";
 import FoundationSection from "@/components/home/FoundationSection";
 import PageLoader from "@/components/PageLoader";
  
@@ -86,24 +83,6 @@ function IconBadge({ kind }: { kind: "draft" | "gear" | "factory" | "chart" | "s
 }
 
 export default function Home() {
-  const imageSet = {
-    hero: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80",
-    partner: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80",
-    journey: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80",
-    about: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
-    team1: "https://images.unsplash.com/photo-1519340333755-afc1f9e8d8c7?auto=format&fit=crop&w=800&q=80",
-    team2: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=800&q=80",
-    team3: "https://images.unsplash.com/photo-1508214757746-8b2b0a6a3c4a?auto=format&fit=crop&w=800&q=80",
-    team4: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
-    team5: "https://images.unsplash.com/photo-1517841905240-472c7ca8c0b8?auto=format&fit=crop&w=800&q=80",
-    portfolioA: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-    portfolioB: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1200&q=80",
-    portfolioC: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    blogA: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
-    blogB: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    blogC: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
-  };
-
   const choosePoints = [
     { icon: "team", title: "Integrated Teams", text: "Cross-functional specialists from concept to commissioning." },
     { icon: "shield", title: "Trusted Governance", text: "Classic accountability standards with modern delivery tools." },

@@ -52,24 +52,8 @@ export default function ScrollToHomeButton() {
         isVisible ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >
-      <button
-        type="button"
-        aria-label="Scroll to contact section"
-        onClick={handleMessageClick}
-        className="flex h-12 w-12 items-center justify-center rounded-full border border-[#12395c]/35 bg-[#12395c] text-[#ffffff] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/55 hover:bg-linear-to-b hover:from-[#73bcfb] hover:to-[#12395c]"
-      >
-        <FaEnvelope className="text-lg" />
-      </button>
-
-      <button
-        type="button"
-        aria-label="Open WhatsApp chat"
-        onClick={handleWhatsAppClick}
-        className="flex h-12 w-12 items-center justify-center rounded-full border border-[#12395c]/35 bg-[#12395c] text-[#ffffff] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/55 hover:bg-linear-to-b hover:from-[#73bcfb] hover:to-[#12395c]"
-      >
-        <FaWhatsapp className="text-xl" />
-      </button>
-
+       
+ 
       <button
         type="button"
         aria-label="Scroll to home section"

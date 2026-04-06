@@ -88,6 +88,9 @@ export default function Navbar() {
           &times;
         </button>
         <nav className="flex flex-col items-center justify-center gap-8 mt-20 text-xl" aria-label="Mobile navigation">
+          <Link className="transition hover:text-white" href="/" onClick={() => setMenuOpen(false)}>
+            HOME
+          </Link>
           <Link className="transition hover:text-white" href="/about" onClick={() => setMenuOpen(false)}>
             About Us
           </Link>

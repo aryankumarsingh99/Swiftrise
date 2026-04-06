@@ -29,12 +29,7 @@ export default function HeroSection() {
               <p className="max-w-[36ch]">
                 Discover how we help clients move from vision to execution with confidence and clarity.
               </p>
-              <a
-                className="inline-flex items-center gap-2 self-end whitespace-nowrap border-b border-white/65 pb-1 text-[1.85rem] font-medium text-white transition hover:border-white"
-                href="/contact"
-              >
-                Get In Touch <span aria-hidden="true">-&gt;</span>
-              </a>
+               
             </div>
           </div>
         </div>

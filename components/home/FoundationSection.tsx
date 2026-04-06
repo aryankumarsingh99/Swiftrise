@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 
 type FoundationTone = "dark" | "light";
 
@@ -118,97 +117,34 @@ const foundationCards = [
 ] as const;
 
 export default function FoundationSection() {
-	const sectionRef = useRef(null);
-	const [showContent, setShowContent] = useState(false);
-	const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-	useEffect(() => {
-		const isSmallDevice = window.matchMedia("(max-width: 767px)").matches;
-
-		// On small screens, keep content visible to avoid observer timing issues.
-		if (isSmallDevice) {
-			setShowContent(true);
-			return;
-		}
-
-		const element = sectionRef.current;
-		if (!element) return;
-
-		const observer = new window.IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					if (timeoutRef.current) clearTimeout(timeoutRef.current);
-					setShowContent(true);
-				} else {
-					timeoutRef.current = setTimeout(() => setShowContent(false), 400);
-				}
-			},
-			{ threshold: 0.25 }
-		);
-
-		observer.observe(element);
-
-		return () => {
-			observer.disconnect();
-			if (timeoutRef.current) clearTimeout(timeoutRef.current);
-		};
-	}, []);
-
 	return (
 		<section
-			ref={sectionRef}
 			className="relative w-full overflow-hidden bg-[#081220] py-20 md:py-28"
 		>
-			<style>{`
-				.slide-in-left {
-					opacity: 0;
-					transform: translateX(-56px);
-					transition: opacity 0.9s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1);
-				}
-				.slide-in-right {
-					opacity: 0;
-					transform: translateX(56px);
-					transition: opacity 0.9s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1);
-				}
-				.slide-up {
-					opacity: 0;
-					transform: translateY(56px);
-					transition: opacity 0.95s cubic-bezier(.4,0,.2,1), transform 0.95s cubic-bezier(.4,0,.2,1);
-				}
-				.slide-down {
-					opacity: 0;
-					transform: translateY(-56px);
-					transition: opacity 0.95s cubic-bezier(.4,0,.2,1), transform 0.95s cubic-bezier(.4,0,.2,1);
-				}
-				.slide-active {
-					opacity: 1 !important;
-					transform: translate(0, 0) !important;
-				}
-			`}</style>
 			<div className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-white" />
 			<div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-[#113f67]" />
 			<motion.div
-				className={`pointer-events-none absolute right-8 top-20 z-20 hidden rounded-2xl border border-white/45 bg-white/35 px-5 py-4 text-[#12395c] shadow-[0_18px_38px_rgba(8,18,32,0.2)] backdrop-blur-md md:block slide-down${showContent ? ' slide-active' : ''}`}
+				className="pointer-events-none absolute right-8 top-20 z-20 hidden rounded-2xl border border-white/45 bg-white/35 px-5 py-4 text-[#12395c] shadow-[0_18px_38px_rgba(8,18,32,0.2)] backdrop-blur-md md:block"
 			>
 				<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#5e7490]">Innovation</p>
 				<p className="mt-2 font-serif text-xl">Rapid delivery</p>
 			</motion.div>
 			<motion.div
-				className={`pointer-events-none absolute bottom-24 left-8 z-20 hidden rounded-2xl border border-white/28 bg-[#0f2d4a]/72 px-5 py-4 text-[#edf2f7] shadow-[0_18px_38px_rgba(2,8,17,0.34)] backdrop-blur-md md:block slide-up${showContent ? ' slide-active' : ''}`}
+				className="pointer-events-none absolute bottom-24 left-8 z-20 hidden rounded-2xl border border-white/28 bg-[#0f2d4a]/72 px-5 py-4 text-[#edf2f7] shadow-[0_18px_38px_rgba(2,8,17,0.34)] backdrop-blur-md md:block"
 			>
 				<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d8c39c]">Security</p>
 				<p className="mt-2 font-serif text-xl text-[#fff8ea]">Always protected</p>
 			</motion.div>
 
 			<motion.div
-				className={`relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 slide-up${showContent ? ' slide-active' : ''}`}
+				className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
 				variants={containerVariants}
 				initial="show"
 				animate="show"
 			>
 				<div className="grid gap-8 xl:grid-cols-[1.04fr_0.96fr] xl:items-end">
 					<motion.div
-						className={`relative overflow-hidden rounded-[2.4rem] border-4 border-[#1d3a57] bg-white p-7 shadow-[0_26px_64px_rgba(5,14,24,0.15)] sm:p-9 lg:p-10 slide-in-left${showContent ? ' slide-active' : ''}`}
+						className="relative overflow-hidden rounded-[2.4rem] border-4 border-[#1d3a57] bg-white p-7 shadow-[0_26px_64px_rgba(5,14,24,0.15)] sm:p-9 lg:p-10"
 						variants={revealVariants}
 					>
 						<div className="absolute right-0 top-0 h-40 w-40 rounded-bl-[2.6rem] bg-[radial-gradient(circle,rgba(18,57,92,0.08),transparent_70%)]" />
@@ -253,7 +189,7 @@ export default function FoundationSection() {
 						</div>
 					</motion.div>
 
-					<div className={`grid gap-9 slide-in-right${showContent ? ' slide-active' : ''}`}>
+					<div className="grid gap-9">
 						{foundationCards.map((item) => {
 							const tone = FOUNDATION_TONE_CLASSES[item.tone];
 
@@ -315,7 +251,7 @@ export default function FoundationSection() {
 				</motion.div>
 
 				<motion.div
-					className={`overflow-hidden rounded-[2.4rem] border border-white/10 bg-[#081523] shadow-[0_28px_60px_rgba(2,8,17,0.34)] slide-up${showContent ? ' slide-active' : ''}`}
+					className="overflow-hidden rounded-[2.4rem] border border-white/10 bg-[#081523] shadow-[0_28px_60px_rgba(2,8,17,0.34)]"
 					variants={revealVariants}
 				>
 					<div className="grid lg:grid-cols-[1.05fr_0.95fr]">
@@ -385,7 +321,7 @@ export default function FoundationSection() {
 				</motion.div>
 			</motion.div>
 
-			<motion.div className={`pointer-events-none absolute inset-0 z-0 slide-up${showContent ? ' slide-active' : ''}`}>
+			<motion.div className="pointer-events-none absolute inset-0 z-0">
 				<div
 					style={{
 						position: "absolute",

@@ -100,18 +100,18 @@ export default function PrivacyPolicySection() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header className="sticky top-4 z-30 rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm backdrop-blur md:p-12">
+          <header className="sticky top-4 z-30 rounded-3xl border border-slate-200/70 bg-white p-6 shadow-sm backdrop-blur md:p-8">
             <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-blue-700">
               Legal Policy
             </span>
-            <h1 className="mt-5 font-(--font-playfair-display) text-4xl leading-tight text-slate-900 md:text-6xl">
+            <h1 className="mt-3 font-(--font-playfair-display) text-3xl leading-tight text-slate-900 md:text-5xl">
               SwiftRise Privacy Policy
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
+            <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">
               We are committed to protecting your privacy. This policy describes what information we collect,
               how we use it, and the rights you have when using SwiftRise.
             </p>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
               Effective Date: April 5, 2026
             </p>
           </header>

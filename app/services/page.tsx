@@ -21,8 +21,8 @@ export default function ServicesPage() {
       <HeroSection />
       <ServicesGridSection />
      
-      <TermsOfServiceSection />
-      <PrivacyPolicySection />
+      {/* <TermsOfServiceSection />
+      <PrivacyPolicySection /> */}
        <TestimonialsSection />
     </>
   );

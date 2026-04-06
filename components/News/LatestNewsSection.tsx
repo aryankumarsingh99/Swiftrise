@@ -113,9 +113,7 @@ export default function LatestNewsSection() {
 
               <h3 className="text-2xl font-semibold leading-tight text-white sm:text-3xl">{featured.title}</h3>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#d6e5ff] sm:text-base">{featured.excerpt}</p>
-              <a href="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#b7d3ff] transition hover:gap-3 hover:text-white">
-                Read full story <span aria-hidden="true">→</span>
-              </a>
+              
             </div>
           </motion.article>
 

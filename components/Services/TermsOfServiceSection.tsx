@@ -140,7 +140,7 @@ export default function TermsOfServiceSection() {
       <div className="relative w-full px-4 sm:px-6 lg:px-12 xl:px-18">
         <header className="mx-auto max-w-7xl text-center">
            
-          <h1 className="mt-4 font-(--font-playfair-display) text-3xl leading-tight text-[--ink] md:text-5xl">
+          <h1 className="mt-4 text-[#113f67] font-(--font-playfair-display) text-3xl leading-tight text-[--ink] md:text-5xl">
             SwiftRise Terms of Service
           </h1>
           <p className="mx-auto mt-4 max-w-[72ch] text-sm leading-relaxed text-slate-600 md:text-base">

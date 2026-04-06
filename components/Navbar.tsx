@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,7 +32,11 @@ export default function Navbar() {
 
 
       {/* Desktop Nav */}
-      <nav className="hidden items-center font-bold  pr-80 gap-10 text-[1.45rem] md:flex" aria-label="Hero navigation">
+      <nav
+        className="hidden items-center font-bold pr-80 gap-15 text-[1.45rem] md:flex"
+        style={{ fontFamily: "var(--font-playfair-display), serif" }}
+        aria-label="Hero navigation"
+      >
         {[
           { href: "/", label: "HOME" },
           { href: "/about", label: "ABOUT US" },
@@ -87,7 +90,11 @@ export default function Navbar() {
         >
           &times;
         </button>
-        <nav className="flex flex-col items-center justify-center gap-8 mt-20 text-xl" aria-label="Mobile navigation">
+        <nav
+          className="mt-20 flex flex-col items-center justify-center gap-8 text-xl"
+          style={{ fontFamily: "var(--font-playfair-display), serif" }}
+          aria-label="Mobile navigation"
+        >
           <Link className="transition hover:text-white" href="/" onClick={() => setMenuOpen(false)}>
             HOME
           </Link>

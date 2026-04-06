@@ -107,8 +107,9 @@ export default function ScrollToHomeButton() {
         isVisible ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >
-      {isChatOpen && (
-        <div className="w-[24rem] rounded-2xl border border-[#12395c]/20 bg-white shadow-[0_20px_48px_rgba(18,57,92,0.24)]">
+      <div className="relative flex flex-col items-end gap-3">
+        {isChatOpen && (
+          <div className="absolute bottom-0 right-16 z-10 w-[min(24rem,calc(100vw-6.5rem))] rounded-2xl border border-[#12395c]/20 bg-white shadow-[0_20px_48px_rgba(18,57,92,0.24)]">
           <div className="flex items-center justify-between rounded-t-2xl bg-[#12395c] px-5 py-3.5 text-white">
             <div className="flex items-center gap-2.5 text-base font-semibold">
               <FaRobot />
@@ -155,34 +156,35 @@ export default function ScrollToHomeButton() {
             </button>
           </form>
         </div>
-      )}
+        )}
 
-      <button
-        type="button"
-        aria-label="Scroll to contact section"
-        onClick={handleEmailClick}
-        className="flex h-14 w-14 items-center justify-center rounded-full border border-[#12395c]/35 bg-white text-[#12395c] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/60 hover:bg-[#e9f1fb]"
-      >
-        <FaEnvelope className="text-xl" />
-      </button>
+        <button
+          type="button"
+          aria-label="Scroll to contact section"
+          onClick={handleEmailClick}
+          className="flex h-14 w-14 items-center justify-center rounded-full border border-[#12395c]/35 bg-white text-[#12395c] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/60 hover:bg-[#e9f1fb]"
+        >
+          <FaEnvelope className="text-xl" />
+        </button>
 
-      <button
-        type="button"
-        aria-label="Open chat assistant"
-        onClick={() => setIsChatOpen((prev) => !prev)}
-        className="flex h-14 w-14 items-center justify-center rounded-full border border-[#12395c]/35 bg-white text-[#12395c] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/60 hover:bg-[#e9f1fb]"
-      >
-        {isChatOpen ? <FaTimes className="text-lg" /> : <FaRobot className="text-xl" />}
-      </button>
+        <button
+          type="button"
+          aria-label="Open chat assistant"
+          onClick={() => setIsChatOpen((prev) => !prev)}
+          className="flex h-14 w-14 items-center justify-center rounded-full border border-[#12395c]/35 bg-white text-[#12395c] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/60 hover:bg-[#e9f1fb]"
+        >
+          {isChatOpen ? <FaTimes className="text-lg" /> : <FaRobot className="text-xl" />}
+        </button>
 
-      <button
-        type="button"
-        aria-label="Scroll to home section"
-        onClick={handleClick}
-        className="flex h-14 w-14 items-center justify-center rounded-full border border-[#12395c]/35 bg-[#12395c] text-[#ffffff] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/55 hover:bg-linear-to-b hover:from-[#73bcfb] hover:to-[#12395c]"
-      >
-        <FaArrowUp className="text-xl" />
-      </button>
+        <button
+          type="button"
+          aria-label="Scroll to home section"
+          onClick={handleClick}
+          className="flex h-14 w-14 items-center justify-center rounded-full border border-[#12395c]/35 bg-[#12395c] text-[#ffffff] shadow-[0_10px_24px_rgba(18,57,92,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[#12395c]/55 hover:bg-linear-to-b hover:from-[#73bcfb] hover:to-[#12395c]"
+        >
+          <FaArrowUp className="text-xl" />
+        </button>
+      </div>
     </div>
   );
 }

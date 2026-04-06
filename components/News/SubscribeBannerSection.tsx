@@ -46,12 +46,11 @@ export default function SubscribeBannerSection() {
             <div className="flex flex-col items-stretch gap-3 md:min-w-52">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 bg-white/12 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#0f1f44]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 bg-white/12 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5  hover:bg-white/20"
               >
                 Stay Connected <span aria-hidden="true">↗</span>
               </a>
-              <p className="text-center text-xs text-[#b8d6ff]">No spam. Unsubscribe anytime.</p>
-            </div>
+             </div>
           </div>
         </div>
       </div>

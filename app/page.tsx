@@ -11,13 +11,17 @@ import PageLoader from "@/components/PageLoader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    absolute: "Swiftrise Solution Pvt.Ltd",
+  },
   description:
     "SwiftRise helps organizations build reliable digital products with software engineering, cloud architecture, and data-driven platform solutions.",
   alternates: {
     canonical: "/",
   },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://swiftrise.com";
 
 type IconKind = "draft" | "gear" | "factory" | "chart" | "shield" | "team" | "target" | "time";
  
@@ -102,15 +106,46 @@ export default function Home() {
     { icon: "time", title: "Long-Term Partnership", text: "Support beyond handover with optimization and scaling guidance." },
   ];
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "SwiftRise Pvt Ltd",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    sameAs: [],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "SwiftRise Pvt Ltd",
+    url: siteUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/news?query={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
-    <PageLoader>
-      <Navbar />
-      <HeroSection />
-      <FoundationSection />
-      <SolutionsSection />
-       <AboutSection />
-       <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
-      <NewsletterSection />
-    </PageLoader>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <PageLoader>
+        <Navbar />
+        <HeroSection />
+        <FoundationSection />
+        <SolutionsSection />
+         <AboutSection />
+         <ChooseUsSection choosePoints={choosePoints} IconBadge={IconBadge} />
+        <NewsletterSection />
+      </PageLoader>
+    </>
   );
 }

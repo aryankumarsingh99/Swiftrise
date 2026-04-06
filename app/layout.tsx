@@ -17,10 +17,64 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://swiftrise.com";
+
 export const metadata: Metadata = {
-  title: "Swiftrise Solution Pvt.Ltd",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Swiftrise Solution Pvt.Ltd | Technology & Digital Solutions",
+    template: "%s | Swiftrise Solution Pvt.Ltd",
+  },
   description:
-    "Aurevia Group is a strategic partner for architecture, engineering, operations, and digital transformation projects.",
+    "Swiftrise Solution Pvt.Ltd delivers software engineering, cloud enablement, platform operations, and digital transformation services for modern businesses.",
+  keywords: [
+    "Swiftrise Solution Pvt.Ltd",
+    "software development company",
+    "digital transformation",
+    "cloud solutions",
+    "platform engineering",
+    "technology consulting",
+  ],
+  applicationName: "Swiftrise Solution Pvt.Ltd",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    title: "Swiftrise Solution Pvt.Ltd | Technology & Digital Solutions",
+    description:
+      "Swiftrise Solution Pvt.Ltd delivers software engineering, cloud enablement, platform operations, and digital transformation services for modern businesses.",
+    siteName: "Swiftrise Solution Pvt.Ltd",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Swiftrise Solution Pvt.Ltd",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Swiftrise Solution Pvt.Ltd | Technology & Digital Solutions",
+    description:
+      "Swiftrise Solution Pvt.Ltd delivers software engineering, cloud enablement, platform operations, and digital transformation services for modern businesses.",
+    images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "technology",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

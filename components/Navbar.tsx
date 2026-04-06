@@ -33,7 +33,7 @@ export default function Navbar() {
 
 
       {/* Desktop Nav */}
-      <nav className="hidden items-center font-bold  pr-90 gap-10 text-[1.45rem] md:flex" aria-label="Hero navigation">
+      <nav className="hidden items-center font-bold  pr-80 gap-10 text-[1.45rem] md:flex" aria-label="Hero navigation">
         {[
           { href: "/", label: "HOME" },
           { href: "/about", label: "ABOUT US" },

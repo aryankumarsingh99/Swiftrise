@@ -2,7 +2,6 @@
 
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 export default function SolutionsSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -32,7 +31,7 @@ export default function SolutionsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full min-h-[90vh] py-20 md:py-32 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="w-full min-h-[90vh] py-20 md:py-32 bg-linear-to-b from-white via-[#f4f8fc] to-white relative overflow-hidden">
       {/* Animated background style and elements (from FoundationSection) */}
       <style>{`
         @keyframes waveMove {
@@ -62,6 +61,62 @@ export default function SolutionsSection() {
         .slide-in-active {
           opacity: 1 !important;
           transform: translateX(0) !important;
+        }
+        @keyframes cardBorderPulse {
+          0% { box-shadow: 0 0 0 0 rgba(17, 63, 103, 0.16); }
+          50% { box-shadow: 0 0 0 10px rgba(17, 63, 103, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(17, 63, 103, 0); }
+        }
+        .offer-card {
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .offer-card::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 5px;
+          background: linear-gradient(90deg, #113f67 0%, #2c6da3 100%);
+          transform: scaleX(0.35);
+          transform-origin: left;
+          transition: transform 0.45s ease;
+        }
+        .offer-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.35) 50%, transparent 80%);
+          transform: translateX(-120%);
+          transition: transform 0.65s ease;
+          pointer-events: none;
+        }
+        .offer-card:hover {
+          transform: translateY(-8px) scale(1.01);
+          box-shadow: 0 20px 36px rgba(17, 63, 103, 0.22);
+          border-color: #2c6da3;
+          animation: cardBorderPulse 1.3s ease-out;
+        }
+        .offer-card:hover::before {
+          transform: scaleX(1);
+        }
+        .offer-card:hover::after {
+          transform: translateX(120%);
+        }
+        .offer-card h4 {
+          transition: color 0.35s ease, transform 0.35s ease;
+        }
+        .offer-card:hover h4 {
+          color: #0b3355;
+          transform: translateX(2px);
+        }
+        .section-glow-title {
+          position: relative;
+          display: inline-block;
+          text-shadow: 0 6px 20px rgba(17, 63, 103, 0.18);
         }
       `}</style>
 
@@ -105,31 +160,79 @@ export default function SolutionsSection() {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-16 md:grid-cols-2 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        {/* Header Section */}
         <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`}>
-          <p className="text-sm sm:text-base tracking-widest text-gray-500 mb-3">WHAT WE OFFER</p>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#113f67] mb-8 leading-tight">Solutions Built For<br />Lasting Security</h2>
-          <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">Life &amp; Healty Insurance</h3>
-          <p className="text-gray-600 mb-8 text-base sm:text-lg md:text-xl">Our life and health protection programs provide financial security for you, your family, and your key people in moments of uncertainty. From medical coverage and income replacement to legacy planning, our solutions help you stay focused on recovery and wellbeing instead of unexpected costs.</p>
-          <div className="flex flex-wrap gap-3 mb-10">
-            <span className="bg-[#22547f] text-white px-4 py-2 rounded text-sm sm:text-base">Medical expense coverage</span>
-            <span className="bg-[#22547f] text-white px-4 py-2 rounded text-sm sm:text-base">Flexible plans</span>
-            <span className="bg-[#22547f] text-white px-4 py-2 rounded text-sm sm:text-base">Critical illness protection</span>
-            <span className="bg-[#22547f] text-white px-4 py-2 rounded text-sm sm:text-base">Family security</span>
-          </div>
-          <p className="text-gray-700 text-sm sm:text-base md:text-lg max-w-lg">We provide integrated service solutions that enhance protection, improve clarity, and deliver consistent value for clients seeking reliable, long-term stability.</p>
+          <p className="inline-flex rounded-full border border-[#113f67]/25 bg-[#113f67]/8 px-4 py-1 text-sm sm:text-base tracking-widest text-[#113f67] mb-4">WHAT WE OFFER</p>
+          <h2 className="section-glow-title text-3xl sm:text-5xl md:text-6xl font-bold text-[#113f67] mb-10 leading-tight">Delivering Intelligent Solutions for a Digital-First World</h2>
+          <p className="text-gray-600 mb-8 text-base sm:text-lg md:text-lg max-w-3xl">At Swiftrise Solution Pvt. Ltd., we offer a comprehensive suite of technology solutions designed to empower businesses with scalability, intelligence, and performance. Our offerings are built to address modern challenges while enabling future-ready growth through innovation and precision engineering.</p>
         </div>
-        <div className={`flex justify-center items-center slide-in-right${showContent ? ' slide-in-active' : ''}`}> 
-          <div className="w-full h-80 xs:h-96 sm:h-128 md:h-152 rounded-2xl overflow-hidden border-6 border-[#113f67] flex items-center justify-center shadow-xl">
-            <Image
-              src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Family security and insurance"
-              width={1200}
-              height={900}
-              className="object-cover w-full h-full"
-              priority
-            />
+
+        {/* Offerings Grid */}
+        <div className="space-y-12">
+          <h3 className={`text-2xl sm:text-3xl font-semibold text-[#113f67] slide-in-left${showContent ? ' slide-in-active' : ''}`}>Our Offerings</h3>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* Offering 1 */}
+            <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`} style={{ transitionDelay: '0.1s' }}>
+              <div className="offer-card bg-white border-4 border-[#113f67] rounded-lg p-6 h-full">
+                <h4 className="text-xl font-semibold text-[#113f67] mb-3">Advanced Digital Engineering</h4>
+                <p className="text-gray-600 text-sm sm:text-base">We develop robust, scalable, and high-performance applications tailored to meet evolving business demands, ensuring seamless functionality and superior user experience.</p>
+              </div>
+            </div>
+
+            {/* Offering 2 */}
+            <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`} style={{ transitionDelay: '0.2s' }}>
+              <div className="offer-card bg-white border-4 border-[#113f67] rounded-lg p-6 h-full">
+                <h4 className="text-xl font-semibold text-[#113f67] mb-3">AI & Machine Learning Solutions</h4>
+                <p className="text-gray-600 text-sm sm:text-base">Harness the power of artificial intelligence to automate processes, gain predictive insights, and enable data-driven decision-making across your organization.</p>
+              </div>
+            </div>
+
+            {/* Offering 3 */}
+            <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`} style={{ transitionDelay: '0.3s' }}>
+              <div className="offer-card bg-white border-4 border-[#113f67] rounded-lg p-6 h-full">
+                <h4 className="text-xl font-semibold text-[#113f67] mb-3">Web & Platform Development</h4>
+                <p className="text-gray-600 text-sm sm:text-base">We create responsive, secure, and scalable web platforms that deliver exceptional user experiences and support business scalability.</p>
+              </div>
+            </div>
+
+            {/* Offering 4 */}
+            <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`} style={{ transitionDelay: '0.4s' }}>
+              <div className="offer-card bg-white border-4 border-[#113f67] rounded-lg p-6 h-full">
+                <h4 className="text-xl font-semibold text-[#113f67] mb-3">Mobile Application Development</h4>
+                <p className="text-gray-600 text-sm sm:text-base">From concept to deployment, we build intuitive and high-performance mobile applications designed for engagement and efficiency.</p>
+              </div>
+            </div>
+
+            {/* Offering 5 */}
+            <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`} style={{ transitionDelay: '0.5s' }}>
+              <div className="offer-card bg-white border-4 border-[#113f67] rounded-lg p-6 h-full">
+                <h4 className="text-xl font-semibold text-[#113f67] mb-3">Cloud & DevOps Enablement</h4>
+                <p className="text-gray-600 text-sm sm:text-base">Accelerate your digital transformation with secure cloud infrastructure, continuous integration pipelines, and optimized deployment strategies.</p>
+              </div>
+            </div>
+
+            {/* Offering 6 */}
+            <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`} style={{ transitionDelay: '0.6s' }}>
+              <div className="offer-card bg-white border-4 border-[#113f67] rounded-lg p-6 h-full">
+                <h4 className="text-xl font-semibold text-[#113f67] mb-3">Smart Systems & IoT Solutions</h4>
+                <p className="text-gray-600 text-sm sm:text-base">Enable intelligent connectivity with real-time data processing and automated systems for smarter operations and enhanced efficiency.</p>
+              </div>
+            </div>
+
+            {/* Offering 7 */}
+            <div className={`slide-in-left${showContent ? ' slide-in-active' : ''}`} style={{ transitionDelay: '0.7s' }}>
+              <div className="offer-card bg-white border-4 border-[#113f67] rounded-lg p-6 h-full">
+                <h4 className="text-xl font-semibold text-[#113f67] mb-3">Data Analytics & Insights</h4>
+                <p className="text-gray-600 text-sm sm:text-base">Transform raw data into actionable intelligence with advanced analytics, visualization, and reporting tools.</p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* Closing Statement */}
+        <div className={`bg-linear-to-r from-[#113f67]/5 to-[#22547f]/5 rounded-lg p-8 border-l-4 border-[#113f67] slide-in-left${showContent ? ' slide-in-active' : ''}`}>
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl max-w-3xl">Our offerings are designed not just to solve problems—but to create intelligent, scalable ecosystems that drive long-term business success.</p>
         </div>
       </div>
     </section>

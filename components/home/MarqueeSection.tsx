@@ -81,7 +81,7 @@ export default function MarqueeSection() {
                 <img
                   src={icon}
                   alt={`Brand ${idx % brandIcons.length + 1}`}
-                  className="h-40 w-40 object-contain"
+                  className={`h-40 w-40 object-contain transition-transform ${icon === "/logo4.png" ? "scale-300" : "scale-100"}`}
                   loading="lazy"
                 />
               </span>

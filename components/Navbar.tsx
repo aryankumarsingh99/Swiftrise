@@ -18,22 +18,22 @@ export default function Navbar() {
 
   return (
     <header
-      className={`flex items-center fixed top-0 left-0 w-full z-50 justify-between pt-6 gap-4 text-[0.98rem] text-white px-6 md:px-29 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-between gap-3 px-4 py-3 text-[0.98rem] text-white transition-colors duration-300 sm:px-6 sm:py-4 md:px-8 md:py-4 lg:gap-4 lg:px-29 lg:pt-6 lg:pb-0 ${
         scrolled ? "bg-[#113f67]" : "bg-transparent"
       }`}
     >
-      <Link href="/" aria-label="ECI home">
+      <Link href="/" aria-label="ECI home" className="shrink-0">
         <img
           src="/logo.png"
           alt="ECI Logo"
-          className="h-10 w-auto object-contain sm:h-15"
+          className="h-9 w-auto object-contain sm:h-10 md:h-9 lg:h-11 xl:h-13 2xl:h-15"
         />
       </Link>
 
 
       {/* Desktop Nav */}
       <nav
-        className="hidden items-center font-bold pr-80 gap-15 text-[1.45rem] md:flex"
+        className="hidden items-center font-bold lg:flex lg:gap-6 lg:pr-22 lg:text-[0.92rem] xl:gap-10 xl:pr-34 xl:text-[1.15rem] 2xl:gap-15 2xl:pr-90 2xl:text-[1.45rem]"
         style={{ fontFamily: "var(--font-playfair-display), serif" }}
         aria-label="Hero navigation"
       >
@@ -64,7 +64,7 @@ export default function Navbar() {
 
       {/* Mobile Hamburger */}
       <button
-        className="md:hidden flex flex-col justify-center items-center gap-1 w-10 h-10 focus:outline-none"
+        className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-1 focus:outline-none lg:hidden"
         aria-label="Open navigation menu"
         onClick={() => setMenuOpen((open) => !open)}
       >
@@ -80,7 +80,7 @@ export default function Navbar() {
       </button>
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed top-0 right-0 h-screen w-80 bg-[#0d1b36] shadow-lg z-50 transform transition-transform duration-300 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 z-50 h-screen w-[min(82vw,22rem)] transform bg-[#0d1b36] shadow-lg transition-transform duration-300 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
         style={{ boxShadow: menuOpen ? "-4px 0 24px rgba(0,0,0,0.18)" : "none" }}
       >
         <button
@@ -91,7 +91,7 @@ export default function Navbar() {
           &times;
         </button>
         <nav
-          className="mt-20 flex flex-col items-center justify-center gap-8 text-xl"
+          className="mt-20 flex flex-col items-center justify-center gap-8 text-lg sm:text-xl md:text-lg"
           style={{ fontFamily: "var(--font-playfair-display), serif" }}
           aria-label="Mobile navigation"
         >

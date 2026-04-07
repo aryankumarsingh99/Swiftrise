@@ -4,36 +4,60 @@ import { motion, type Variants } from "framer-motion";
 
 const services = [
   {
-    title: "Mobile Engineering",
+    titleLeft: "Digital Engineering &",
+    titleRight: "Product Development",
     description:
-      "Master planning, heritage-sensitive architecture, and future-ready spaces that balance character with performance.",
+      "We design and develop high-performance, scalable applications tailored to your business needs. From concept to deployment, our solutions are built for reliability, flexibility, and long-term growth.",
   },
   {
-    title: "AI / ML Integration",
+    titleLeft: "Artificial Intelligence &",
+    titleRight: "Machine Learning",
     description:
-      "Civil, mechanical, and electrical execution managed through disciplined timelines, clear documentation, and quality controls.",
+      "Leverage intelligent systems to automate processes, gain predictive insights, and enhance decision-making. We build AI-driven solutions that deliver real business value.",
   },
   {
-    title: "IOT & Digital Innovation",
+    title: "Web Application Development",
     description:
-      "Production process improvements, automation readiness, and retrofits that increase output without disrupting continuity.",
+      "Create fast, responsive, and secure web platforms with seamless user experiences and modern design standards.",
   },
   {
-    title: "Cyber Security",
+    title: "Mobile Application Development",
     description:
-      "Data-enabled operations, management dashboards, and practical AI integrations built around measurable business outcomes.",
+      "We build intuitive, high-performance mobile applications across platforms ensuring engagement, usability, and scalability.",
   },
   {
-    title: "Data Analytics & Big Data",
+    title: "Cloud Solutions & DevOps",
     description:
-      "Comprehensive maintenance, safety protocols, and operational support for seamless facility performance.",
+      "Accelerate your digital transformation with scalable cloud infrastructure, CI/CD pipelines, and optimized deployment strategies.",
   },
   {
-    title: "Blockchain & Web3 Solutions",
+    title: "IoT & Smart Systems",
     description:
-      "Comprehensive maintenance, safety protocols, and operational support for seamless facility performance.",
+      "Develop connected ecosystems with real-time monitoring, automation, and intelligent data processing.",
+  },
+  {
+     titleLeft: "Data Analytics & ",
+    titleRight: " Business Intelligence ",
+    description:
+      "Transform data into actionable insights with advanced analytics, dashboards, and reporting systems.",
+  },
+  {
+    titleLeft: "Security &",
+    titleRight: "Performance Optimization",
+    description:
+      "Ensure your systems are secure, resilient, and optimized for peak performance with advanced security practices and monitoring.",
   },
 ];
+
+const serviceApproach = [
+  "Tailored Solutions for Every Business",
+  "Scalable & Future-Ready Architecture",
+  "Agile Development & Rapid Delivery",
+  "Focus on Performance, Security & UX",
+];
+
+const closingStatement =
+  "Our services are designed to not just meet your current needs but to future-proof your business with intelligent, scalable, and high-impact technology solutions.";
 
 const unsplashImages = [
   "https://images.unsplash.com/photo-1647964185852-cdc3069aa0ab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -121,16 +145,15 @@ export default function ServicesGridSection() {
           We partner with startups and enterprises to design, build, and scale reliable digital products across mobile,
           AI, cloud, cybersecurity, data, and Web3 ecosystems.
         </motion.p>
-        <div className="overflow-x-auto py-2 md:overflow-x-visible">
-          <div className="flex w-max flex-row gap-4 md:w-full md:flex-row md:gap-8">
+        <div className="mt-8 grid grid-cols-1 gap-4 py-2 sm:grid-cols-2 lg:grid-cols-5 md:gap-8">
             {services.map((service, idx) => {
               return (
                 <motion.div
-                  key={service.title}
+                  key={service.title ?? `${service.titleLeft}-${service.titleRight}-${idx}`}
                   variants={cardMotion}
                   custom={idx}
                   className={
-                    "relative mx-0 flex h-60 min-w-[260px] max-w-[260px] items-end overflow-hidden rounded-xl border border-[#e2e3e8] shadow-md transition-all duration-500 group md:mx-2 md:h-85 md:w-full md:min-w-45 md:max-w-45 hover:md:min-w-85 hover:md:max-w-85" +
+                    "relative mx-0 flex h-60 items-end overflow-hidden rounded-xl border border-[#e2e3e8] shadow-md transition-all duration-500 group md:h-85" +
                     (idx === services.length - 1 ? " bg-linear-to-t from-[#e2e3e8] to-transparent" : "")
                   }
                   style={{
@@ -139,18 +162,54 @@ export default function ServicesGridSection() {
                     backgroundPosition: "center",
                   }}
                 >
-                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#232d4b]/90 to-transparent p-4 transition-transform duration-500 md:translate-y-full md:p-6 md:group-hover:translate-y-0">
-                    <p className="mb-1 text-lg font-bold text-white">{service.title}</p>
+                  <div className="absolute bottom-0 left-0 w-full bg-linear-to-t from-[#232d4b]/90 to-transparent p-4 transition-transform duration-500 md:translate-y-full md:p-6 md:group-hover:translate-y-0">
+                    {service.titleLeft && service.titleRight ? (
+                      <div className="mb-1 flex flex-col gap-1">
+                        <p className="text-lg font-bold text-white">{service.titleLeft}</p>
+                        <p className="text-lg font-bold text-white">{service.titleRight}</p>
+                      </div>
+                    ) : (
+                      <p className="mb-1 text-lg font-bold text-white">{service.title}</p>
+                    )}
                     <p className="text-sm text-white">{service.description}</p>
                   </div>
-                  <span className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-lg font-bold tracking-wide text-white transition-opacity duration-300 group-hover:opacity-0 md:block">
-                    {service.title}
-                  </span>
+                  {service.titleLeft && service.titleRight ? (
+                    <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-lg font-bold tracking-wide text-white transition-opacity duration-300 group-hover:opacity-0 md:flex flex-col gap-0 origin-center">
+                      <span>{service.titleLeft}</span>
+                      <span>{service.titleRight}</span>
+                    </div>
+                  ) : (
+                    <span className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-lg font-bold tracking-wide text-white transition-opacity duration-300 group-hover:opacity-0 md:block">
+                      {service.title}
+                    </span>
+                  )}
                 </motion.div>
               );
             })}
-          </div>
         </div>
+
+        <motion.div
+          variants={introMotion}
+          className="mt-12 overflow-hidden rounded-3xl border-3 border-[#113f67]  shadow-[0_18px_45px_-28px_rgba(38,86,165,0.55)]"
+        >
+          <div className="border-b border-[#dbe5f7] px-5 py-4 md:px-8 md:py-5">
+            <p className="text-[0.68rem] uppercase tracking-[0.16em] text-[#49648f]">Service Blueprint</p>
+            <h3 className="mt-1 text-xl font-(--font-playfair-display) text-[#11284d] md:text-3xl">Our Service Approach</h3>
+          </div>
+
+          <div className="grid gap-3 px-5 py-5 md:grid-cols-2 md:gap-4 md:px-8 md:py-7">
+            {serviceApproach.map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-xl border border-[#d8e3f5] bg-white/80 px-4 py-3">
+                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#2563eb]" />
+                <p className="text-sm font-medium leading-relaxed text-[#1d355e] md:text-base">{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="border-t border-[#dbe5f7] bg-[#113f67] px-5 py-5 md:px-8 md:py-6">
+             <p className="mt-2 max-w-4xl text-sm leading-relaxed text-[#ffffff] md:text-base">{closingStatement}</p>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );

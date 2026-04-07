@@ -102,10 +102,10 @@ export default function AboutSection() {
           />
           <div className="absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(8,32,84,0.38)_0%,rgba(4,27,82,0.72)_58%,rgba(2,21,70,0.88)_100%)] md:block" />
           <div className="absolute inset-0 hidden bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.14)_0%,transparent_35%),radial-gradient(circle_at_88%_68%,rgba(88,131,255,0.15)_0%,transparent_33%)] md:block" />
-           <div className="absolute inset-0 hidden items-center justify-end p-8 pointer-events-none md:flex">
-            <div className="max-w-[44ch]">
+          <div className="absolute inset-0 hidden items-end justify-center p-8 pointer-events-none md:flex">
+            <div className="max-w-2xl text-center">
               {aboutParagraphs.map((paragraph, index) => (
-                <p key={paragraph.slice(0, 24)} className={`text-[1.08rem] leading-relaxed text-[#ffffff]${index === 0 ? "" : " mt-4"}`}>
+                <p key={paragraph.slice(0, 24)} className={`text-[1rem] leading-relaxed text-[#ffffff]${index === 0 ? "" : " mt-3"}`}>
                   {paragraph}
                 </p>
               ))}
@@ -113,7 +113,7 @@ export default function AboutSection() {
           </div>
 
           <div className="md:hidden border-t border-[#d1d5de]/35 bg-[#08264c] px-5 py-6">
-            <div className="mx-auto max-w-[68ch]">
+            <div className="mx-auto max-w-full">
               {aboutParagraphs.map((paragraph, index) => (
                 <p key={`${paragraph.slice(0, 24)}-${index}`} className={`text-[0.98rem] leading-7 tracking-[0.01em] text-[#f7fbff]${index === 0 ? "" : " mt-4"}`}>
                   {paragraph}

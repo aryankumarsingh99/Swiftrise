@@ -18,18 +18,17 @@ export default function HeroSection() {
         <div className="mt-auto">
           <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">SERVICES</p>
           <h1 className="max-w-[18ch] text-4xl font-medium leading-[1.06] sm:text-5xl md:text-6xl lg:text-7xl">
-            Technology services built for scale
+            Engineering Intelligent Solutions for Scalable Growth
           </h1>
 
           <div className="mt-8 border-t border-white/35 pt-5 md:mt-12 md:pt-7">
             <div className="grid gap-5 text-[1.08rem] leading-relaxed text-white/90 md:grid-cols-[1fr_1fr_auto] md:items-start md:gap-10">
-              <p className="max-w-[34ch]">
-                From product engineering and cloud architecture to automation and modernization, our services are designed to deliver measurable business outcomes.
+              <p className="max-w-full md:max-w-[34ch]">
+                At Swiftrise Solution Pvt. Ltd., we deliver a comprehensive suite of technology services designed to help businesses innovate, scale, and stay ahead in a rapidly evolving digital landscape.
               </p>
-              <p className="max-w-[36ch]">
-                We help teams move from idea to launch with reliable execution, transparent delivery, and long-term technical support.
+              <p className="max-w-full md:max-w-[36ch]">
+                Our services combine advanced engineering, AI-driven intelligence, and modern infrastructure to create impactful, future-ready solutions.
               </p>
-               
             </div>
           </div>
         </div>

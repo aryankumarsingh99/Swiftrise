@@ -31,7 +31,7 @@ export default function ContactFormSection({ status }: ContactFormSectionProps) 
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    formData.append("_subject", "SwiftRise Website Contact Request");
+    formData.append("_subject", "SwiftRise Technology Consultation Request");
     formData.append("_captcha", "false");
     formData.append("_template", "table");
 
@@ -74,23 +74,23 @@ export default function ContactFormSection({ status }: ContactFormSectionProps) 
       <div className="relative mx-auto w-[92vw] max-w-7xl rounded-[1.8rem] p-4  backdrop-blur-sm sm:p-6 md:p-8">
         <div className="grid gap-8 md:grid-cols-[0.88fr_1.12fr]">
           <aside className="rounded-[1.35rem] border-4 border-[#113f67] p-6 md:p-7">
-            <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#4a637d]">Advisory</p>
+            <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#4a637d]">Technology Partner</p>
             <h2 className="max-w-[16ch] font-(--font-playfair-display) text-3xl leading-tight text-[#132c46] md:text-[2.65rem]">
-              A Contact Experience Built For Decision Makers
+              Connect With Our Technology Team
             </h2>
             <p className="mt-4 leading-7 text-[#4d657d]">
-              This conversation is where strategic clarity begins. Share your priorities and we will return a tailored plan with milestones, ownership, and expected outcomes.
+              Tell us what you are building or modernizing. We will respond with a technical plan covering architecture, timelines, and the right delivery model for your goals.
             </p>
 
             <div className="mt-7 grid gap-3">
               <div className="rounded-xl border border-[#163b60]/13 bg-white/65 px-4 py-3 text-sm text-[#2b4862]">
-                Discovery call and scope definition
+                Product discovery and technical scoping
               </div>
               <div className="rounded-xl border border-[#163b60]/13 bg-white/65 px-4 py-3 text-sm text-[#2b4862]">
-                Architecture of execution roadmap
+                Solution architecture and cloud planning
               </div>
               <div className="rounded-xl border border-[#163b60]/13 bg-white/65 px-4 py-3 text-sm text-[#2b4862]">
-                Delivery governance and reporting cadence
+                Agile delivery and post-launch support
               </div>
             </div>
 
@@ -115,9 +115,9 @@ export default function ContactFormSection({ status }: ContactFormSectionProps) 
             className="grid gap-4 rounded-[1.35rem] border-4 border-[#163b60] p-6 shadow-[0_20px_42px_rgba(22,43,62,0.12)] md:p-7"
           >
             <div className="mb-2 flex flex-wrap items-center justify-between gap-3 border-b border-[#163b60]/10 pb-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4b657d]">Project Inquiry</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4b657d]">Technology Inquiry</p>
               <span className="rounded-full border border-[#163b60]/18 bg-[#113f67] px-3 py-1 text-[11px] font-medium text-[#ffffff]">
-                Priority response in 24 hours
+                Engineering response in 24 hours
               </span>
             </div>
 
@@ -162,7 +162,7 @@ export default function ContactFormSection({ status }: ContactFormSectionProps) 
                 name="message"
                 rows={6}
                 required
-                placeholder="Share your goals, expected timeline, available resources, and the challenges you want to solve."
+                placeholder="Share your product idea, technical challenges, expected timeline, preferred tech stack, and business goals."
               />
             </label>
 
@@ -181,13 +181,13 @@ export default function ContactFormSection({ status }: ContactFormSectionProps) 
             ) : null}
 
             <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
-              <p className="text-xs tracking-[0.12em] text-[#5e778e]">By submitting this form, you agree to be contacted by our advisory team.</p>
+              <p className="text-xs tracking-[0.12em] text-[#5e778e]">By submitting this form, you agree to be contacted by our engineering and consulting team.</p>
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-[#163b60] to-[#12395c] px-6 py-3 text-[0.95rem] font-semibold tracking-[0.12em] text-[#f8ecd6] transition hover:-translate-y-px hover:from-[#1b4f7a] hover:to-[#15466f]"
               >
-                {isSubmitting ? "Sending..." : "Send Request"}
+                {isSubmitting ? "Sending..." : "Send Inquiry"}
               </button>
             </div>
           </form>

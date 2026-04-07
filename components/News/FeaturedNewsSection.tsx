@@ -6,20 +6,20 @@ import { useRef } from "react";
 
 const featuredItems = [
   {
-    title: "Global Operations Expansion Across 6 New Markets",
+    title: "SwiftRise Launches AI Engineering Pods Across 6 Delivery Hubs",
     summary:
-      "Our latest expansion strengthens delivery capabilities and enables faster client support in emerging regions.",
+      "The new pods combine product engineers, cloud architects, and QA automation specialists to accelerate global software delivery.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    tag: "Company",
+    tag: "Engineering",
   },
   {
-    title: "Sustainability Initiative Reduces Operational Waste By 31%",
+    title: "Platform Modernization Program Cuts Cloud Waste By 31%",
     summary:
-      "A cross-functional initiative has helped reduce waste and improve resource efficiency across our core facilities.",
+      "Our FinOps and DevOps teams optimized workloads, reduced idle resources, and improved release reliability across client environments.",
     image:
       "https://images.unsplash.com/photo-1762330464006-46181dfe3381?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tag: "Impact",
+    tag: "Cloud",
   },
 ];
 
@@ -83,9 +83,9 @@ export default function FeaturedNewsSection() {
         >
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#1d4ed8]">Top Stories</p>
-            <h2 className="text-3xl font-semibold text-[#172849] sm:text-4xl">Featured News</h2>
+            <h2 className="text-3xl font-semibold text-[#172849] sm:text-4xl">Featured Technology News</h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#5f7392] sm:text-base">
-              Carefully selected updates with the highest strategic and operational relevance.
+              Key updates from our engineering teams on product releases, platform upgrades, and scalable delivery initiatives.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function FeaturedNewsSection() {
               className="inline-flex items-center gap-2 rounded-full border border-[#cad8f6] bg-white px-5 py-2.5 text-sm font-semibold text-[#1d4ed8] shadow-[0_8px_18px_rgba(23,40,73,0.1)] transition hover:-translate-y-0.5 hover:bg-[#eef3ff]"
               href="#latest-news"
             >
-              View all updates <span aria-hidden="true">→</span>
+              View all technology updates <span aria-hidden="true">→</span>
             </a>
           </div>
         </motion.div>
@@ -135,7 +135,7 @@ export default function FeaturedNewsSection() {
                   <h3 className="text-xl font-semibold leading-snug text-[#172849]">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-[#5d7191] sm:text-base">{item.summary}</p>
                   <a href="/contact" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] transition group-hover:gap-3">
-                    Explore story <span aria-hidden="true">→</span>
+                    Talk to our tech team <span aria-hidden="true">→</span>
                   </a>
                 </div>
               )}

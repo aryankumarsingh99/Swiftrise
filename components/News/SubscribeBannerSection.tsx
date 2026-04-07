@@ -24,18 +24,18 @@ export default function SubscribeBannerSection() {
                 Newsletter
               </p>
               <h3 className="mt-4 max-w-[22ch] text-2xl font-semibold leading-tight sm:text-3xl md:text-4xl">
-                Get News Delivered To Your Inbox
+                Get Technology Updates In Your Inbox
               </h3>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#dbe9ff] sm:text-base">
-                Receive monthly updates on milestones, announcements, and thought leadership.
+                Receive monthly briefs on product launches, engineering insights, cloud modernization, and AI-driven solutions.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
                 <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#dbe9ff]">
-                  Monthly Brief
+                  Release Notes
                 </span>
                 <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#dbe9ff]">
-                  Industry Insights
+                  Engineering Insights
                 </span>
                 <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#dbe9ff]">
                   Product Updates
@@ -48,7 +48,7 @@ export default function SubscribeBannerSection() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 bg-white/12 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5  hover:bg-white/20"
               >
-                Stay Connected <span aria-hidden="true">↗</span>
+                Connect With Our Team <span aria-hidden="true">↗</span>
               </a>
              </div>
           </div>

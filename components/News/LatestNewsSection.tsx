@@ -7,33 +7,33 @@ import { useRef } from "react";
 const updates = [
   {
     date: "Apr 02, 2026",
-    category: "Research",
-    title: "Quarterly Industry Brief Released",
-    excerpt: "Our research team published insights on operational resilience trends for 2026.",
+    category: "Engineering",
+    title: "Q2 Engineering Report Published",
+    excerpt: "Our platform team shared key improvements in deployment speed, observability, and release quality.",
     image:
       "https://images.unsplash.com/photo-1551836022-8b2858c9c69b?auto=format&fit=crop&w=1400&q=80",
   },
   {
     date: "Mar 24, 2026",
     category: "Partnership",
-    title: "New Partnership Announced",
-    excerpt: "A strategic collaboration expands our service footprint and delivery speed.",
+    title: "Cloud Alliance Expands Delivery Capability",
+    excerpt: "A new technology partnership strengthens our cloud migration and managed infrastructure services.",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
   },
   {
     date: "Mar 10, 2026",
-    category: "Leadership",
-    title: "Leadership Forum Highlights",
-    excerpt: "Executives shared practical frameworks for sustainable and scalable growth.",
+    category: "Product",
+    title: "Product Delivery Forum Highlights",
+    excerpt: "Product leads and architects shared proven frameworks for scaling SaaS platforms with confidence.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
   },
   {
     date: "Mar 05, 2026",
     category: "Technology",
-    title: "AI-Powered Analytics Platform Launched",
-    excerpt: "Revolutionary analytics engine delivers real-time insights with advanced machine learning capabilities.",
+    title: "AI Analytics Platform Released",
+    excerpt: "Our new analytics suite delivers real-time dashboards, predictive insights, and automated anomaly detection.",
     image:
       "https://images.unsplash.com/photo-1555949519-2d0b1a30c49d?auto=format&fit=crop&w=1200&q=80",
   }  
@@ -85,7 +85,7 @@ export default function LatestNewsSection() {
 
         <div className="mb-8">
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#d4e4ff] sm:text-base">
-            Follow our recent announcements, industry insights, and company developments.
+            Track the latest releases, engineering practices, and technology announcements from SwiftRise.
           </p>
         </div>
 
@@ -126,7 +126,7 @@ export default function LatestNewsSection() {
           >
             <div className="pointer-events-none absolute left-7 top-16 hidden h-[calc(100%-5rem)] w-px bg-linear-to-b from-[#7db2ff]/55 via-[#7db2ff]/25 to-transparent sm:block" />
             <div className="mb-4 flex items-center justify-between">
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#b6d4ff]">More Headlines</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#b6d4ff]">More Tech Headlines</p>
             </div>
 
             <div className="grid gap-4">

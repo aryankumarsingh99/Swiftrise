@@ -1,15 +1,15 @@
 const testimonials = [
   {
     quote:
-      "Aurevia combines old-school professionalism with modern delivery discipline. Our board trusted their reporting from week one.",
+      "SwiftRise combines strong engineering standards with fast execution. From sprint one, we had complete visibility into delivery, quality, and release progress.",
     author: "Anita Rao",
-    role: "Director, Halden Properties",
+    role: "Director, Nexora Digital",
   },
   {
     quote:
-      "They redesigned our operations without creating disruption on the floor. The practical impact was immediate and measurable.",
+      "They modernized our legacy platform with zero downtime. Performance improved immediately, and our team now ships features with confidence.",
     author: "Marcus Bell",
-    role: "Plant Head, NorthRiver Industries",
+    role: "CTO, NorthRiver Tech",
   },
 ];
 
@@ -40,8 +40,12 @@ export default function TestimonialsSection() {
       <div className="relative mx-auto w-[92vw] max-w-7xl">
         
         <h2 className="font-playfair-display mb-12 max-w-[32ch] text-3xl font-extrabold text-slate-900 drop-shadow-sm md:text-5xl">
-          Partnerships built on <span className="text-indigo-700">performance</span> and <span className="text-cyan-600">trust</span>.
+          Technology partnerships built on <span className="text-indigo-700">engineering excellence</span> and <span className="text-cyan-600">reliable delivery</span>.
         </h2>
+        <p className="-mt-8 mb-10 max-w-3xl text-sm leading-relaxed text-slate-600 md:text-base">
+          From cloud-native architecture to AI-enabled workflows, we help teams launch faster, scale securely, and maintain
+          long-term product stability.
+        </p>
         <div className="grid gap-10 md:grid-cols-2">
           {testimonials.map((item, idx) => (
             <div

@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="animate-rise relative isolate min-h-screen overflow-hidden text-white">
       <Image
         src={imageSet.hero}
-        alt="Leadership team in strategic meeting"
+        alt="Technology team collaborating on a software project"
         fill
         priority
         className="object-cover"
@@ -23,20 +23,20 @@ export default function HeroSection() {
         <div className="mt-auto">
           <p className="mb-4 text-xs font-semibold tracking-[0.38em] text-[#e2c99d] sm:text-sm">CONTACT</p>
           <h1 className="max-w-[15ch] font-(--font-playfair-display) text-4xl leading-[1.05] text-[#fefaf0] sm:text-5xl md:text-6xl lg:text-7xl">
-            Let us shape your next chapter.
+            Let us build your next digital product.
           </h1>
 
           <div className="mt-8 rounded-2xl border border-white/24 bg-[#0f2748]/42 px-5 py-5 backdrop-blur-sm md:mt-12 md:px-7 md:py-6">
             <div className="grid gap-6 text-base leading-relaxed text-white/90 md:grid-cols-[1fr_1fr_auto] md:items-start md:gap-10">
               <p className="max-w-[34ch]">
-                Tell us where you are now and where you want to go. We will propose a focused roadmap with clear business value.
+                Share your current systems, product vision, and growth goals. We will map the right technology strategy for measurable outcomes.
               </p>
               <p className="max-w-[36ch]">
-                Our team will respond with practical steps and tailored solutions for your needs.
+                From custom software and cloud to automation and support, our team will respond with practical, execution-ready solutions.
               </p>
               <a
                 className="inline-flex items-center gap-2 self-end whitespace-nowrap rounded-full border border-[#e2c99d]/70 bg-[#e2c99d]/15 px-5 py-2 text-sm font-semibold tracking-[0.14em] text-[#f8ecd6] transition hover:-translate-y-px hover:bg-[#e2c99d]/25"
-                href="mailto:hello@aurevia.com"
+                href="mailto:contactswiftrise@gmail.com"
               >
                 Email Us <span aria-hidden="true">↗</span>
               </a>

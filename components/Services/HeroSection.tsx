@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="animate-rise relative isolate min-h-[100vh] overflow-hidden text-white">
+    <section className="animate-rise relative isolate min-h-screen overflow-hidden text-white">
       <Image
         src={"https://images.unsplash.com/flagged/photo-1553267252-d100936057c1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-        alt="Leadership team in strategic meeting"
+        alt="Technology team collaborating on software delivery"
         fill
         priority
         className="object-cover"
@@ -18,16 +18,16 @@ export default function HeroSection() {
         <div className="mt-auto">
           <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">SERVICES</p>
           <h1 className="max-w-[18ch] text-4xl font-medium leading-[1.06] sm:text-5xl md:text-6xl lg:text-7xl">
-            Capabilities for every phase of growth
+            Technology services built for scale
           </h1>
 
           <div className="mt-8 border-t border-white/35 pt-5 md:mt-12 md:pt-7">
             <div className="grid gap-5 text-[1.08rem] leading-relaxed text-white/90 md:grid-cols-[1fr_1fr_auto] md:items-start md:gap-10">
               <p className="max-w-[34ch]">
-                From architecture and planning to engineering, modernization, and digital transformation, our services are designed for measurable impact.
+                From product engineering and cloud architecture to automation and modernization, our services are designed to deliver measurable business outcomes.
               </p>
               <p className="max-w-[36ch]">
-                Discover how we help clients move from vision to execution with confidence and clarity.
+                We help teams move from idea to launch with reliable execution, transparent delivery, and long-term technical support.
               </p>
                
             </div>

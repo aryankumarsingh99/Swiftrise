@@ -5,10 +5,10 @@ export default function HeroSection() {
     "https://images.unsplash.com/photo-1612461313144-fc1676a1bf17?q=80&w=1102&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D0";
 
   return (
-    <section className="animate-rise relative isolate min-h-[100vh] overflow-hidden text-white">
+    <section className="animate-rise relative isolate min-h-screen overflow-hidden text-white">
       <Image
         src={heroImage}
-        alt="News and updates background"
+        alt="Technology team updates and engineering announcements"
         fill
         priority
         className="object-cover"
@@ -21,16 +21,16 @@ export default function HeroSection() {
         <div className="mt-auto">
           <p className="mb-3 text-[1.9rem] tracking-tight text-white/90">NEWS</p>
           <h1 className="max-w-[18ch] text-4xl font-medium leading-[1.06] sm:text-5xl md:text-6xl lg:text-7xl">
-            Latest Updates & Announcements
+            Product, Engineering & Platform Updates
           </h1>
 
           <div className="mt-8 border-t border-white/35 pt-5 md:mt-12 md:pt-7">
             <div className="grid gap-5 text-[1.08rem] leading-relaxed text-white/90 md:grid-cols-[1fr_1fr_auto] md:items-start md:gap-10">
               <p className="max-w-[34ch]">
-                Stay up to date with the latest news, updates, and announcements from our company.
+                Follow releases from our product, engineering, and cloud teams as we build and scale digital solutions.
               </p>
               <p className="max-w-[36ch]">
-                Discover how our innovations and milestones are shaping the industry and our community.
+                Explore launch notes, architecture insights, and delivery milestones that drive measurable business impact.
               </p>
               <a
                 className="inline-flex items-center gap-2 self-end whitespace-nowrap border-b border-white/65 pb-1 text-[1.85rem] font-medium text-white transition hover:border-white"

@@ -60,15 +60,23 @@ export default function Footer() {
             {/* Social icons */}
             <div className="mt-5 flex gap-3">
               {[
-                { label: "LinkedIn", path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z" },
-               
-                { label: "Instagram", path: "M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a4 4 0 100 8 4 4 0 000-8zm4.5-1a.7.7 0 100 1.4.7.7 0 000-1.4z" },
+                {
+                  label: "LinkedIn",
+                  path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z",
+                  href: "https://www.linkedin.com/company/swiftrise-solutions-pvt-ltd/"
+                },
+                {
+                  label: "Instagram",
+                  path: "M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a4 4 0 100 8 4 4 0 000-8zm4.5-1a.7.7 0 100 1.4.7.7 0 000-1.4z",
+                  href: "https://www.instagram.com/swiftrise.in?igsh=bDA0eWNuemtocjRi&utm_source=qr"
+                },
               ].map((s) => (
                 <a
                   key={s.label}
-                  href="#"
+                  href={s.href}
                   aria-label={s.label}
                   className="grid size-12 place-items-center rounded-full border border-white/20 text-white/50 transition hover:border-white/60 hover:text-white"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   <svg viewBox="0 0 24 24" fill="none" className="size-6" aria-hidden="true">
                     <path d={s.path} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

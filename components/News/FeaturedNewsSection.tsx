@@ -57,7 +57,7 @@ export default function FeaturedNewsSection() {
   return (
     <motion.section
       ref={sectionRef}
-      className="relative overflow-hidden bg-linear-to-b from-[#fefcf7] via-[#f5f8ff] to-[#edf3ff] px-0 py-14 sm:py-16 md:py-20"
+      className="relative overflow-hidden px-0 py-14 sm:py-16 md:py-20"
     >
       <motion.div className="pointer-events-none absolute inset-0" style={{ y: bgY }}>
  
@@ -107,20 +107,23 @@ export default function FeaturedNewsSection() {
               whileInView={cardMotion(index).whileInView}
               viewport={cardMotion(index).viewport}
               transition={cardMotion(index).transition}
-              className={`group relative overflow-hidden rounded-3xl border border-[#dbe5f8] bg-white shadow-[0_14px_34px_rgba(23,40,73,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_46px_rgba(23,40,73,0.16)] ${
+              className={`group relative overflow-hidden rounded-3xl border border-[#0c2d6c] shadow-[0_14px_34px_rgba(23,40,73,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_46px_rgba(23,40,73,0.16)] ${
                 index === 0 ? "" : "lg:self-start"
               }`}
             >
               <span className="pointer-events-none absolute inset-x-0 top-0 z-20 h-1 bg-linear-to-r from-[#1d4ed8]/0 via-[#1d4ed8]/55 to-[#1d4ed8]/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-              <div className={`relative overflow-hidden ${index === 0 ? "h-72 sm:h-80 lg:min-h-112" : "h-56 sm:h-64"}`}>
+              <div className={`relative overflow-hidden ${index === 0 ? "h-96 sm:h-[32rem] lg:h-[36rem]" : "h-56 sm:h-64"}`}>
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  priority={index === 0}
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
-                {index === 0 ? <div className="absolute inset-0 bg-linear-to-t from-[#0f1f44]/84 via-[#0f1f44]/30 to-transparent" /> : null}
+                {index === 0 ? (
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f1f44]/90 via-[#0f1f44]/40 to-transparent" />
+                ) : null}
               </div>
 
               {index === 0 ? (

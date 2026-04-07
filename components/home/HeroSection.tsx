@@ -28,8 +28,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative isolate min-h-[100vh] flex items-center justify-center overflow-hidden text-white pt-20 md:pt-0">
-      <div className="absolute inset-0 w-full h-full perspective-[1200px]">
+    <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden overflow-x-hidden text-white pt-20 md:pt-0">
+      <div className="absolute inset-0 h-full w-full overflow-hidden perspective-[1200px]">
         {heroImages.map((img, idx) => {
           // Improved 3D rotation (flip) effect
           let isActive = idx === imgIdx;
@@ -75,7 +75,7 @@ export default function HeroSection() {
                 under one integrated approach.
               </p>
               <Link
-                className="mx-auto inline-flex items-center gap-2 self-center whitespace-nowrap border-b border-white/65 pb-1 text-[1.5rem] font-medium text-white transition hover:border-white sm:text-[1.7rem] md:mx-0 md:self-end md:text-[1.85rem]"
+                className="mx-auto inline-flex items-center gap-2 self-center border-b border-white/65 pb-1 text-center text-[1.5rem] font-medium text-white transition hover:border-white sm:text-[1.7rem] md:mx-0 md:self-end md:whitespace-nowrap md:text-[1.85rem]"
                 href="/services"
               >
                 Explore Our Services <span aria-hidden="true">↗</span>

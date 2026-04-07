@@ -11,8 +11,8 @@ export default function NewsletterSection() {
           <div className="relative px-7 py-10 sm:px-10 md:px-12 md:py-14 lg:px-16">
             <div className="pointer-events-none absolute inset-0 opacity-30 [background:linear-gradient(120deg,transparent_0%,transparent_44%,rgba(29,78,216,0.08)_44.3%,rgba(29,78,216,0.08)_45.5%,transparent_45.8%,transparent_100%)]" />
             <p className="relative mb-4 inline-flex items-center rounded-full border border-[#c8d6f3] bg-white px-4 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">Tech Briefing</p>
-            <h2 className="relative max-w-xl font-[--font-playfair-display] text-3xl font-bold leading-tight text-[#172546] sm:text-[2.2rem] md:text-[2.55rem]">Modern technology insight,<span className="ml-2 text-[#1d4ed8]">practical engineering focus.</span></h2>
-            <p className="relative mt-5 max-w-xl text-base leading-relaxed text-[#3f4d68] sm:text-lg">Receive one concise monthly brief on product engineering, cloud architecture, AI automation, and real-world delivery lessons. Built for teams that value clarity over hype.</p>
+            <h2 className="relative max-w-xl font-[--font-playfair-display] text-3xl font-bold leading-tight text-[#172546] sm:text-[2.2rem] md:text-[2.55rem]">Deep Tech Intelligence with a Practical Engineering Perspective</h2>
+            <p className="relative mt-5 max-w-xl text-base leading-relaxed text-[#3f4d68] sm:text-lg">Our Tech Briefing delivers curated insights into emerging technologies, industry trends, and practical engineering applications. We bridge the gap between theoretical innovation and real-world deployment, ensuring that every insight is actionable, relevant, and aligned with business outcomes.</p>
             <div className="relative mt-8 grid gap-3 text-sm text-[#2f3f5f] sm:grid-cols-3">
               <div className="rounded-2xl border border-[#d7deee] bg-white px-4 py-3">
                 <p className="text-2xl font-semibold text-[#172546]">12k+</p>
@@ -28,8 +28,8 @@ export default function NewsletterSection() {
               </div>
             </div>
             <figure className="relative mt-8 rounded-2xl border border-[#d4dced] bg-[#f8faff] px-5 py-5 text-[#33466a] sm:px-6">
-              <blockquote className="text-[0.98rem] italic leading-relaxed sm:text-base">&ldquo;Concise, technical, and actionable. It helps our team make faster architecture and product decisions.&rdquo;</blockquote>
-              <figcaption className="mt-3 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-[#5f7195]">A. Verma, Engineering Manager</figcaption>
+              <blockquote className="text-[0.98rem] italic leading-relaxed sm:text-base">&ldquo;Our offerings are designed not just to solve problems—but to create intelligent, scalable ecosystems that drive long-term business success.&rdquo;</blockquote>
+              <figcaption className="mt-3 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-[#5f7195]">Strategic technology insight</figcaption>
             </figure>
           </div>
           <div className="relative border-t border-[#d5dff2] bg-[linear-gradient(160deg,#172546_0%,#1f3a70_58%,#244a8f_100%)] px-7 py-10 text-white sm:px-10 md:border-l md:border-t-0 md:px-10 md:py-14 lg:px-12">

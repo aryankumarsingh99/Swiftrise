@@ -15,10 +15,8 @@ export default function HeroSection() {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,26,56,0.44)_0%,rgba(6,32,72,0.78)_55%,rgba(5,20,44,0.9)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(255,255,255,0.16)_0%,transparent_34%),radial-gradient(circle_at_88%_72%,rgba(194,153,93,0.22)_0%,transparent_33%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.2)_0.7px,transparent_0.7px)] bg-size-[20px_20px] opacity-25" />
-      <div className="absolute left-8 right-8 top-20 hidden h-px bg-linear-to-r from-transparent via-white/40 to-transparent md:block" />
-
+       <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.2)_0.7px,transparent_0.7px)] bg-size-[20px_20px] opacity-25" />
+ 
       <div className="relative mx-auto flex min-h-[92vh] w-[94vw] max-w-330 flex-col px-2 pb-10 pt-8 sm:px-4 md:pb-14 md:pt-12">
         <div className="mt-auto">
           <p className="mb-4 text-xs font-semibold tracking-[0.38em] text-[#e2c99d] sm:text-sm">CONTACT</p>

@@ -63,19 +63,19 @@ export default function MarqueeSection() {
           </div>
         </div>
 
-        <div className="relative w-full overflow-hidden rounded-3xl border-2 border-[#113f67] bg-white/80 px-4 py-6 shadow-[0_18px_42px_rgba(17,63,103,0.12)] backdrop-blur-sm sm:px-7">
+        <div className="relative w-full overflow-hidden rounded-3xl border-2  bg-white/80 px-4 py-6 shadow-[0_18px_42px_rgba(17,63,103,0.12)] backdrop-blur-sm sm:px-7">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-[linear-gradient(90deg,rgba(248,251,255,0.95)_0%,rgba(248,251,255,0)_100%)]" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-[linear-gradient(270deg,rgba(248,251,255,0.95)_0%,rgba(248,251,255,0)_100%)]" />
 
           <div
-            className="flex w-max gap-14 animate-marquee"
+            className="flex w-max  animate-marquee"
             style={{ animation: 'marquee 22s linear infinite' }}
           >
             {[...brandIcons, ...brandIcons].map((icon, idx) => (
               <span
                 key={idx}
                 style={{ minWidth: 160 }}
-                className="flex h-52 w-52 items-center justify-center rounded-2xl border border-[#dce7f5] bg-white/95 shadow-[0_10px_26px_rgba(17,63,103,0.08)]"
+                className="flex h-52 w-52 items-center justify-center rounded-2xl "
               >
                 {/* Replace <img> with next/image for optimization if possible */}
                 <img

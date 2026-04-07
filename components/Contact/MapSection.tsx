@@ -17,7 +17,7 @@ export default function MapSection() {
             <div className="mt-7 space-y-3 rounded-2xl border-4 border-[#163b60] bg-[#ffffff] p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#4f6780]">Office</p>
               <p className="text-sm leading-6 text-[#18334d]">
-                SwiftRise Pvt Ltd
+                Swiftrise Solution Pvt Ltd
                 <br />
                 33/11, Star House, Lane-4, Bhagabat Sandhan Colony, Rasulgarh, Bhubaneswar, Odisha - 751010
                 <br />

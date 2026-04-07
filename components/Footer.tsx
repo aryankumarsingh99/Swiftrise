@@ -149,30 +149,8 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="mt-6">
-          <div className="mb-5 flex -translate-x-5 items-center justify-center gap-5 sm:gap-7">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/0/09/Ministry_of_External_Affairs_India.svg"
-              alt="Ministry of External Affairs India logo"
-              width={240}
-              height={64}
-              className="h-14 w-auto object-contain sm:h-16"
-            />
-            <Image
-              src="/MSME.jpg"
-              alt="MSME logo"
-              width={160}
-              height={160}
-              className="h-14 w-auto object-contain sm:h-16"
-            />
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Ministry_of_Corporate_Affairs_India.svg/960px-Ministry_of_Corporate_Affairs_India.svg.png"
-              alt="ISO 9001 certification logo"
-              width={160}
-              height={160}
-              className="h-14 w-auto object-contain sm:h-16"
-            />
-          </div>
+        <div className="mt-2">
+          
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5 text-base text-white/40">
             <p>&copy; {new Date().getFullYear()} Swiftrise Solution Pvt.Ltd. All rights reserved.</p>

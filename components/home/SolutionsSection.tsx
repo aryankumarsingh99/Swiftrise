@@ -122,6 +122,59 @@ export default function SolutionsSection() {
 
       {/* Animated background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
+        <svg
+          className="absolute inset-0 h-full w-full opacity-40"
+          viewBox="0 0 1200 700"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="techLineGradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#113f67" stopOpacity="0.05" />
+              <stop offset="50%" stopColor="#113f67" stopOpacity="0.16" />
+              <stop offset="100%" stopColor="#113f67" stopOpacity="0.05" />
+            </linearGradient>
+          </defs>
+          <path d="M0 150H1200" stroke="url(#techLineGradient)" strokeWidth="2" />
+          <path d="M0 350H1200" stroke="url(#techLineGradient)" strokeWidth="2" />
+          
+        </svg>
+
+        <svg
+          className="absolute left-8 top-10 h-72 w-72 opacity-200"
+          viewBox="0 0 320 320"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ animation: "gradPulse 8s ease-in-out infinite" }}
+          aria-hidden="true"
+        >
+          <circle cx="160" cy="160" r="110" stroke="#113f67" strokeOpacity="2.2" strokeWidth="2.5" strokeDasharray="8 10" />
+          <circle cx="160" cy="160" r="78" stroke="#2c6da3" strokeOpacity="2.24" strokeWidth="2" />
+          <path d="M160 50V270" stroke="#113f67" strokeOpacity="2.14" strokeWidth="2" />
+          <path d="M50 160H270" stroke="#113f67" strokeOpacity="2.14" strokeWidth="2" />
+        </svg>
+
+        <svg
+          className="absolute right-4 bottom-6 h-64 w-80 opacity-95"
+          viewBox="0 0 420 280"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ animation: "waveMove 24s linear infinite" }}
+          aria-hidden="true"
+        >
+          <path d="M12 198C90 120 154 255 232 198C302 145 347 235 410 192" stroke="#113f67" strokeOpacity="1.22" strokeWidth="4" strokeLinecap="round" />
+          <path d="M15 230C95 158 156 274 234 230C308 188 352 266 408 230" stroke="#2c6da3" strokeOpacity="1.26" strokeWidth="3" strokeLinecap="round" strokeDasharray="1 9" />
+          <circle cx="84" cy="124" r="6" fill="#113f67" fillOpacity="1.22" />
+          <circle cx="206" cy="90" r="8" fill="#2c6da3" fillOpacity="1.24" />
+          <circle cx="332" cy="130" r="6" fill="#113f67" fillOpacity="1.2" />
+        </svg>
+
+        <div className="absolute inset-x-0 top-0 h-36 bg-linear-to-b from-[#113f67]/6 to-transparent" />
+        <div className="absolute -left-24 top-28 h-64 w-64 rounded-full bg-[#113f67]/10 blur-3xl" />
+        <div className="absolute -right-24 bottom-16 h-72 w-72 rounded-full bg-[#2c6da3]/10 blur-3xl" />
+
         <div style={{
           position: 'absolute',
           left: '12%',

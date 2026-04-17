@@ -18,47 +18,48 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-between gap-3 px-4 py-3 text-[0.98rem] text-white transition-colors duration-300 sm:px-6 sm:py-4 md:px-8 md:py-4 lg:gap-4 lg:px-29 lg:pt-6 lg:pb-0 ${
+      className={`fixed top-0 left-0 z-50 w-full text-[0.98rem] text-white transition-colors duration-300 py-3 sm:py-4 lg:pt-6 lg:pb-0 ${
         scrolled ? "bg-[#113f67]" : "bg-transparent"
       }`}
     >
-      <Link href="/" aria-label="ECI home" className="shrink-0">
-        <img
-          src="/logo.png"
-          alt="ECI Logo"
-          className="h-9 w-auto object-contain sm:h-10 md:h-9 lg:h-11 xl:h-13 2xl:h-15"
-        />
-      </Link>
+      <div className="flex items-center gap-30 justify-start w-full ml-30">
+        <Link href="/" aria-label="ECI home" className="shrink-0">
+          <img
+            src="/logo.png"
+            alt="ECI Logo"
+            className="h-9 w-auto object-contain sm:h-10 md:h-9 lg:h-11 xl:h-13 2xl:h-15"
+          />
+        </Link>
+        {/* Desktop Nav */}
+        <nav
+          className="hidden items-center font-bold lg:flex lg:gap-8 lg:text-[0.98rem] xl:gap-10 xl:text-[1.1rem] 2xl:gap-12 2xl:text-[1.2rem]"
+          style={{ fontFamily: "var(--font-playfair-display), serif" }}
+          aria-label="Hero navigation"
+        >
+          {[
+            { href: "/", label: "HOME" },
+            { href: "/about", label: "ABOUT US" },
+            { href: "/services", label: "SERVICES" },
+            { href: "/news", label: "NEWS" },
+            { href: "/contact", label: "CONTACT" },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={
+                `group relative transition pb-1 ${pathname === item.href ? "text-white font-bold " : ""}`
+              }
+            >
+              {item.label}
+              <span
+                className={`absolute left-0 bottom-0 h-0.5 w-full bg-white transition-all duration-300 origin-left
+                  ${pathname === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+              />
+            </Link>
+          ))}
+        </nav>
+      </div>
 
-
-      {/* Desktop Nav */}
-      <nav
-        className="hidden items-center font-bold lg:flex lg:gap-6 lg:pr-22 lg:text-[0.92rem] xl:gap-10 xl:pr-34 xl:text-[1.15rem] 2xl:gap-15 2xl:pr-90 2xl:text-[1.45rem]"
-        style={{ fontFamily: "var(--font-playfair-display), serif" }}
-        aria-label="Hero navigation"
-      >
-        {[
-          { href: "/", label: "HOME" },
-          { href: "/about", label: "ABOUT US" },
-          { href: "/services", label: "SERVICES" },
-          { href: "/news", label: "NEWS" },
-          { href: "/contact", label: "CONTACT" },
-        ].map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={
-              `group relative transition pb-1 ${pathname === item.href ? "text-white font-bold " : ""}`
-            }
-          >
-            {item.label}
-            <span
-              className={`absolute left-0 bottom-0 h-0.5 w-full bg-white transition-all duration-300 origin-left
-                ${pathname === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
-            />
-          </Link>
-        ))}
-      </nav>
 
 
 

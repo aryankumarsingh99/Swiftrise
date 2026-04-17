@@ -22,63 +22,68 @@ export default function Navbar() {
         scrolled ? "bg-[#113f67]" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center gap-30 justify-start w-full ml-30">
-        <Link href="/" aria-label="ECI home" className="shrink-0">
-          <img
-            src="/logo.png"
-            alt="ECI Logo"
-            className="h-9 w-auto object-contain sm:h-10 md:h-9 lg:h-11 xl:h-13 2xl:h-15"
-          />
-        </Link>
-        {/* Desktop Nav */}
-        <nav
-          className="hidden items-center font-bold lg:flex lg:gap-8 lg:text-[0.98rem] xl:gap-10 xl:text-[1.1rem] 2xl:gap-12 2xl:text-[1.2rem]"
-          style={{ fontFamily: "var(--font-playfair-display), serif" }}
-          aria-label="Hero navigation"
-        >
-          {[
-            { href: "/", label: "HOME" },
-            { href: "/about", label: "ABOUT US" },
-            { href: "/services", label: "SERVICES" },
-            { href: "/news", label: "NEWS" },
-            { href: "/contact", label: "CONTACT" },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={
-                `group relative transition pb-1 ${pathname === item.href ? "text-white font-bold " : ""}`
-              }
-            >
-              {item.label}
-              <span
-                className={`absolute left-0 bottom-0 h-0.5 w-full bg-white transition-all duration-300 origin-left
-                  ${pathname === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
-              />
-            </Link>
-          ))}
-        </nav>
+      <div className="flex items-center w-full px-4 sm:px-6 lg:px-12">
+        {/* Logo + Desktop Nav Group */}
+        <div className="flex items-center gap-8 lg:gap-16 xl:gap-24 ml-0 lg:ml-24 xl:ml-32 2xl:ml-18">
+          <Link href="/" aria-label="ECI home" className="shrink-0">
+            <img
+              src="/logo.png"
+              alt="ECI Logo"
+              className="h-9 w-auto object-contain sm:h-10 md:h-9 lg:h-11 xl:h-13 2xl:h-15"
+            />
+          </Link>
+          <nav
+            className="hidden lg:flex items-center font-bold lg:gap-8 lg:text-[0.98rem] xl:gap-10 xl:text-[1.1rem] 2xl:gap-12 2xl:text-[1.2rem]"
+            style={{ fontFamily: "var(--font-playfair-display), serif" }}
+            aria-label="Hero navigation"
+          >
+            {[
+              { href: "/", label: "HOME" },
+              { href: "/about", label: "ABOUT US" },
+              { href: "/services", label: "SERVICES" },
+              { href: "/news", label: "NEWS" },
+              { href: "/contact", label: "CONTACT" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={
+                  `group relative transition pb-1 ${pathname === item.href ? "text-white font-bold " : ""}`
+                }
+              >
+                {item.label}
+                <span
+                  className={`absolute left-0 bottom-0 h-0.5 w-full bg-white transition-all duration-300 origin-left
+                    ${pathname === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                />
+              </Link>
+            ))}
+          </nav>
+        </div>
+        {/* Mobile Hamburger */}
+        <div className="flex-1 flex justify-end lg:hidden">
+          <button
+            className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-1 focus:outline-none"
+            aria-label="Open navigation menu"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span
+              className={`block h-1 w-7 bg-white rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+            ></span>
+            <span
+              className={`block h-1 w-7 bg-white rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
+            ></span>
+            <span
+              className={`block h-1 w-7 bg-white rounded transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            ></span>
+          </button>
+        </div>
       </div>
 
 
 
 
-      {/* Mobile Hamburger */}
-      <button
-        className="flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-1 focus:outline-none lg:hidden"
-        aria-label="Open navigation menu"
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        <span
-          className={`block h-1 w-7 bg-white rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-        ></span>
-        <span
-          className={`block h-1 w-7 bg-white rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
-        ></span>
-        <span
-          className={`block h-1 w-7 bg-white rounded transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-        ></span>
-      </button>
+      
       {/* Mobile Drawer Menu */}
       <div
         className={`fixed top-0 right-0 z-50 h-screen w-[min(82vw,22rem)] transform bg-[#0d1b36] shadow-lg transition-transform duration-300 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}

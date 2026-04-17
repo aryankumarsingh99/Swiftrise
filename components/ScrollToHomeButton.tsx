@@ -140,19 +140,25 @@ export default function ScrollToHomeButton() {
             ))}
           </div>
 
-          <form onSubmit={submitChat} className="flex items-center gap-2.5 border-t border-[#dce5f4] px-4 py-4">
+          <form 
+            onSubmit={submitChat} 
+            className="flex items-center gap-2.5 border-t border-[#dce5f4] px-4 py-4 sm:px-4 sm:py-4 sticky bottom-0 bg-white"
+            style={{zIndex: 20}}
+          >
             <input
               value={chatInput}
               onChange={(e) => setChatInput(e.target.value)}
               placeholder="Type your message..."
-              className="h-11 flex-1 rounded-lg border border-[#c9d8ee] px-3.5 text-base text-[#1f3550] outline-hidden transition focus:border-[#12395c]"
+              className="flex-1 rounded-lg border border-[#c9d8ee] px-3.5 text-base text-[#1f3550] outline-hidden transition focus:border-[#12395c] h-11 sm:h-11 md:h-12 lg:h-12 min-w-0"
+              style={{fontSize: '1rem', minHeight: '2.75rem'}}
             />
             <button
               type="submit"
               aria-label="Send message"
-              className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#12395c] text-white transition hover:bg-[#0f2f4d]"
+              className="flex h-11 w-11 sm:h-11 sm:w-11 md:h-12 md:w-12 items-center justify-center rounded-lg bg-[#12395c] text-white transition hover:bg-[#0f2f4d] active:scale-95"
+              style={{fontSize: '1.25rem'}}
             >
-              <FaPaperPlane className="text-sm" />
+              <FaPaperPlane />
             </button>
           </form>
         </div>

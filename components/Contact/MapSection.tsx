@@ -19,7 +19,7 @@ export default function MapSection() {
               <p className="text-sm leading-6 text-[#18334d]">
                 Swiftrise Solution Pvt Ltd
                 <br />
-                33/11, Star House, Lane-4, Bhagabat Sandhan Colony, Rasulgarh, Bhubaneswar, Odisha - 751010
+                Bhagabat Sandhan Colony, Rasulgarh, Bhubaneswar, Odisha - 751010
                 <br />
                 India
               </p>

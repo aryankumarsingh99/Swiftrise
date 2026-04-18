@@ -34,17 +34,17 @@ export default function MilestonesSection() {
 
   const milestones = [
     {
-      year: "2002",
+      year: "2026",
       title: "Foundation Year",
       description: "Aurevia Group launched with a clear focus on precision, reliability, and long-term client trust.",
     },
     {
-      year: "2010",
-      title: "100+ Projects Delivered",
+      year: "2026",
+      title: "50+ Projects Delivered",
       description: "Our portfolio expanded across multiple sectors with consistent delivery and measurable outcomes.",
     },
     {
-      year: "2018",
+      year: "2026",
       title: "Specialist Teams Built",
       description: "Dedicated expert teams were formed to provide tailored solutions for diverse operational needs.",
     },
@@ -56,9 +56,9 @@ export default function MilestonesSection() {
   ];
 
   const stats = [
-    { value: "24+", label: "Years Experience" },
-    { value: "180+", label: "Projects Delivered" },
-    { value: "11", label: "Specialist Teams" },
+    { value: "1+", label: "Years Experience" },
+    { value: "50+", label: "Projects Delivered" },
+    { value: "15", label: "Specialist Teams" },
     { value: "97%", label: "Client Retention" },
   ];
 

@@ -13,20 +13,7 @@ export default function NewsletterSection() {
             <p className="relative mb-4 inline-flex items-center rounded-full border border-[#c8d6f3] bg-white px-4 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-[#1d4ed8]">Tech Briefing</p>
             <h2 className="relative max-w-xl font-[--font-playfair-display] text-3xl font-bold leading-tight text-[#172546] sm:text-[2.2rem] md:text-[2.55rem]">Deep Tech Intelligence with a Practical Engineering Perspective</h2>
             <p className="relative mt-5 max-w-xl text-base leading-relaxed text-[#3f4d68] sm:text-lg">Our Tech Briefing delivers curated insights into emerging technologies, industry trends, and practical engineering applications. We bridge the gap between theoretical innovation and real-world deployment, ensuring that every insight is actionable, relevant, and aligned with business outcomes.</p>
-            <div className="relative mt-8 grid gap-3 text-sm text-[#2f3f5f] sm:grid-cols-3">
-              <div className="rounded-2xl border border-[#d7deee] bg-white px-4 py-3">
-                <p className="text-2xl font-semibold text-[#172546]">12k+</p>
-                <p className="mt-1 text-[0.72rem] uppercase tracking-[0.14em] text-[#62718f]">Tech Readers</p>
-              </div>
-              <div className="rounded-2xl border border-[#d7deee] bg-white px-4 py-3">
-                <p className="text-2xl font-semibold text-[#172546]">4.9/5</p>
-                <p className="mt-1 text-[0.72rem] uppercase tracking-[0.14em] text-[#62718f]">Community Rating</p>
-              </div>
-              <div className="rounded-2xl border border-[#d7deee] bg-white px-4 py-3">
-                <p className="text-2xl font-semibold text-[#172546]">1x</p>
-                <p className="mt-1 text-[0.72rem] uppercase tracking-[0.14em] text-[#62718f]">Issue / Month</p>
-              </div>
-            </div>
+             
             <figure className="relative mt-8 rounded-2xl border border-[#d4dced] bg-[#f8faff] px-5 py-5 text-[#33466a] sm:px-6">
               <blockquote className="text-[0.98rem] italic leading-relaxed sm:text-base">&ldquo;Our offerings are designed not just to solve problems—but to create intelligent, scalable ecosystems that drive long-term business success.&rdquo;</blockquote>
               <figcaption className="mt-3 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-[#5f7195]">Strategic technology insight</figcaption>

@@ -38,7 +38,7 @@ export default function Navbar() {
             aria-label="Hero navigation"
           >
             {[
-              { href: "/", label: "HOME" },
+              { href: "/", label: "HOME" }, 
               { href: "/about", label: "ABOUT US" },
               { href: "/services", label: "SERVICES" },
               { href: "/news", label: "NEWS" },

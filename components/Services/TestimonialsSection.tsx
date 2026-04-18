@@ -2,14 +2,20 @@ const testimonials = [
   {
     quote:
       "SwiftRise combines strong engineering standards with fast execution. From sprint one, we had complete visibility into delivery, quality, and release progress.",
-    author: "Anita Rao",
-    role: "Director, Nexora Digital",
+    author: "PK argo",
+    role: "Akasha  Madi",
   },
   {
     quote:
       "They modernized our legacy platform with zero downtime. Performance improved immediately, and our team now ships features with confidence.",
-    author: "Marcus Bell",
-    role: "CTO, NorthRiver Tech",
+    author: "rajlaxmi",
+    role: " Rajat Mahapatra",
+  },
+  {
+    quote:
+      "Swiftrise delivered our project ahead of schedule and exceeded our expectations. Their expertise and dedication are unmatched!",
+    author: "goldy",
+    role: "BADRI",
   },
 ];
 
@@ -46,7 +52,7 @@ export default function TestimonialsSection() {
           From cloud-native architecture to AI-enabled workflows, we help teams launch faster, scale securely, and maintain
           long-term product stability.
         </p>
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-3">
           {testimonials.map((item, idx) => (
             <div
               key={item.author}

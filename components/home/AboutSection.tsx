@@ -82,8 +82,9 @@ export default function AboutSection() {
             animate={textControls}
             whileHover={{ scale: 1.12, rotate: -1 }}
           >
-            <h2 className="max-w-full text-center text-4xl font-medium leading-[1.08] sm:max-w-[13ch] sm:text-5xl md:text-left md:text-[4.25rem]">
-              Who We Are as Your Digital Innovation Partner
+            <h2 className="max-w-full text-center text-4xl font-medium leading-[1.08] sm:text-5xl md:text-left md:text-[4.25rem]">
+              <span className="block whitespace-nowrap">Who We Are as Your</span>
+              <span className="block whitespace-nowrap"> Digital Innovation Partner</span>
             </h2>
           </motion.div>
         </div>

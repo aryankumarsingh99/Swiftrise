@@ -24,7 +24,7 @@ export default function HeroSection() {
           <div className="mt-8 border-t border-white/35 pt-5 md:mt-12 md:pt-7">
             <div className="grid gap-5 text-[1.08rem] leading-relaxed text-white/90 md:grid-cols-[1fr_1fr_auto] md:items-start md:gap-10">
               <p className="max-w-full md:max-w-[34ch]">
-                At Swiftrise Solution Pvt. Ltd., we deliver a comprehensive suite of technology services designed to help businesses innovate, scale, and stay ahead in a rapidly evolving digital landscape.
+                At Swiftrise Solution, we deliver a comprehensive suite of technology services designed to help businesses innovate, scale, and stay ahead in a rapidly evolving digital landscape.
               </p>
               <p className="max-w-full md:max-w-[36ch]">
                 Our services combine advanced engineering, AI-driven intelligence, and modern infrastructure to create impactful, future-ready solutions.

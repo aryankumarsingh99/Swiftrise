@@ -2,7 +2,7 @@ const testimonials = [
   {
     quote:
       "SwiftRise combines strong engineering standards with fast execution. From sprint one, we had complete visibility into delivery, quality, and release progress.",
-    author: "PK argo",
+    author: "PK Argo",
     role: "Akasha  Madi",
   },
   {
@@ -10,13 +10,7 @@ const testimonials = [
       "They modernized our legacy platform with zero downtime. Performance improved immediately, and our team now ships features with confidence.",
     author: "rajlaxmi",
     role: " Rajat Mahapatra",
-  },
-  {
-    quote:
-      "Swiftrise delivered our project ahead of schedule and exceeded our expectations. Their expertise and dedication are unmatched!",
-    author: "goldy",
-    role: "BADRI",
-  },
+  } 
 ];
 
 export default function TestimonialsSection() {
@@ -52,7 +46,7 @@ export default function TestimonialsSection() {
           From cloud-native architecture to AI-enabled workflows, we help teams launch faster, scale securely, and maintain
           long-term product stability.
         </p>
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2">
           {testimonials.map((item, idx) => (
             <div
               key={item.author}
@@ -63,7 +57,27 @@ export default function TestimonialsSection() {
               <blockquote className="relative z-10">
                 <p className="mb-8 text-xl font-medium italic leading-relaxed text-slate-800">&quot;{item.quote}&quot;</p>
                 <footer className="flex flex-col gap-0.5">
-                  <span className="text-lg font-semibold text-indigo-700">{item.author}</span>
+                  {item.author === 'PK Argo' ? (
+                    <a
+                      href="https://pkagroindustries.in"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold text-indigo-700 underline hover:text-indigo-900"
+                    >
+                      {item.author}
+                    </a>
+                  ) : item.author === 'rajlaxmi' ? (
+                    <a
+                      href="https://rajlaxmiwoodenfurniture.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold text-indigo-700 underline hover:text-indigo-900"
+                    >
+                      {item.author}
+                    </a>
+                  ) : (
+                    <span className="text-lg font-semibold text-indigo-700">{item.author}</span>
+                  )}
                   <span className="text-sm text-slate-500">{item.role}</span>
                 </footer>
               </blockquote>

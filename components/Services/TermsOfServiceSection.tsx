@@ -89,17 +89,62 @@ const termsSections = [
 
 export default function TermsOfServiceSection() {
   return (
-    <section id="terms-of-service" style={{ background: '#fff', padding: '2rem 0' }}>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 1rem' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: 8, textAlign: 'center', color: '#174ea6', padding: '0.75rem 1rem', borderRadius: '0.75rem', display: 'inline-block', boxShadow: '0 2px 8px 0 rgba(23,78,166,0.06)' }}>
+    <section
+      id="terms-of-service"
+      style={{
+        background: '#ffffff',
+        padding: 'clamp(1rem, 4vw, 2rem) 0',
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          margin: '0 auto',
+          padding: '0 0.75rem',
+          maxWidth: '900px',
+        }}
+      >
+        <style>{`
+          @media (max-width: 640px) {
+            #terms-of-service > div {
+              max-width: 100vw !important;
+              padding-left: 0.5rem !important;
+              padding-right: 0.5rem !important;
+            }
+          }
+        `}</style>
+        <h1
+          style={{
+            fontSize: 'clamp(1.3rem, 5vw, 2rem)',
+            fontWeight: 700,
+            color: '#113f67',
+            marginBottom: 8,
+            textAlign: 'center',
+            wordBreak: 'break-word',
+          }}
+        >
           SwiftRise Terms of Service
         </h1>
-         <p style={{ textAlign: 'center', color: '#666', marginBottom: 24 }}>
+        <p
+          style={{
+            textAlign: 'center',
+            color: '#666',
+            marginBottom: 24,
+            fontSize: 'clamp(0.95rem, 3vw, 1.1rem)',
+          }}
+        >
           This agreement outlines the rules and responsibilities for using SwiftRise, including account conduct, data usage, intellectual property, and legal limitations.
         </p>
         {termsSections.map((section) => (
           <div key={section.title} style={{ marginBottom: 24 }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 600,color: '#174ea6', marginBottom: 6 }}>
+            <h2
+              style={{
+                fontSize: '1.1rem',
+                fontWeight: 900,
+                color: '#113f67',
+                marginBottom: 6,
+              }}
+            >
               {section.title}
             </h2>
             {section.paragraphs?.map((paragraph) => (

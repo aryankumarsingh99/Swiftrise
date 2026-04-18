@@ -206,7 +206,7 @@ export default function Footer() {
             onClick={() => setOpenPolicyCard(null)}
           >
             <div
-              className="flex h-[98vh] w-[min(96vw,1120px)] flex-col overflow-hidden rounded-3xl "
+              className="flex w-[min(96vw,1100px)] flex-col overflow-hidden rounded-3xl max-h-[98vh] "
               onClick={(event) => event.stopPropagation()}
             >
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50/90 px-4 py-3 text-slate-700 sm:px-6">
@@ -248,8 +248,24 @@ export default function Footer() {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto bg-slate-50">
-                {openPolicyCard === "privacy" ? <PrivacyPolicySection /> : <TermsOfServiceSection />}
+              <div className="flex-1 overflow-y-auto flex justify-center items-start bg-neutral-100" style={{ maxHeight: '90vh', padding: '2rem 0' }}>
+                <div
+                  style={{
+                    background: '#fff',
+                    boxShadow: '0 4px 32px 0 rgba(0,0,0,0.12)',
+                    borderRadius: '12px',
+                    padding: '2.5rem 2.5rem',
+                    minWidth: 0,
+                    width: '100%',
+                    maxWidth: '800px',
+                    minHeight: '120vh',
+                    border: '1px solid #e5e7eb',
+                    fontFamily: 'Georgia, Times, "Times New Roman", serif',
+                    overflow: 'auto',
+                  }}
+                >
+                  {openPolicyCard === "privacy" ? <PrivacyPolicySection /> : <TermsOfServiceSection />}
+                </div>
               </div>
             </div>
           </div>

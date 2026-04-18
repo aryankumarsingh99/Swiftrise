@@ -62,7 +62,8 @@ export default function TestimonialsSection() {
                       href="https://pkagroindustries.in"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lg font-semibold text-indigo-700 underline hover:text-indigo-900"
+                      className="text-lg font-semibold text-indigo-700 hover:underline hover:text-indigo-900"
+                      style={{ textDecoration: 'none' }}
                     >
                       {item.author}
                     </a>
@@ -71,7 +72,8 @@ export default function TestimonialsSection() {
                       href="https://rajlaxmiwoodenfurniture.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lg font-semibold text-indigo-700 underline hover:text-indigo-900"
+                      className="text-lg font-semibold text-indigo-700 hover:underline hover:text-indigo-900"
+                      style={{ textDecoration: 'none' }}
                     >
                       {item.author}
                     </a>

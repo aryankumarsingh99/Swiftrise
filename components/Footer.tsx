@@ -200,16 +200,16 @@ export default function Footer() {
 
         {openPolicyCard && (
           <div
-            className="fixed inset-0 z-120 flex items-center justify-center bg-[radial-gradient(circle_at_top,rgba(29,78,216,0.35),rgba(2,6,23,0.86)_55%)] p-3 backdrop-blur-xs sm:p-6"
+            className="fixed inset-0 z-120 flex items-end sm:items-center justify-center bg-[radial-gradient(circle_at_top,rgba(29,78,216,0.35),rgba(2,6,23,0.86)_55%)] p-0 sm:p-6 backdrop-blur-xs"
             role="dialog"
             aria-modal="true"
             onClick={() => setOpenPolicyCard(null)}
           >
             <div
-              className="flex w-[min(96vw,1100px)] flex-col overflow-hidden rounded-3xl max-h-[98vh] "
+              className="w-full sm:w-[min(96vw,1100px)] flex flex-col overflow-y-auto overflow-x-hidden rounded-t-2xl sm:rounded-3xl shadow-2xl bg-white max-h-[90vh]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50/90 px-4 py-3 text-slate-700 sm:px-6">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50/90 px-4 py-3 text-slate-700 sm:px-6 sticky top-0 z-10">
                 <div className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
                   Legal Policies
                 </div>
@@ -248,24 +248,11 @@ export default function Footer() {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto flex justify-center items-start bg-neutral-100" style={{ maxHeight: '90vh', padding: '2rem 0' }}>
-                <div
-                  style={{
-                    background: '#fff',
-                    boxShadow: '0 4px 32px 0 rgba(0,0,0,0.12)',
-                    borderRadius: '12px',
-                    padding: '2.5rem 2.5rem',
-                    minWidth: 0,
-                    width: '100%',
-                    maxWidth: '800px',
-                    minHeight: '120vh',
-                    border: '1px solid #e5e7eb',
-                    fontFamily: 'Georgia, Times, "Times New Roman", serif',
-                    overflow: 'auto',
-                  }}
-                >
-                  {openPolicyCard === "privacy" ? <PrivacyPolicySection /> : <TermsOfServiceSection />}
-                </div>
+              <div
+                className="bg-white w-full max-w-full sm:max-w-[800px] px-2 py-3 sm:px-10 sm:py-12 font-serif mx-auto"
+                style={{ fontFamily: 'Georgia, Times, \"Times New Roman\", serif' }}
+              >
+                {openPolicyCard === "privacy" ? <PrivacyPolicySection /> : <TermsOfServiceSection />}
               </div>
             </div>
           </div>

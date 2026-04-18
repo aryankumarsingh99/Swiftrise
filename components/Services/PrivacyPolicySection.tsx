@@ -71,10 +71,50 @@ const privacySections = [
 
 export default function PrivacyPolicySection() {
   return (
-    <section id="privacy-policy" style={{ background: '#ffffff', padding: '2rem 0' }}>
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 1rem' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#113f67', marginBottom: 8, textAlign: 'center' }}>SwiftRise Privacy Policy</h1>
-         <p style={{ textAlign: 'center', color: '#666', marginBottom: 24 }}>
+    <section
+      id="privacy-policy"
+      style={{
+        background: '#ffffff',
+        padding: 'clamp(1rem, 4vw, 2rem) 0',
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          margin: '0 auto',
+          padding: '0 0.75rem',
+          maxWidth: '900px',
+        }}
+      >
+        <style>{`
+          @media (max-width: 640px) {
+            #privacy-policy > div {
+              max-width: 100vw !important;
+              padding-left: 0.5rem !important;
+              padding-right: 0.5rem !important;
+            }
+          }
+        `}</style>
+        <h1
+          style={{
+            fontSize: 'clamp(1.3rem, 5vw, 2rem)',
+            fontWeight: 700,
+            color: '#113f67',
+            marginBottom: 8,
+            textAlign: 'center',
+            wordBreak: 'break-word',
+          }}
+        >
+          SwiftRise Privacy Policy
+        </h1>
+        <p
+          style={{
+            textAlign: 'center',
+            color: '#666',
+            marginBottom: 24,
+            fontSize: 'clamp(0.95rem, 3vw, 1.1rem)',
+          }}
+        >
           We are committed to protecting your privacy. This policy describes what information we collect, how we use it, and the rights you have when using SwiftRise.
         </p>
         {privacySections.map((section) => (

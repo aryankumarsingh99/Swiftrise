@@ -57,7 +57,7 @@ export default function MilestonesSection() {
 
   const stats = [
     { value: "1+", label: "Years Experience" },
-    { value: "50+", label: "Projects Delivered" },
+    { value: "25+", label: "Projects Delivered" },
     { value: "15", label: "Specialist Teams" },
     { value: "97%", label: "Client Retention" },
   ];

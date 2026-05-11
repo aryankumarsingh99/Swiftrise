@@ -57,7 +57,7 @@ export default function Footer() {
             <p className="text-lg leading-relaxed text-white/60 sm:text-xl">
               Built on trust, designed for tomorrow. Planning, building, and modernising the environments where growth happens.
             </p>
-            {/* Social icons */}
+            {/* Social icon */}
             <div className="mt-5 flex gap-3">
               {[
                 {
